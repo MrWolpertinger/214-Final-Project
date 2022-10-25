@@ -11,7 +11,7 @@ class TransportationCorridor
 		int _trucks;
 		int _buses;
 	public:
-		TransportationCorridor();
+		TransportationCorridor(int, int, int, int, int);
 		~TransportationCorridor();
 		int get_num_cars();
 		int get_num_buses();
