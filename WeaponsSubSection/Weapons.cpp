@@ -1,0 +1,25 @@
+
+#include "Weapons.h"
+
+string Weapons::getName()
+{
+    return name;
+}
+int Weapons::fire()
+{
+    return damage;
+}
+
+Weapons::Weapons(int damage)
+{
+    this->damage = damage;
+}
+
+int Weapons::getDamage()
+{
+    return damage;
+}
+void Weapons::setName(string name)
+{
+    this->name = name;
+}
