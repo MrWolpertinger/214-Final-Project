@@ -4,14 +4,13 @@
 class Military : public Army{
     public:
         virtual bool add(Army* Force);
-        virtual bool remove(Army* Force);
+        virtual Army* remove(int id);
         virtual Army* get(int id);
         virtual void conflict();// the main function
 
         virtual ~Military();
 
     private:
-        int Troops;
-        int capacity;
+        int numberOfTroops;
         std::vector<Army*> next;
 };
