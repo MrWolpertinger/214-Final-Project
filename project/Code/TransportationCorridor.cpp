@@ -1,7 +1,12 @@
 #include "TransportationCorridor.h"
 
 
-TransportationCorridor::TransportationCorridor(){
+TransportationCorridor::TransportationCorridor(int cars, int buses, int trucks, int cargo_trains, int cargo_ships){
+	_cars=cars;
+	_cargo_trains=cargo_trains;
+	_cargo_ships=cargo_ships;
+	_trucks=trucks;
+	_buses=buses;
 }
 
 TransportationCorridor::~TransportationCorridor(){
