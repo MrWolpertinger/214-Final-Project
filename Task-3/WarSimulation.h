@@ -2,6 +2,9 @@
 #define WARSIMULATION_H
 
 //#include "File.h"
+#include <iostream>
+#include <string>
+#include <algorithm>
 #include <string>
 
 using namespace std;
@@ -12,6 +15,7 @@ class WarSimulation {
 private:
 	string id;
     string name;
+    //CountryGroup** CountryGroups = new CountryGroup*[noOfCountryGroups];
 
 public:
 	WarSimulation();

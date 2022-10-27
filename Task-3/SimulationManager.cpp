@@ -10,7 +10,7 @@ SimulationManager::SimulationManager() {
     cout<<"COS214 PROJECT - RUNTIME TERRORS - WAR SIMULATOR"<<endl;
 
     string startNewSimulation;
-    cout<<"Do you wnat to start a new simulation(Y/N)?"<<endl;
+    cout<<"Do you want to start a new simulation(Y/N)?"<<endl;
     cin>>startNewSimulation;
     transform(startNewSimulation.begin(), startNewSimulation.end(), startNewSimulation.begin(), ::tolower);
     if (startNewSimulation.compare("y")==0){
