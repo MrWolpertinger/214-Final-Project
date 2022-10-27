@@ -14,11 +14,16 @@ Weapons::Weapons(int damage)
 {
     this->damage = damage;
 }
-
 int Weapons::getDamage()
 {
     return damage;
 }
+
+void Weapons::setDamage(int damage)
+{
+    this->damage = damage;
+}
+
 void Weapons::setName(string name)
 {
     this->name = name;
