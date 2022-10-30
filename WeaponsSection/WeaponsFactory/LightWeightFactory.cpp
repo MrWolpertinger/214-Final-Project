@@ -2,7 +2,7 @@
 #include "../LightWeightWeapons/Grenades.h"
 #include "../LightWeightWeapons/MachineGuns.h"
 #include "../LightWeightWeapons/Rifles.h"
-#include "../LightWeightWeapons/MachineGuns.h"
+#include "../LightWeightWeapons/Pistols.h"
 
  Weapons* LightWeightFactory::produceWeapons(int choice)
  {
@@ -11,19 +11,31 @@
     {
         if(choice == 1)
         {
-            return new Grenades();
+            LightWeapons *wep = new Grenades();
+            wep->setName("Grenade");
+            wep->setDamage(50);
+            return wep;
         }
         else if(choice == 2)
         {
-            return new Rifles();
+            LightWeapons *wep = new Rifles();
+            wep->setName("Rifle");
+            wep->setDamage(60);
+            return wep;
         }
         else if(choice == 3)
         {
-            return new MachineGuns();
+            LightWeapons *wep = new MachineGuns();
+            wep->setName("MachineGun");
+            wep->setDamage(70);
+            return wep;
         }
         else if(choice == 4)
         {
-            return new Grenades();
+            LightWeapons *wep = new Pistols();
+            wep->setName("Pistol");
+            wep->setDamage(30);
+            return wep;
         }
 
         system("Color 4");

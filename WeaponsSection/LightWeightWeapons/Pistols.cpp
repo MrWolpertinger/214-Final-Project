@@ -4,5 +4,5 @@
  */
 Pistols::Pistols()
 {
-
+    LightWeapons(40, "Pistol");
 }

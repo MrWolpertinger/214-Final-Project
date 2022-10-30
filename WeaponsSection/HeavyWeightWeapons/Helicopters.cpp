@@ -4,5 +4,5 @@
  */
 Helicopters::Helicopters()
 {
-    HeavyWeapons(500);
+    HeavyWeapons(500, "Helicopter");
 }

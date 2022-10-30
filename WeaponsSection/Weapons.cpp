@@ -10,9 +10,10 @@ int Weapons::fire()
     return damage;
 }
 
-Weapons::Weapons(int damage)
+Weapons::Weapons(int damage, string NAME)
 {
     this->damage = damage;
+    this->setName(NAME);
 }
 int Weapons::getDamage()
 {

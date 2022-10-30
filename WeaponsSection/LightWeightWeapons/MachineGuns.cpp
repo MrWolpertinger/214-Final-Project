@@ -4,6 +4,6 @@
  */
 MachineGuns::MachineGuns()
 {
-
+    LightWeapons(60, "MachineGun");
 }
 

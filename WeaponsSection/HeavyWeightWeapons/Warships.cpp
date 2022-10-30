@@ -4,5 +4,5 @@
  */
 Warships::Warships()
 {
-    HeavyWeapons(550);
+    HeavyWeapons(550, "Worship");
 }

@@ -1,4 +1,4 @@
 #include "LightWeapons.h"
 
-LightWeapons::LightWeapons(int dam):Weapons(dam){}
+LightWeapons::LightWeapons(int dam,string name):Weapons(dam, name){}
 

@@ -6,7 +6,7 @@ class LightWeapons : public Weapons
 {
     public:
         LightWeapons(){};
-        LightWeapons(int);
+        LightWeapons(int,string);
         ~LightWeapons(){};
 };
 

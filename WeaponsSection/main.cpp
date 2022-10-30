@@ -10,20 +10,35 @@ using namespace std;
 
 
 
+vector<Weapons*> CreateWeapons();
 
 int main()
 {
+    vector<Weapons*> The_Weapons = CreateWeapons();
+    cout << "Created "<< The_Weapons.size() << " Weapons" << endl;
+    //get Damage of each of the weapons available
+
+    for(int x = 0; x < The_Weapons.size(); x++)
+    {
+        cout << "Name: " << The_Weapons[x]->getName() << endl;
+        cout << "Damage: " << The_Weapons[x]->getDamage() << endl;
+    }
+
+    return 0;
+}
+
+vector<Weapons*> CreateWeapons()
+{
     vector<Weapons*> WeaponsVector;
-    WeaponsFactory *HeavyWFac = new HeavyWeightFactory();
+    WeaponsFactory *HeavyWFac;
     WeaponsFactory *LightWFac;
 
     char Weapontype;
-    cout << "What kind of weapon do you want to create?" << endl;
-    cout << "H -> HeavyWeapons" << endl;
-    cout << "L -> LightWeapons" << endl;
+    cout << "Do you want to create LightWeight Weapons?" << endl;
+    cout << "Y/N" << endl;
     cin >> Weapontype;
 
-    if(Weapontype == 'l' || Weapontype == 'L')
+    if(Weapontype == 'Y' || Weapontype == 'y')
     {
         LightWFac = new LightWeightFactory();
 
@@ -61,7 +76,12 @@ int main()
         }
 
     }
-    else if(Weapontype == 'h' || Weapontype == 'H')
+
+
+    cout << "Do you want to create HeavyWeight Weapons?" << endl;
+    cout << "Y/N" << endl;
+    cin >> Weapontype;
+    if(Weapontype == 'Y' || Weapontype == 'n')
     {
         HeavyWFac = new HeavyWeightFactory();
 
@@ -97,12 +117,7 @@ int main()
         {
             WeaponsVector.push_back(HeavyWFac->produceWeapons(4));
         }
-
     }
-   
 
-
-    cout << "Created "<< WeaponsVector.size() << " Weapons" << endl;
-
-    return 0;
+    return WeaponsVector;
 }

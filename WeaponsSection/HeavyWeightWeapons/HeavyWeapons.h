@@ -6,7 +6,7 @@ class HeavyWeapons : public Weapons
 {
     public:
         HeavyWeapons(){};
-        HeavyWeapons(int);
+        HeavyWeapons(int,string);
         ~HeavyWeapons(){};
 };
 

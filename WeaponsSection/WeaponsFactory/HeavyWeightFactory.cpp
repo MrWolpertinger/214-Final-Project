@@ -11,19 +11,31 @@
     {
         if(choice == 1)
         {
-            return new Warships();
-        }
-        else if(choice == 2)
-        {
-            return new Tanks();
+            HeavyWeapons *wep = new Warships();
+            wep->setName("Warship");
+            wep->setDamage(300);
+            return wep;
         }
         else if(choice == 3)
         {
-            return new Submarines();
+            HeavyWeapons *wep = new Tanks();
+            wep->setName("Tank");
+            wep->setDamage(400);
+            return wep;
+        }
+        else if(choice == 2)
+        {
+            HeavyWeapons *wep = new Submarines();
+            wep->setName("Submarine");
+            wep->setDamage(350);
+            return wep;
         }
         else if(choice == 4)
         {
-            return new Helicopters();
+            HeavyWeapons *wep = new Helicopters();
+            wep->setName("Helicopter");
+            wep->setDamage(200);
+            return wep;
         }
 
         system("Color 4");

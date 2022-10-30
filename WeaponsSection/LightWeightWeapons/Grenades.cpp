@@ -4,5 +4,5 @@
  */
 Grenades::Grenades()
 {
-    LightWeapons(50);
+    LightWeapons(50, "Grenade");
 }

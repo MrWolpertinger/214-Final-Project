@@ -4,5 +4,5 @@
  */
 Submarines::Submarines()
 {
-    HeavyWeapons(300);
+    HeavyWeapons(300 , "Submarine");
 }
