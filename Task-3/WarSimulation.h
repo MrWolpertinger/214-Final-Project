@@ -15,7 +15,8 @@ class WarSimulation {
 private:
 	string id;
     string name;
-    //CountryGroup** CountryGroups = new CountryGroup*[noOfCountryGroups];
+    bool warIsActive;
+    //CountryGroup** countryGroups;
 
 public:
 	WarSimulation();
@@ -27,6 +28,7 @@ public:
     string getID();
     void setName(string);
     string getName();
+    void warloop();
 };
 
 #endif
