@@ -3,12 +3,12 @@
 CountryGroup::CountryGroup(string name) : AlliedForce(name) {};
 
 void CountryGroup::setEnemy(CountryGroup* e){
-    this.enemy = e;
-    cout << this.name << "'s enemy is now " << e.getName() << "\n";
+    this->enemy = e;
+    cout << this->name << "'s enemy is now " << e->getName() << "\n";
 }
 
 string CountryGroup::getName(){
-    return this.name;
+    return this->name;
 }
 
 void CountryGroup::print(){
@@ -23,9 +23,10 @@ void CountryGroup::print(){
     cout << "====================================================================\n";
 }
 
-void CountryGroup::add(Country ct){
+void CountryGroup::add(AlliedForce* ct){
     this.Allies.push_back(ct);
     ct.setAlliance(this);
+    cout << ct->getName() << " has been added to " << this->getName() << "\n";
 }
 
 void CountryGroup::remove(AlliedForce* f){
