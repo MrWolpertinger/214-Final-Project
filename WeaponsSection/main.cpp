@@ -81,7 +81,7 @@ vector<Weapons*> CreateWeapons()
     cout << "Do you want to create HeavyWeight Weapons?" << endl;
     cout << "Y/N" << endl;
     cin >> Weapontype;
-    if(Weapontype == 'Y' || Weapontype == 'n')
+    if(Weapontype == 'Y' || Weapontype == 'y')
     {
         HeavyWFac = new HeavyWeightFactory();
 
@@ -118,6 +118,5 @@ vector<Weapons*> CreateWeapons()
             WeaponsVector.push_back(HeavyWFac->produceWeapons(4));
         }
     }
-
     return WeaponsVector;
 }
