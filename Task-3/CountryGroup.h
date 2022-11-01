@@ -1,7 +1,7 @@
 #ifndef _COUNTRYGROUP_H
 #define _COUNTRYGROUP_H
 #include "AlliedForce.h"
-#include "Country"
+#include "Country.h"
 #include <list>
 
 class CountryGroup : public AlliedForce{
@@ -14,6 +14,7 @@ class CountryGroup : public AlliedForce{
         CountryGroup(string name);
         void print();
         void setEnemy(CountryGroup* e);
+        void add(AlliedForce* ptr);
         void remove(AlliedForce* ptr);
         string getName();
         // void notify();
