@@ -1,5 +1,4 @@
 #include<iostream>
-#include "GroundForce.h"
 using namespace std;
 
 int main(){
