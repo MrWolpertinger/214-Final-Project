@@ -1,3 +1,6 @@
+#ifndef AIRFLOW_H
+#define AIRFLOW_H
+
 class airFlow
 {
 private:
@@ -14,3 +17,5 @@ airFlow::airFlow(/* args */)
 airFlow::~airFlow()
 {
 }
+
+#endif

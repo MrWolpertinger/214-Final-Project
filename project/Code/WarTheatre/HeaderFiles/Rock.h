@@ -1,3 +1,6 @@
+#ifndef ROCK_H
+#define ROCK_H
+
 class Rock
 {
 private:
@@ -14,3 +17,5 @@ Rock::Rock(/* args */)
 Rock::~Rock()
 {
 }
+
+#endif

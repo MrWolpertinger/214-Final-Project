@@ -1,3 +1,5 @@
+#ifndef WAR_THEATRE_H
+#define WAR_THEATRE_H
 #include <string>
 
 class War_Theatre {
@@ -15,3 +17,5 @@ public:
     //CountryGroup* getSideA();
     //CountryGroup* getSideB();
 };
+
+#endif

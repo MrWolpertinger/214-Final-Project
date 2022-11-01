@@ -1,3 +1,5 @@
+#ifndef Airspace_war_theatre_H
+#define Airspace_war_theatre_H
 #include "War_Theatre.h"
 
 class Airspace_war_theatre : public War_Theatre
@@ -9,3 +11,5 @@ public:
     ~Airspace_war_theatre();
     War_Theatre* cloneTheatre();
 };
+
+#endif

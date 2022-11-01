@@ -1,4 +1,4 @@
-#include "ArmyItorator.h"
+#include "HeaderFiles/ArmyItorator.h"
 
 ArmyItorator::ArmyItorator(std::vector<Army*> Force) {
     it = next.begin();

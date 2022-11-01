@@ -1,3 +1,6 @@
+#ifndef WAVEDIRECTION_H
+#define WAVEDIRECTION_H
+
 class waveDirection
 {
 private:
@@ -14,3 +17,5 @@ waveDirection::waveDirection(/* args */)
 waveDirection::~waveDirection()
 {
 }
+
+#endif
