@@ -1,5 +1,5 @@
-#include "Military.h"
-#include "ArmyItorator.h"
+#include "HeaderFiles/Military.h"
+#include "HeaderFiles/ArmyItorator.h"
 
 /*bool Military::add(Army* Force) {
     try {

@@ -9,9 +9,16 @@ class ArmyItorator {
         Army* firstItem();
         Army* prevItem();
         Army* nextItem();
+        //overloading ++ & --
         Army* currentItem();
         bool add(Army* element);
         bool remove(Army* element);
+        double getDMG(Army* element);//--
+        double getTotalDMG();//--
+        double getCatagoryDMG(Army* type);// for class comparison --
+        double getHP(Army* element);//--
+        double getTotalHP();//--
+        double getCatagoryHP(Army* type);// for class comparison --
     
     private:
         std::vector<Army*>::iterator it;

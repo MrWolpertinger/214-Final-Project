@@ -1,3 +1,6 @@
+#ifndef SEA_WAR_THEATRE_H
+#define SEA_WAR_THEATRE_H
+
 #include "War_Theatre.h"
 
 class Sea_War_Theatre : public War_Theatre
@@ -9,3 +12,5 @@ public:
     ~Sea_War_Theatre();
     War_Theatre* cloneTheatre();
 };
+
+#endif

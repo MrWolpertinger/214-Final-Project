@@ -1,3 +1,6 @@
+#ifndef OBSTACLE_H
+#define OBSTACLE_H
+
 class Obstacle
 {
 private:
@@ -14,3 +17,5 @@ Obstacle::Obstacle(/* args */)
 Obstacle::~Obstacle()
 {
 }
+
+#endif
