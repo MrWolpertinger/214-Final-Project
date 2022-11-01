@@ -29,12 +29,13 @@ class Country : public AlliedForce{
         Country(string name);
         void attack(Country c);
         void setAlliance(CountryGroup* c);
-        //void attack(TransportationCorridor tc);
+        void attack(TransportationCorridor tc);
         void requestAssistance(CountryGroup cg);
         void increaseRandSpending(long amount);
         void receiveDamage(int amount);
         void print();
         void remove(AlliedForce* ptr);
+        void increaseHP(int v);
         string getState();
 };
 

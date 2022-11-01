@@ -55,7 +55,18 @@ void Country::receiveDamage(int amount){
     cout << this.name << " has taken " << amount << " damage and their HP is now " << this.HP << ".\n";
 }
 
+/**
+ * @brief
+ * This attack function takes an opposing AlliedForce object as a parameter. The country calling the function then calculates it's damage and calls the receiving countries receiveDamage function with the appropriate damage variable. 
+ *
+ * @param c The opposing country which is being attacked.
+ */
 void Country::attack(AlliedForce* c){
+    string check = this->getState();
+    if (check != "aggressive"){
+        cout << this->getName() << " is not in the aggressive state and cannot attack!\n";
+        return;
+    }
     int x = this.arsenal->getDamage();
     cout << this.getName() << " is now attacking " << c.getName() << ".\n";
     c.receiveDamage(x);
@@ -65,6 +76,12 @@ string Country::getState(){
     return this.strategy;
 }
 
+/**
+ * @brief This function creates an iterator for the calling Country's CountryGroup, and iterates through this group. If any of the AlliedForces in this group are in the supportive strategy, then that country will support the country calling for assistance.
+ * 
+ * 
+ * @param c 
+ */
 void Country::requestAssistance(AlliedForce* c){
     CountryGroupIterator* ptr = c->CreateGroupIterator();
     string tmp = "";
@@ -72,7 +89,7 @@ void Country::requestAssistance(AlliedForce* c){
     for (ptr; ptr->hasNext(); ptr->next()){
         tmp = (*ptr)->getState();
         if (tmp == "supportive"){
-            //do something
+            c->support(this);
             cout << this.getName() << " is now receiving assistance from " << (*ptr)->getName() << ".\n";
             return;
         }
@@ -80,5 +97,16 @@ void Country::requestAssistance(AlliedForce* c){
     cout << "No countries in this alliance are in supportive mode.\n";
 }
 
-// void Country::attack(TransportationCorridor TC){
-// }
+void Country::support(AlliedForce* c){
+    this.HP -= 50;
+    c.increaseHP(50);
+}
+
+void increaseHP(int v){
+    this.HP += v;
+}
+
+void Country::attack(TransportationCorridor TC){
+    int dmg = ((this.arsenal->getDamage())*0.2)/5;
+    TC.takeDamage(dmg);
+}
