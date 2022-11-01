@@ -1,15 +1,16 @@
 #include "Military.h"
+#include "ArmyItorator.h"
 
-bool Military::add(Army* Force) {
+/*bool Military::add(Army* Force) {
     try {
         next.push_back(Force);
         return true;
     } catch (int i){
         return false;
     }
-};
+};*/
 
-Army* Military::remove(int id) {
+/*Army* Military::remove(int id) {
     std::vector<Army*>:: iterator it;
     int i = 0;
     Army* Temp = nullptr;;
@@ -23,23 +24,17 @@ Army* Military::remove(int id) {
         i++;
     }
     return nullptr;
-};
-
-Army* Military::get(int id) {
-    std::vector<Army*>:: iterator it;
-    
-    for (it = next.begin(); it != next.end(); ++it)
-        if(id == (*it)->getID()) {
-            return (*it);
-        }
-    return nullptr;
-};
+};*/
 
 void Military::conflict() {};// the main function
 
 Military::~Military() {
-    std::vector<Army*>:: iterator it;
+    std::vector<Army*>::iterator it;
     
     for (it = next.begin(); it != next.end(); ++it)
         delete *it;
+};
+
+ArmyItorator* Military::createItorator() {
+    return new ArmyItorator(next);
 };
