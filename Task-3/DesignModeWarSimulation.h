@@ -19,6 +19,8 @@ public:
     void interrupt();
     void tweak();
     void continueSimulation();
+    void run();
+	void warloop();
 };
 
 #endif

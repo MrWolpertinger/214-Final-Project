@@ -6,6 +6,12 @@ WarSimulation::WarSimulation()
 
 WarSimulation::~WarSimulation()
 {
+	/*
+	for (CountryGroup* cg:countryGroups){
+		delete cg;
+	}
+	delete countryGroups;
+	*/
 }
 
 void WarSimulation::setUp()
@@ -13,7 +19,7 @@ void WarSimulation::setUp()
 	bool isNeutral;
 	int noOfCountryGroups;
 	int noOfCountries;
-	int totalMilitarySpending;
+	long totalMilitarySpending;
 	string unlistedCitizens;
 	string refugeeCount;
 	string enlistedCitizens;
@@ -22,9 +28,9 @@ void WarSimulation::setUp()
 	string stationedCitizens;
 	string returnedCitizens;
 	string deathtoll;
-	string isNeutralInput;
+	//string isNeutralInput;
 	string countryGroupNameInput;
-	string noOfCountryGroupsInput;
+	//string noOfCountryGroupsInput;
 	string noOfCountriesInput;
 	string countryNameInput;
 	string countryLeaderInput;
@@ -32,25 +38,41 @@ void WarSimulation::setUp()
 
 	cout <<"\033[31m"<< "Warphase: Intelligence" <<"\033[0m"<<endl;
 
-	// Number of country Groups
-	cout << "How many country groups are there in this simulation?" << endl;
-	cin >> noOfCountryGroupsInput;
-	noOfCountryGroups = stoi(noOfCountryGroupsInput);
+	// // Number of country Groups
+	// cout << "How many country groups are there in this simulation?" << endl;
+	// cin >> noOfCountryGroupsInput;
+	// noOfCountryGroups = stoi(noOfCountryGroupsInput);
+	// // countryGroups = new CountryGroup*[noOfCountryGroups];
+
+	cout << "Is there a neutral country group in this simulation?(Y/N)" << endl;
+	cin >> isThereANeutralCountryGroup;
+	transform(isThereANeutralCountryGroup.begin(), isThereANeutralCountryGroup.end(), isThereANeutralCountryGroup.begin(), ::tolower);
+	if (isThereANeutralCountryGroup=="y"){
+		noOfCountryGroups=3;
+	}else{
+		noOfCountryGroups=2;
+	}
 	// countryGroups = new CountryGroup*[noOfCountryGroups];
 
-	for (int i = 1; i <= noOfCountryGroups; i++)
+
+	for (int cg = 1; cg <= noOfCountryGroups; cg++)
 	{
-		cout << "\n\n\n\nCountry Group " << i << ":" << endl;
+		cout << "\n\n\n\nCountry Group ";
+		if (cg!=3){
+			cout<<"(Non-neutral Country Group) " << cg << ":" << endl;
+		}else{
+			cout<<"(Neutral Country Group) " << cg << ":" << endl;
+		}
 
 		cout << "Country Group Name: ";
 		cin.ignore();
 		getline(cin, countryGroupNameInput);
 		// CountryGroup* newCountryGroup = new CountryGroup(countryGroupNameInput);
 
-		cout << "Is this country group neutral(Y/N)?" << endl;
-		cin >> isNeutralInput;
-		transform(isNeutralInput.begin(), isNeutralInput.end(), isNeutralInput.begin(), ::tolower);
-		// newCountryGroup->setIsNeutral(isNeutralInput=="y"?true:false);
+		// cout << "Is this country group neutral(Y/N)?" << endl;
+		// cin >> isNeutralInput;
+		// transform(isNeutralInput.begin(), isNeutralInput.end(), isNeutralInput.begin(), ::tolower);
+		// // newCountryGroup->setIsNeutral(isNeutralInput=="y"?true:false);
 
 		// Number of countries
 		cout << "How many countries are there in this country group?" << endl;
@@ -73,18 +95,18 @@ void WarSimulation::setUp()
 			// newCountry.setLeader(countryLeaderInput);
 
 			cout << "Total Military Spending: ";
-			cin.ignore();
-			getline(cin, totalMilitarySpendingInput);
-			totalMilitarySpending = stoi(totalMilitarySpendingInput);
-			// newCountry.setTotalMilitarySpeding(totalMilitarySpendingInput);
+			//cin.ignore();
+			//getline(cin, totalMilitarySpendingInput);
+			cin>>totalMilitarySpendingInput;
+			totalMilitarySpending = stol(totalMilitarySpendingInput);
+			// newCountry.setTotalMilitarySpending(totalMilitarySpendingInput);
 
-			// newCountry.setIsNeutral(isNeutralInput=="y"?true:false);
+			// newCountry.setIsNeutral(cg==3?true:false);
 			// newCountry.setFlag(false);
 			// newCountry.setDeathToll(0);
 
 			cout << "Unlisted Citizens: ";
-			cin.ignore();
-			getline(cin, unlistedCitizens);
+			cin >> unlistedCitizens;
 			// newCountry.setUnlistedCitizens(stoi(unlistedCitizens));
 
 			// cout << "Refugee Count: ";
@@ -93,8 +115,7 @@ void WarSimulation::setUp()
 			// // newCountry.setRefugeeCount(stoi(refugeeCount));
 
 			cout << "Enlisted Citizens: ";
-			cin.ignore();
-			getline(cin, enlistedCitizens);
+			cin >> enlistedCitizens;
 			// newCountry.setEnlistedCitizens(stoi(enlistedCitizens));
 
 			// cout << "Deployed Citizens: ";
@@ -122,30 +143,42 @@ void WarSimulation::setUp()
 			// getline(cin, deathtoll);
 			// // newCountry.setDeathtoll(stoi(deathtoll));
 
-			// countryGroups[i-1]->Allies.push_back(newCountry);
+			// newCountry.setRefugeeCount(0);
+			// newCountry.setDeployedCitizens(0);
+			// newCountry.fightingCitizens(0);
+			// newCountry.setStationedCitizens(0);
+			// newCountry.setReturnedCitizens(0);
+			// newCountry.setDeathtoll(0);
+			
+
+			// countryGroups[cg-1]->Allies.push_back(newCountry);
 
 		}
 	}
 
 	cout <<"\033[31m"<< "Warphase: Initiation" <<"\033[0m"<<endl;
-	run();
+	this->run();
 	cout <<"\033[31m"<< "Warphase: Finished" <<"\033[0m"<<endl;
 }
 
 WarSimulation *WarSimulation::clone()
 {
+	WarSimulation* cloneSimulation = new WarSimulation();
+	//cloneSimulation.countryGroups = this.countryGroups;
+	return cloneSimulation;
 }
 
 void WarSimulation::displayInformation()
 {
-	
+	cout<<name<<endl;
 }
 
 void WarSimulation::run()
 {
-	cout << "The war has begun." << endl;
-	warIsActive = true;
-	warloop();
+	// cout << "The war has begun." << endl;
+	// cout << "If you want to pause the simulation press p." << endl;
+	// warIsActive = true;
+	// warloop();
 }
 
 string WarSimulation::getID()
@@ -164,7 +197,7 @@ string WarSimulation::getName()
 }
 
 void WarSimulation::warloop(){
-	cout <<"\033[31m"<< "Warphase: Occupation" <<"\033[0m"<<endl;
+	//cout <<"\033[31m"<< "Warphase: Occupation" <<"\033[0m"<<endl;
 	// while (warIsActive){
 	// 	for (int i = 0;i<10;i++){
 
@@ -175,8 +208,13 @@ void WarSimulation::warloop(){
 	// 	}
 	// 	if (countryGroups[1].lost==true){
 	// 		warIsActive=false;
+	//choose two countries
+	//countryGroups[0].receiveDamage()
 	// 		cout << "Country Group"<<countryGroups[1]->getName()<<" has lost the war."<< endl;
 	// 	}
 	// }
 }
 
+// void WarSimulation::setCountryGroups(){
+// 	thi
+// }

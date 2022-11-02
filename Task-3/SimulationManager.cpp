@@ -7,7 +7,7 @@
 #include "DesignModeWarSimulation.h"
 
 SimulationManager::SimulationManager() {
-    cout<<"COS214 PROJECT - RUNTIME TERRORS - WAR SIMULATOR"<<endl;
+    cout<<"\033[1m\033[32m"<<"COS214 PROJECT - RUNTIME TERRORS - WAR SIMULATOR"<<"\033[0m"<<endl;
 
     string startNewSimulation;
     cout<<"Do you want to start a new simulation(Y/N)?"<<endl;
