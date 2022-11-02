@@ -1,9 +1,0 @@
-
-
-
-
-Fource1 = {DMG = 0.5, HP = 8, maxTroops = 10, initTroops = 8, country = "Country1"}
-
-Country1 = {SideA = true, IsNeutral = false}
-
-WarSettings = {}
