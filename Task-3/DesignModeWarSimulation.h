@@ -16,6 +16,7 @@ private:
 public:
 	DesignModeWarSimulation();
     ~DesignModeWarSimulation();
+    void setUp();
     void interrupt();
     void tweak();
     void continueSimulation();

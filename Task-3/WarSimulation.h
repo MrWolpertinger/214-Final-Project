@@ -15,15 +15,15 @@ class WarSimulation {
 private:
 	string id;
     string name;
-    string isThereANeutralCountryGroup;
     //CountryGroup** countryGroups;
 
 public:
     bool warIsActive;
+    string isThereANeutralCountryGroup;
 
 	WarSimulation();
     ~WarSimulation();
-    void setUp();
+    virtual void setUp();
     WarSimulation* clone();
     void displayInformation();
     virtual void run();

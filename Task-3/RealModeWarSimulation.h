@@ -15,6 +15,7 @@ private:
 public:
 	RealModeWarSimulation();
     ~RealModeWarSimulation();
+	void setUp();
 	void run();
 	void warloop();
 };
