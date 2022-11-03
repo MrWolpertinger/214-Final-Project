@@ -1,6 +1,10 @@
 #include "CountryGroup.h"
+using namespace std;
 
-CountryGroup::CountryGroup(string name) : AlliedForce(name) {};
+CountryGroup::CountryGroup(string name) : AlliedForce(name) {
+    this->setCG(true);
+    cout << name << " has been successfully created. \n";
+};
 
 void CountryGroup::setEnemy(CountryGroup* e){
     this->enemy = e;
@@ -24,6 +28,10 @@ void CountryGroup::print(){
 }
 
 void CountryGroup::add(AlliedForce* ct){
+    if (!(ct->CG())){
+        cout << "Cannot add countries to other countries, only to other country groups.\n";
+        return;
+    }
     this.Allies.push_back(ct);
     ct.setAlliance(this);
     cout << ct->getName() << " has been added to " << this->getName() << "\n";
@@ -34,8 +42,12 @@ void CountryGroup::remove(AlliedForce* f){
     ptr->first();
     for (ptr; ptr->hasNext(); ptr->next())
     {
-        if ((*(ptr->current()))->getName() == f->getName())
+        AlliedForce* temp = ptr->current();
+        if ((temp->getName() == f->getName()){
             this.Allies.erase(ptr);
+            cout << temp->getName() << " is no longer part of " << this->getName() << "\n";
+            break;
+        }
     }
     delete ptr; 
 }
@@ -50,6 +62,10 @@ void CountryGroup::~CountryGroup(){
     this.Allies.clear();
     delete p;
     this.Allies == NULL;
+}
+
+AlliedForce* CountryGroup::getEnemy(){
+    return this->enemy;
 }
 
 // CountryGroupIterator* CountryGroup::CreateGroupIterator(CountryGroup* c){

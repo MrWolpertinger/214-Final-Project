@@ -1,58 +1,56 @@
 #include "Country.h"
+using namespace std;
 
 Country::Country(string name) : AlliedForce(name) {
+    this->setCG(false);
     cout << name << " has been successfully created. \n";
 }
 
 void Country::print(){
     cout << "============================CountryInfo============================\n";
-    cout << "Country Name: " << this.name << "\n";
-    cout << "Country Leader: " << this.leader << "\n";
+    cout << "Country Name: " << this->name << "\n";
+    cout << "Country Leader: " << this->leader << "\n";
 
     bool o = false;
-    if (this.isNeutral)
+    if (this->isNeutral)
         o = true;
     cout << "Country Neutral: " << o << "\n";
 
     bool surr = false;
-    if (this.flag)
+    if (this->flag)
         surr = true;
     cout << "Country Surrendered: " << surr;
 
-    cout << "Country Military Expenditure: " << this.totalMilitarySpending << "\n";
-    cout << "Unlisted Citizens: " << this.unlistedCitizens << "\n";
-    cout << "Deployed Citizens: " << this.deployedCitizens << "\n";
-    cout << "Fighting Citizens: " << this.fightingCitizens << "\n";
-    cout << "Stationed Citizens: " << this.stationedCitizens << "\n";
-    cout << "Returned Citizens: " << this.returnedCitizens << "\n";
-    cout << "Death Count: " << this.deathtoll << "\n";
+    cout << "Country Military Expenditure: " << this->totalMilitarySpending << "\n";
+    cout << "Unlisted Citizens: " << this->unlistedCitizens << "\n";
+    cout << "Deployed Citizens: " << this->deployedCitizens << "\n";
+    cout << "Fighting Citizens: " << this->fightingCitizens << "\n";
+    cout << "Stationed Citizens: " << this->stationedCitizens << "\n";
+    cout << "Returned Citizens: " << this->returnedCitizens << "\n";
+    cout << "Death Count: " << this->deathtoll << "\n";
     cout << "===================================================================\n";
 }
 
-void Country::increaseRandSpending(long amount){
-    this.totalMilitarySpending = amount;
-}
-
 void Country::setAlliance(AlliedForce* a){
-    if (this.A  == NULL){
-        this.A = a;
+    if (this->A  == NULL){
+        this->A = a;
         cout << "This country now belongs to " << a.getName();
         return;
     }
     else{
-        this.A.remove(this); 
-        this.A = a;
+        (this->A)->remove(this); 
+        this->A = a;
         cout << "This country now belongs to " << a.getName();
         return;
     }
 }
 
 void Country::receiveDamage(int amount){
-    if (this.HP - amount <= 0)
-        this.HP = 0;
+    if (this->HP - amount <= 0)
+        this->HP = 0;
     else
-        this.HP -= amount;
-    cout << this.name << " has taken " << amount << " damage and their HP is now " << this.HP << ".\n";
+        this->HP -= amount;
+    cout << this->name << " has taken " << amount << " damage and their HP is now " << this->HP << ".\n";
 }
 
 /**
@@ -62,18 +60,30 @@ void Country::receiveDamage(int amount){
  * @param c The opposing country which is being attacked.
  */
 void Country::attack(AlliedForce* c){
+    string phase = "";
+    phase = this->phase->getPhase();
+    if (phase == "Intelligence Phase ."){
+        cout << "Cannot attack in the intelligence phase!\n";
+        return;
+    }
+    else if (phase == "Finished Phase ."){
+        cout << "Cannot attack whilst the war is finished!\n";
+        return;
+    }
+
     string check = this->getState();
-    if (check != "aggressive"){
+    if (check != "The Country Strategy is Aggrasive"){
         cout << this->getName() << " is not in the aggressive state and cannot attack!\n";
         return;
     }
-    int x = this.arsenal->getDamage();
-    cout << this.getName() << " is now attacking " << c.getName() << ".\n";
-    c.receiveDamage(x);
+
+    int x = this->arsenal->getDamage();
+    cout << this->getName() << " is now attacking " << c->getName() << ".\n";
+    c->receiveDamage(x);
 }
 
 string Country::getState(){
-    return this.strategy;
+    return ((this->strategy)->getCountryStrategy());
 }
 
 /**
@@ -90,23 +100,123 @@ void Country::requestAssistance(AlliedForce* c){
         tmp = (*ptr)->getState();
         if (tmp == "supportive"){
             c->support(this);
-            cout << this.getName() << " is now receiving assistance from " << (*ptr)->getName() << ".\n";
+            cout << this->getName() << " is now receiving assistance from " << (*ptr)->getName() << ".\n";
             return;
         }
     }
     cout << "No countries in this alliance are in supportive mode.\n";
 }
 
+// void Country::attack(TransportationCorridor TC){
+//     int dmg = ((this->arsenal->getDamage())*0.2)/5;
+//     TC.takeDamage(dmg);
+// }
+
 void Country::support(AlliedForce* c){
-    this.HP -= 50;
-    c.increaseHP(50);
+    this->HP -= 50;
+    c->increaseHP(50);
 }
 
-void increaseHP(int v){
-    this.HP += v;
+void Country::increaseHP(int v){
+    this->HP += v;
 }
 
-void Country::attack(TransportationCorridor TC){
-    int dmg = ((this.arsenal->getDamage())*0.2)/5;
-    TC.takeDamage(dmg);
+string Country::getLeader(){
+    return this->leader;
+}
+
+bool Country::getNeutral(){
+    return this->isNeutral;
+}
+
+bool Country::getsurr(){
+    return this->flag;
+}
+
+int Country::getRefugee(){
+    return this->refugeeCount;
+}
+
+int Country::getUnlisted(){
+    return this->unlistedCitizens;
+}
+
+int Country::getEnlisted(){
+    return this->enlistedCitizens;
+}
+
+int Country::getDeployed(){
+    return this->deployedCitizens;
+}
+
+int Country::getFighting(){
+    return this->deployedCitizens;
+}
+
+int Country::getStationed(){
+    return this->stationedCitizens;
+}
+
+int Country::getReturned(){
+    return this->returnedCitizens;
+}
+
+int Country::getDeath(){
+    return this->deathtoll;
+}
+
+int Country::getHp(){
+    return this->HP;
+}
+
+long Country::getBudget(){
+    return this->totalMilitarySpending;
+}
+
+void Country::setLeader(string L){
+    this->leader = L;
+}
+
+void Country::setNeutral(bool b){
+    this->isNeutral = b;
+}
+
+void Country::setsurr(bool b){
+    this->flag = b;
+}
+
+void Country::setRefugee(int x){
+    this->refugeeCount = x;
+}
+
+void Country::setUnlisted(int x){
+    this->unlistedCitizens = x;
+}
+
+void Country::setEnlisted(int x){
+    this->enlistedCitizens = x;
+}
+
+void Country::setDeployed(int x){
+    this->deployedCitizens = x;
+}
+
+void Country::setFighting(int x){
+    this->fightingCitizens = x;
+}
+
+void Country::setStationed(int x){
+    this->stationedCitizens = x;
+}
+
+void Country::setReturned(int x){
+    this->returnedCitizens = x;
+}
+
+void Country::setDeath(int x){
+    this->deathtoll = x;
+}
+
+void Country::setBudget(long x){
+    this->totalMilitarySpending = x;
 }

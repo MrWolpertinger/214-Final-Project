@@ -9,14 +9,13 @@ class CountryGroup : public AlliedForce{
     private:
         list<AlliedForce*> Allies;
         CountryGroup* enemy;
-        string name;
     public:
         CountryGroup(string name);
         void print();
         void setEnemy(CountryGroup* e);
+        AlliedForce* getEnemy();
         void add(AlliedForce* ptr);
         void remove(AlliedForce* ptr);
-        string getName();
         // void notify();
         // void attach(Observer warPhaseObserver);
         // void detach(Observer parameter);
