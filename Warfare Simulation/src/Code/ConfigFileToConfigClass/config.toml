@@ -1,0 +1,31 @@
+#Global Settings
+WarSettings = {wartheatreRangeOfMultiplierToImpede = [10,50]}
+
+
+
+#per country initial settings
+CountryNumber = 10
+Totaltroops = 10
+
+Country1 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 2}
+Country2 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 2}
+Country3 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 2}
+Country4 = {Side = "B", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 2}
+Country5 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 1}
+Country6 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 0}
+Country7 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 0}
+Country8 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 0}
+Country9 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 0}
+Country10 = {SideA = "N", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 1}
+
+
+Force1 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country1", type = "G"}
+Force2 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country2", type = "A"}
+Force3 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country2", type = "N"}
+Force4 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country3", type = "N"}
+Force5 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country3", type = "G"}
+Force6 = {DMGX = 5, HPX = 8, maxTroops = 9, initTroops = 8, country = "Country4", type = "A"}
+Force7 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country4", type = "G"}
+Force8 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country5", type = "A"}
+Force9 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country10", type = "G"}
+Force10 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country1", type = "A"}
