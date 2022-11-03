@@ -2,6 +2,7 @@
 #define MACHINEGUNS_H
 #include "LightWeapons.h"
 
+
 class MachineGuns : public LightWeapons
 {
     public:

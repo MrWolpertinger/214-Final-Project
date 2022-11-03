@@ -4,6 +4,9 @@
 #include "../HeavyWeightWeapons/Submarines.h"
 #include "../HeavyWeightWeapons/Helicopters.h"
 
+ /// @brief Produces Weapons based on the choice you have selected, the kind of weapon that you want.
+ /// @param choice Select what kind of Heavyweight weapon you want to produce.
+ /// @return an instance of the weapon that you have created.
  Weapons* HeavyWeightFactory::produceWeapons(int choice)
  {
 

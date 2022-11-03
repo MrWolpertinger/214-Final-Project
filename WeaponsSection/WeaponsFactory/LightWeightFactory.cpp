@@ -4,6 +4,9 @@
 #include "../LightWeightWeapons/Rifles.h"
 #include "../LightWeightWeapons/Pistols.h"
 
+ /// @brief Produces Weapons based on the choice you have selected, the kind of weapon that you want
+ /// @param choice Select what kind of Lightweight Weapon you want to produce
+ /// @return an instance of the Weapon that you have created
  Weapons* LightWeightFactory::produceWeapons(int choice)
  {
 
