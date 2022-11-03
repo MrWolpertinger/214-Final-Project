@@ -246,23 +246,50 @@ void DesignModeWarSimulation::warloop()
 	//     countryB->attack(countryA);
 	// }
 
-	string turnChoice;
-	cout << "What would you like to do: \nAttack \nRequest Assistance\n Change Strategy (A/R/S)";
-	cin >> turnChoice;
-	transform(turnChoice.begin(), turnChoice.end(), turnChoice.begin(), ::tolower);
-	if (turnChoice == "a")
+	string countryChoiceA;
+	string countryChoiceB;
+	//cout << "What would you like to do"<<"for country"<<countryA->getName()<<": \nAttack (A) \nRequest Assistance (R) \n Change Strategy (S) (A/R/S)";
+	cin >> countryChoiceA;
+	transform(countryChoiceA.begin(), countryChoiceA.end(), countryChoiceA.begin(), ::tolower);
+	if (countryChoiceA == "a")
 	{
 		//countryA->attack(countryB);
 	}
-	else if (turnChoice == "r"){
-		//countryA->requestAssistance();
-	}else if (turnChoice == "s"){
+	else if (countryChoiceA == "r"){
+		//countryA->requestAssistance(countryGroups[0]->Allies.at(rand()%countryGroups[0]->Allies.size()));
+	}else if (countryChoiceA == "s"){
 		// cout<<"What is the strategy for "<<countryA->getName()<<"(A/D/S)"<<endl;
 		// cin>>countryAStrategy;
 		// cout<<"What is the strategy for "<<countryB->getName()<<"(A/D/S)"<<endl;
 		// cin>>countryBStrategy;
 		// transform(countryAStrategy.begin(), countryAStrategy.end(), countryAStrategy.begin(), ::tolower);
 		// transform(countryBStrategy.begin(), countryBStrategy.end(), countryBStrategy.begin(), ::tolower);
+	}else if(countryChoiceA == "d"){
+		
+	}else if(countryChoiceA == "p"){
+		interrupt();
+	}
+
+	//cout << "What would you like to do"<<"for country"<<countryB->getName()<<": \nAttack (A) \nRequest Assistance (R) \n Change Strategy (S) (A/R/S)";
+	cin >> countryChoiceB;
+	transform(countryChoiceB.begin(), countryChoiceB.end(), countryChoiceB.begin(), ::tolower);
+	if (countryChoiceB == "a")
+	{
+		//countryB->attack(countryA);
+	}
+	else if (countryChoiceB == "r"){
+		//countryA->requestAssistance(countryGroups[0]->Allies.at(rand()%countryGroups[0]->Allies.size()));
+	}else if (countryChoiceB == "s"){
+		// cout<<"What is the strategy for "<<countryA->getName()<<"(A/D/S)"<<endl;
+		// cin>>countryAStrategy;
+		// cout<<"What is the strategy for "<<countryB->getName()<<"(A/D/S)"<<endl;
+		// cin>>countryBStrategy;
+		// transform(countryAStrategy.begin(), countryAStrategy.end(), countryAStrategy.begin(), ::tolower);
+		// transform(countryBStrategy.begin(), countryBStrategy.end(), countryBStrategy.begin(), ::tolower);
+	}else if(countryChoiceA == "d"){
+		
+	}else if(countryChoiceB == "p"){
+		interrupt();
 	}
 	// }
 }
