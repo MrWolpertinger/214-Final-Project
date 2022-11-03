@@ -2,7 +2,15 @@
 
 class Navy : public Army{
     public:
-        virtual void conflict();// the main function
+        Navy();
+        double getHP();
+        double getDMG();
+        bool incHP(int);//--
+        bool decHP(int);//--
+        char getType() {return _Type;};
     private:
-        int numberOfShips;
+        int _DMGX;
+        int _HPX;
+        int _Troops;
+        const char _Type = 'N';
 };

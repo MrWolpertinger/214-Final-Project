@@ -5,16 +5,12 @@
 
 class Military : public Army{
     public:
-        //virtual bool add(Army* Force);
-        //virtual Army* remove(int id);
-        virtual void conflict();// the main function
-
+        Military();
         ArmyItorator* createItorator();
 
         virtual ~Military();
 
     private:
-        int numberOfTroops;
         std::vector<Army*> next;
-        std::string currWarTheatre;
+        ArmyItorator* _Itorater = nullptr;
 };

@@ -2,9 +2,15 @@
 
 class GroundForce : public Army {
     public:
-        virtual void conflict();// the main function
+        GroundForce();
+        double getHP();
+        double getDMG();
+        bool incHP(int);//--
+        bool decHP(int);//--
+        char getType() {return _Type;};
     private:
-        int numberOfTanks;
-        int numberOfMortars;
-        int armsCount;
+        int _DMGX;
+        int _HPX;
+        int _Troops;
+        const char _Type = 'G';
 };
