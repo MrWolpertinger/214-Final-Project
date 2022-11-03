@@ -25,9 +25,10 @@ class ConfigClass
 {
 public:
     static Country* ListOfCountries;
+    static int ChangableX[3];
     static int wartheatreRange[2];
     static int SizeOfArr;// size of ListOfCountries[]+1
     static void ParseConfigFile(std::string path);
 };
 
-#endif
+#endif//ConfigClass::ChangableX[0] = 

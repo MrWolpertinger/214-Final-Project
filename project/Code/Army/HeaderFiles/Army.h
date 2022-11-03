@@ -6,8 +6,11 @@ class Army {
         virtual ~Army() {};
         int getID() { return id; };
         void setID(int i) { id = i; };
-        virtual void conflict() = 0;// the main function
-
+        virtual double getHP() = 0;//--
+        virtual double getDMG() = 0;//--
+        virtual char getType() {return 'X';};
+        virtual bool incHP(int) {};//--
+        virtual bool decHP(int) {};
     private:
         int id;
 };
