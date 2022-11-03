@@ -1,9 +1,9 @@
 #include "CountryFactory.h"
 
 /**
-*@brief 
-*@param name [string] name of the country
-*@returns Country
+*@brief Create a new country class.
+*@param name [string] name of the country.
+*@return new Country* object.
 */
 Country* CountryFactory::createCountry(string name) {
 	return new Country(name);
