@@ -10,7 +10,7 @@ class Weapons
         string name;
         int damage;
     public:
-        Weapons(int,string);
+        Weapons(int,int,string);
         Weapons(){};
         int fire();
         string getName();
