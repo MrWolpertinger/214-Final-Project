@@ -17,7 +17,7 @@ string CountryGroup::getName(){
 
 void CountryGroup::print(){
     cout << "============================AllianceInfo============================\n";
-    CountryGroupIterator* ptr = CreateGroupIterator(this);
+    CountryGroupIterator* ptr = CreateGroupIterator();
     ptr->first();
     for (ptr; ptr->hasNext(); ptr->next())
     {
@@ -38,7 +38,7 @@ void CountryGroup::add(AlliedForce* ct){
 }
 
 void CountryGroup::remove(AlliedForce* f){
-    CountryGroupIterator* ptr = CreateGroupIterator(this);
+    CountryGroupIterator* ptr = CreateGroupIterator();
     ptr->first();
     for (ptr; ptr->hasNext(); ptr->next())
     {
@@ -53,7 +53,7 @@ void CountryGroup::remove(AlliedForce* f){
 }
 
 void CountryGroup::~CountryGroup(){
-    CountryGroupIterator* p = CreateGroupIterator(this);
+    CountryGroupIterator* p = CreateGroupIterator();
     ptr->first();
     for (ptr; ptr->hasNext(); ptr->next()){
         if (*(ptr->current()) != NULL)
