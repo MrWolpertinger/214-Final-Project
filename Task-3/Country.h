@@ -21,6 +21,7 @@ class Country : public AlliedForce{
         int HP;
         long totalMilitarySpending;
         //Weapon* arsenal;
+        //Military* _mil;
         //TransportationCorridor* t;
         //string strategy;
         //WarPhase* phase;
@@ -60,6 +61,7 @@ class Country : public AlliedForce{
         void setReturned(int x);
         void setDeath(int x);
         void setBudget(long x);
+        void setMil(Military* m);
 };
 
 #endif
