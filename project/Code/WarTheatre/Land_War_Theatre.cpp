@@ -1,4 +1,4 @@
-#include "HeaderFiles/Land_War_Theatre.h"
+#include "Land_War_Theatre.h"
 
 Land_War_Theatre::Land_War_Theatre(const Land_War_Theatre& Template) : War_Theatre(Template){};
 

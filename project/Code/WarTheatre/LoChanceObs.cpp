@@ -1,4 +1,4 @@
-#include "HeaderFiles/LoChanceObs.h"
+#include "LoChanceObs.h"
 
 LoChanceObs::LoChanceObs(War_Theatre *W) : Obstacle(W){};
 

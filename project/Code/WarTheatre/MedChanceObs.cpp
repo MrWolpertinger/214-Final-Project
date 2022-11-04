@@ -1,4 +1,4 @@
-#include "HeaderFiles/MedChanceObs.h"
+#include "MedChanceObs.h"
 
 MedChanceObs::MedChanceObs(War_Theatre *W) : Obstacle(W){};
 

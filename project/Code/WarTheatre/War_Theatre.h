@@ -12,7 +12,7 @@ protected:
     War_Theatre(const War_Theatre& Template);
     War_Theatre() {};
 public:
-    const int TT = 0;
+    int TT;
     War_Theatre(std::string n, Country* SideA, Country* SideB);
     ~War_Theatre() {};
 
@@ -28,7 +28,7 @@ public:
     Country* getSideB();
     void setSideA(Country* sideA);
     void setSideB(Country* sideB);
-    virtual std::string getDescription() {};
+    virtual std::string getDescription() { return "";};
 };
 
 #endif

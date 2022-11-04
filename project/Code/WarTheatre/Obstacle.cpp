@@ -1,4 +1,4 @@
-#include "HeaderFiles/Obstacle.h"
+#include "Obstacle.h"
 
 Obstacle::Obstacle(War_Theatre *W) {
     this->Component = W;

@@ -1,10 +1,10 @@
-#include "HeaderFiles/HighChanceObs.h"
+#include "HighChanceObs.h"
 
 HighChanceObs::HighChanceObs(War_Theatre *W) : Obstacle(W){};
 
 std::string HighChanceObs::getDescription() {
     std::string sf, ss = "";
-    switch (Component->TT)
+    switch (Component->TT)//Doesn't work
     {
     case 1://air
         ss = " is engulfed in storms.";

@@ -1,4 +1,4 @@
-#include "HeaderFiles/War_Theatre.h"
+#include "War_Theatre.h"
 
 War_Theatre::War_Theatre(std::string name, Country* SideA, Country* SideB) {
     this->_name = name;
