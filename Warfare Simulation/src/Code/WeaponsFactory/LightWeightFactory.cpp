@@ -1,4 +1,4 @@
-#include "lightWeightFactory.h"
+#include "LightWeightFactory.h"
 
 
  /// @brief Produces Weapons based on the choice you have selected, the kind of weapon that you want
