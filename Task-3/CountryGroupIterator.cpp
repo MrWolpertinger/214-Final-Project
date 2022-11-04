@@ -13,17 +13,14 @@ CountryGroupIterator::~CountryGroupIterator(){
 
 AlliedForce* CountryGroupIterator::first(){
     it = cg.begin();
-    return (*it);
 }
             
 AlliedForce* CountryGroupIterator::next(){
     it++;
-    return (*it);
 }
 
 AlliedForce* CountryGroupIterator::prev(){
     it--;
-    return (*it);
 }
 
 bool CountryGroupIterator::hasNext(){
@@ -36,4 +33,8 @@ bool CountryGroupIterator::hasNext(){
         it.prev();
         return true;
     }
+}
+
+AlliedForce* CountryGroupIterator::current(){
+    return (*it);
 }
