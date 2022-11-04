@@ -7,16 +7,7 @@ class HighChanceObs : public Obstacle
 private:
     /* data */
 public:
-    HighChanceObs(/* args */);
-    ~HighChanceObs();
+    HighChanceObs(War_Theatre *W);
+    std::string getDescription();
 };
-
-HighChanceObs::HighChanceObs(/* args */)
-{
-}
-
-HighChanceObs::~HighChanceObs()
-{
-}
-
 #endif

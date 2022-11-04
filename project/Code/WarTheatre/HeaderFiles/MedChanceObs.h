@@ -7,16 +7,8 @@ class MedChanceObs : public Obstacle
 private:
     /* data */
 public:
-    MedChanceObs(/* args */);
-    ~MedChanceObs();
+    MedChanceObs(War_Theatre *W);
+    std::string getDescription();
 };
-
-MedChanceObs::MedChanceObs(/* args */)
-{
-}
-
-MedChanceObs::~MedChanceObs()
-{
-}
 
 #endif 

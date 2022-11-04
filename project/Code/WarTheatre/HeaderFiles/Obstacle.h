@@ -4,10 +4,12 @@
 
 class Obstacle : public War_Theatre
 {
-private:
-    /* data */
+protected:
+    War_Theatre* Component;
 public:
-    Obstacle(/* args */);
+    Obstacle() {};
+    Obstacle(War_Theatre *W);
     ~Obstacle();
+    virtual std::string getDescription() = 0;//
 };
 #endif

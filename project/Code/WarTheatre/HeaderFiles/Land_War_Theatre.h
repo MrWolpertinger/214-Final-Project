@@ -6,10 +6,13 @@ class Land_War_Theatre : public War_Theatre
 {
 private:
     Land_War_Theatre(const Land_War_Theatre& Template);
+    Land_War_Theatre() {};
 public:
-    Land_War_Theatre(std::string name/*CountryGroup* SideA, CountryGroup SideB*/);
+    const int TT = 2;
+    Land_War_Theatre(std::string name, Country* SideA, Country* SideB);
     ~Land_War_Theatre();
-    War_Theatre* cloneTheatre();
+    War_Theatre* cloneTheatre();//
+    std::string getDescription();//
 };
 
 #endif

@@ -7,16 +7,8 @@ class LoChanceObs : public Obstacle
 private:
     /* data */
 public:
-    LoChanceObs(/* args */);
-    ~LoChanceObs();
+    LoChanceObs(War_Theatre *W);
+    std::string getDescription();
 };
-
-LoChanceObs::LoChanceObs(/* args */)
-{
-}
-
-LoChanceObs::~LoChanceObs()
-{
-}
 
 #endif
