@@ -78,6 +78,8 @@ void Country::attack(AlliedForce* c){
     }
 
     int x = this->arsenal->getDamage();
+    ArmyItorator* p = (this->_mil)->createIterator();
+    int x += static_cast<int>((this->_mil)->getCatagoryDamage());
     cout << this->getName() << " is now attacking " << c->getName() << ".\n";
     c->receiveDamage(x);
 }
@@ -219,4 +221,8 @@ void Country::setDeath(int x){
 
 void Country::setBudget(long x){
     this->totalMilitarySpending = x;
+}
+
+void Country::setMil(Military* m){
+    this->_mil = m;
 }
