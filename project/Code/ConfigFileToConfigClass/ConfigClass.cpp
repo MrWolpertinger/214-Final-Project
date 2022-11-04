@@ -2,6 +2,8 @@
 #include "TOMLParser/toml.hpp"
 #include <iostream>
 
+ConfigClass* ConfigClass::onlyInstance_;
+
 ConfigClass* ConfigClass::instance() {
     if(ConfigClass::onlyInstance_ == nullptr) {
         ConfigClass::onlyInstance_ = new ConfigClass();
