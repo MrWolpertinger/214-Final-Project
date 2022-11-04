@@ -6,10 +6,13 @@ class Airspace_war_theatre : public War_Theatre
 {
 private:
     Airspace_war_theatre(const Airspace_war_theatre& Template);
+    Airspace_war_theatre() {};
 public:
-    Airspace_war_theatre(std::string name/*CountryGroup* SideA, CountryGroup SideB*/);
+    const int TT = 1;
+    Airspace_war_theatre(std::string name, Country* SideA, Country* SideB);
     ~Airspace_war_theatre();
-    War_Theatre* cloneTheatre();
+    War_Theatre* cloneTheatre();//
+    virtual std::string getDescription();//
 };
 
 #endif

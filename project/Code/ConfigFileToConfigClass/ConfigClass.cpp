@@ -2,11 +2,17 @@
 #include "TOMLParser/toml.hpp"
 #include <iostream>
 
-Country* ConfigClass::ListOfCountries;
-int ConfigClass::SizeOfArr;
-int ConfigClass::wartheatreRange[2];
+ConfigClass* ConfigClass::onlyInstance_;
+
+ConfigClass* ConfigClass::instance() {
+    if(ConfigClass::onlyInstance_ == nullptr) {
+        ConfigClass::onlyInstance_ = new ConfigClass();
+    }
+    return ConfigClass::onlyInstance_;
+};
 
 void ConfigClass::ParseConfigFile(std::string path) {
+    //check and remove if var is already saturated
     toml::table tbl;
     try
     {
@@ -31,33 +37,33 @@ void ConfigClass::ParseConfigFile(std::string path) {
     }
 
     //create and populate country
-    ConfigClass::SizeOfArr = *tbl.at_path("CountryNumber").value<int>();
-    ConfigClass::ListOfCountries = new Country[ConfigClass::SizeOfArr];// allocating memory for country structs
+    this->SizeOfArr = *tbl.at_path("CountryNumber").value<int>();
+    this->ListOfCountries = new Country[this->SizeOfArr];// allocating memory for country structs
 
-    for (int i = 0; i < ConfigClass::SizeOfArr; i++) {
-        ConfigClass::ListOfCountries[i].NumOfForces = *tbl.at_path("Country" + std::to_string(i+1) + ".NumberOfForces").value<int>();
+    for (int i = 0; i < this->SizeOfArr; i++) {
+        this->ListOfCountries[i].NumOfForces = *tbl.at_path("Country" + std::to_string(i+1) + ".NumberOfForces").value<int>();
         int troopAlocated = 0;
-        ConfigClass::ListOfCountries[i].countryForces = new Force[ConfigClass::ListOfCountries[i].NumOfForces];
-        for(int j = 0; (j < TotalTroops && troopAlocated < ConfigClass::ListOfCountries[i].NumOfForces); j++) {
+        this->ListOfCountries[i].countryForces = new Force[this->ListOfCountries[i].NumOfForces];
+        for(int j = 0; (j < TotalTroops && troopAlocated < this->ListOfCountries[i].NumOfForces); j++) {
             if(f[j].Country == ("Country" + std::to_string(i+1))) {
-                ConfigClass::ListOfCountries[i].countryForces[troopAlocated++] = f[i];
+                this->ListOfCountries[i].countryForces[troopAlocated++] = f[i];
             }
         }
         //added Force structs to country structs
         std::string side = *tbl.at_path("Country" + std::to_string(i+1) + ".Side").value<std::string>();
         if(side == "A") {
-            ConfigClass::ListOfCountries[i].side = 'A';
+            this->ListOfCountries[i].side = 'A';
         } else if(side == "B") {
-            ConfigClass::ListOfCountries[i].side = 'B';
+            this->ListOfCountries[i].side = 'B';
         } else {
-            ConfigClass::ListOfCountries[i].side = 'N';
+            this->ListOfCountries[i].side = 'N';
         }
 
-        ConfigClass::ListOfCountries[i].supportX = *tbl.at_path("Country" + std::to_string(i+1) + ".supportMultiplier").value<int>();
+        this->ListOfCountries[i].supportX = *tbl.at_path("Country" + std::to_string(i+1) + ".supportMultiplier").value<int>();
 
         for(int j = 0; j < 8; j++) {
-            ConfigClass::ListOfCountries[i].NoOfWeapons[j] =  *tbl.at_path("Country" + std::to_string(i+1) + ".NumberOfWeapons")[j].value<int>();
-            ConfigClass::ListOfCountries[i].WeaponDMGX[j] =  *tbl.at_path("Country" + std::to_string(i+1) + ".WeaponsMultiplier")[j].value<int>();
+            this->ListOfCountries[i].NoOfWeapons[j] =  *tbl.at_path("Country" + std::to_string(i+1) + ".NumberOfWeapons")[j].value<int>();
+            this->ListOfCountries[i].WeaponDMGX[j] =  *tbl.at_path("Country" + std::to_string(i+1) + ".WeaponsMultiplier")[j].value<int>();
         }
     }
 };

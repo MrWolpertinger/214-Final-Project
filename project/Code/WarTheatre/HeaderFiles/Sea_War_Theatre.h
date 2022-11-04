@@ -7,10 +7,13 @@ class Sea_War_Theatre : public War_Theatre
 {
 private:
     Sea_War_Theatre(const Sea_War_Theatre& Template);
+    Sea_War_Theatre() {};
 public:
-    Sea_War_Theatre(std::string name/*CountryGroup* SideA, CountryGroup SideB*/);
+    const int TT = 3;
+    Sea_War_Theatre(std::string name, Country* SideA, Country* SideB);
     ~Sea_War_Theatre();
-    War_Theatre* cloneTheatre();
+    War_Theatre* cloneTheatre();//
+    std::string getDescription();//
 };
 
 #endif

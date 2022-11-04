@@ -1,21 +1,34 @@
 #ifndef WAR_THEATRE_H
 #define WAR_THEATRE_H
 #include <string>
+#include "AlliedForce/HeaderFiles/Country.h"
 
 class War_Theatre {
 protected:
-    std::string _name;
-    //CountryGroup* _SideA;
-    //CountryGroup* _SideB;
-    std::string _area;
+    std::string _name = "";
+    Country* _SideA = nullptr;
+    Country* _SideB = nullptr;
+    std::string _area = "";
     War_Theatre(const War_Theatre& Template);
+    War_Theatre() {};
 public:
-    War_Theatre(std::string n/*CountryGroup* SideA, CountryGroup SideB*/);
+    const int TT = 0;
+    War_Theatre(std::string n, Country* SideA, Country* SideB);
     ~War_Theatre() {};
-    std::string getName();
+
     virtual War_Theatre* cloneTheatre();
-    //CountryGroup* getSideA();
-    //CountryGroup* getSideB();
+
+    std::string getName();
+    void setName(std::string name);
+
+    std::string getArea();
+    void setArea(std::string area);
+
+    Country* getSideA();
+    Country* getSideB();
+    void setSideA(Country* sideA);
+    void setSideB(Country* sideB);
+    virtual std::string getDescription() {};
 };
 
 #endif

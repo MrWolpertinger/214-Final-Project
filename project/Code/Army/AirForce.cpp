@@ -22,5 +22,6 @@ bool AirForce::decHP(int T) {
         return false;
     } else {
         _Troops -= T;
+        return true;
     }
 };

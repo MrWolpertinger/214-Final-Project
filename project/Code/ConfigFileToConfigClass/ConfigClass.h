@@ -24,11 +24,15 @@ struct Country {
 class ConfigClass
 {
 public:
-    static Country* ListOfCountries;
-    static int ChangableX[3];
-    static int wartheatreRange[2];
-    static int SizeOfArr;// size of ListOfCountries[]+1
-    static void ParseConfigFile(std::string path);
+    Country* ListOfCountries;
+    int ChangableX[3];
+    int SizeOfArr;// size of ListOfCountries[]+1
+    void ParseConfigFile(std::string path);
+    static ConfigClass* instance();
+protected:
+    ConfigClass() {};
+private: 
+    static ConfigClass* onlyInstance_;
 };
 
 #endif//ConfigClass::ChangableX[0] = 

@@ -1,15 +1,15 @@
 #include "HeaderFiles/War_Theatre.h"
 
-War_Theatre::War_Theatre(std::string name/*CountryGroup* SideA, CountryGroup SideB*/) {
-    _name = name;
-    /*_SideA = SideA;
-    _SideB = SideB;*/
+War_Theatre::War_Theatre(std::string name, Country* SideA, Country* SideB) {
+    this->_name = name;
+    this->_SideA = SideA;
+    this->_SideB = SideB;
 };
 
 War_Theatre::War_Theatre(const War_Theatre& Template) {
-    _name = Template._name;
-    /*_SideA = Template._SideA;
-    _SideB = Template._SideB*/
+    this->_name = Template._name;
+    this->_SideA = Template._SideA;
+    this->_SideB = Template._SideB;
 };
 
 War_Theatre* War_Theatre::cloneTheatre() {
@@ -17,13 +17,33 @@ War_Theatre* War_Theatre::cloneTheatre() {
 };
 
 std::string War_Theatre::getName() {
-    return _name;
+    return this->_name;
 };
 
-/*CountryGroup* War_Theatre::getSideA() {
-    return _SideA;
+void War_Theatre::setName(std::string name) {
+    this->_name = name;
 };
 
-CountryGroup* War_Theatre::getSideB() {
-    return _SideB;
-};*/
+Country* War_Theatre::getSideA() {
+    return this->_SideA;
+};
+
+Country* War_Theatre::getSideB() {
+    return this->_SideB;
+};
+
+void War_Theatre::setSideA(Country* sideA) {
+    this->_SideA = sideA;
+};
+
+void War_Theatre::setSideB(Country* sideB) {
+    this->_SideB = sideB;
+};
+
+std::string War_Theatre::getArea() {
+    return this->_area;
+};
+
+void War_Theatre::setArea(std::string area) {
+    this->_area = area;
+};
