@@ -94,13 +94,13 @@ string Country::getState(){
  * 
  * @param c 
  */
-void Country::requestAssistance(AlliedForce* c){
+void Country::requestAssistance(){
     CountryGroupIterator* ptr = c->CreateGroupIterator();
     string tmp = "";
 
     for (ptr; ptr->hasNext(); ptr->next()){
-        tmp = (*ptr)->getState();
-        if (tmp == "supportive"){
+        AlliedForce* p = (*ptr);
+        if ((p->getState() == "supportive") && (p->getHp() > 0)){
             c->support(this);
             cout << this->getName() << " is now receiving assistance from " << (*ptr)->getName() << ".\n";
             return;
