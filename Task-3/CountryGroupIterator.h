@@ -11,8 +11,8 @@ class CountryGroupIterator
     public:
         CountryGroupIterator(std::vector<AlliedForce*> f);
         AlliedForce* first();
-        AlliedForce* hasNext();
         AlliedForce* next();
+        bool hasNext();
 };
 
 #endif
