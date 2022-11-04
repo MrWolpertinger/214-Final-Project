@@ -1,5 +1,6 @@
 #ifndef _ALLIEDFORCE_H
 #define _ALLIEDFORCE_H
+#include<iostream>
 #include <string>
 
 using namespace std;
