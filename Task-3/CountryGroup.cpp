@@ -68,9 +68,9 @@ AlliedForce* CountryGroup::getEnemy(){
     return this->enemy;
 }
 
-// CountryGroupIterator* CountryGroup::CreateGroupIterator(CountryGroup* c){
-//     return new GroupIterator(c);
-// }
+CountryGroupIterator* CountryGroup::CreateGroupIterator(){
+    return new GroupIterator(this->Allies);
+}
 
 // void CountryGroup::notify(){
 // }
