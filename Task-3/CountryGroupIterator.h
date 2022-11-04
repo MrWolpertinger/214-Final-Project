@@ -10,6 +10,7 @@ class CountryGroupIterator
         std::vector<AlliedForce*>::iterator it;
     public:
         CountryGroupIterator(std::vector<AlliedForce*> f);
+        ~CountryGroupIterator();
         AlliedForce* first();
         AlliedForce* next();
         AlliedForce* prev();
