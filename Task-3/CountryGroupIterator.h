@@ -7,6 +7,7 @@ class CountryGroupIterator
 {
     private:
         std::vector<AlliedForce*> cg;
+        std::vector<AlliedForce*>::iterator it;
     public:
         CountryGroupIterator(std::vector<AlliedForce*> f);
         AlliedForce* first();
