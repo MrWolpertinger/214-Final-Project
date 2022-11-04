@@ -4,6 +4,7 @@
 #include "Country.h"
 #include <list>
 
+class CountryGroupIterator;
 class CountryGroup : public AlliedForce{
 
     private:
@@ -16,10 +17,10 @@ class CountryGroup : public AlliedForce{
         AlliedForce* getEnemy();
         void add(AlliedForce* ptr);
         void remove(AlliedForce* ptr);
+        CountryGroupIterator* CreateGroupIterator(list<AlliedForce*> a);
         // void notify();
         // void attach(Observer warPhaseObserver);
-        // void detach(Observer parameter);
-        //CountryGroupIterator* CreateGroupIterator();
+        // void detach(Observer parameter);       
 };
 
 #endif
