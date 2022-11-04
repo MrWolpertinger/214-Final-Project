@@ -17,10 +17,11 @@ int Weapons::fire()
 /// @brief Constructor for the weapons class
 /// @param damage Damage that the weapon can cause
 /// @param NAME Name of the Weapon
-Weapons::Weapons(int damage, string NAME)
+Weapons::Weapons(int damage, int price, string NAME)
 {
     this->damage = damage;
     this->setName(NAME);
+    this->price=price;
 }
 
 /// @brief Gets the private variable damage.
