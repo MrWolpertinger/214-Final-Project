@@ -9,6 +9,7 @@ class Weapons
     private:
         string name;
         int damage;
+        int price;
     public:
         Weapons(int,int,string);
         Weapons(){};
