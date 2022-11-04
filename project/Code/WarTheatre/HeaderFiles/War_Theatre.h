@@ -4,10 +4,10 @@
 
 class War_Theatre {
 protected:
-    std::string _name;
-    //CountryGroup* _SideA;
-    //CountryGroup* _SideB;
-    std::string _area;
+    std::string _name = "";
+    //CountryGroup* _SideA = nullptr;
+    //CountryGroup* _SideB = nullptr;
+    std::string _area = "";
     War_Theatre(const War_Theatre& Template);
 public:
     War_Theatre(std::string n/*CountryGroup* SideA, CountryGroup SideB*/);
