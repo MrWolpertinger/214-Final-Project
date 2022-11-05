@@ -7,14 +7,17 @@ using namespace std;
 class AlliedForce{
     private:
         string name;
+        bool isCG;
     public:
         AlliedForce(string name){
-            this.name = name;
+            this->name = name;
         }
         virtual void print() = 0;
-        virtual void remove() {AlliedForce* ptr};
+        virtual void remove(AlliedForce* ptr);
         virtual ~AlliedForce() {};
-        string getName() {return name};
+        void setCG(bool b) {this->isCG = b;}
+        bool CG() {return isCG;}
+        string getName() {return name;}
 };
 
 #endif
