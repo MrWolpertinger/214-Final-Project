@@ -1,26 +1,22 @@
 #ifndef _COUNTRY_H
 #define _COUNTRY_H
-//#include "AlliedForce.h"
-//#include "CountryGroup.h"
-//#include "CountryStrategy.h"
-//#include "WarPhase.h"
-#include <iostream>
-#include <string>
-using namespace std;
+#include "AlliedForce.h"
+#include "CountryGroup.h"
 
 class CountryStrategy ;
 class WarPhase ;
+class Military ;
+class Weapons ;
+class CountryGroup ;
 
-class Country//: public AlliedForce
-{
+class Country : public AlliedForce{
 
     private:
-        std::string leader;
-        std::string name;
-       // AlliedForce* A = null;
+        string leader;
+        AlliedForce* A = NULL;
         bool isNeutral;
         int unlistedCitizens;
-        bool flag;
+        bool flag = false;
         int refugeeCount;
         int enlistedCitizens;
         int deployedCitizens;
@@ -32,28 +28,62 @@ class Country//: public AlliedForce
         long totalMilitarySpending;
         WarPhase* phase;
         CountryStrategy* strategy;
-
-        //Weapon* arsenal;
+        Weapons* arsenal;
+         Military* _mil ;
+         
+       
         //TransportationCorridor* t;
-        //string strategy;
-        //WarPhase* phase;
+       
     public:
-        /*Country(std::string name);
-        void attack(Country c);
-        void setAlliance(CountryGroup* c);
-        void attack(TransportationCorridor tc);
-        void requestAssistance(CountryGroup cg);*/
-        void increaseRandSpending(long amount);
-        //void receiveDamage(int amount);
-       /* void print();
-        void remove(AlliedForce* ptr);*/
-        std::string getCurrentPhase();//getState
+        Country(string name);
+        ~Country();
+        void attack(Country* c);
+        void setAlliance(AlliedForce* c);
+        //void attack(TransportationCorridor tc);
+        void requestAssistance(Country* g);
+        void receiveDamage(int amount);
+        void print();
+        //void remove(AlliedForce* ptr);
+        string getLeader();
+        bool getNeutral();
+        bool getsurr();
+        int getRefugee();
+        int getUnlisted();
+        int getEnlisted();
+        int getDeployed();
+        int getFighting();
+        int getStationed();
+        int getReturned();
+        int getDeath();
+        int getHp();
+        long getBudget();
+
+        /////
+
+        string getCurrentPhase();//getState
         void setWarPhase();
         void iteratePhases(WarPhase* phase_);
         void changeWarPhase();
         void setCountryStrategy();
-        std::string getStrategy();
-        
+        string getStrategy();
+
+        /////
+        void increaseHP(int v) ;
+        void support(Country* c);//added
+        void setHP(int x);
+        void setLeader(string l);
+        void setNeutral(bool b);
+        void setsurr(bool b);
+        void setRefugee(int x);
+        void setUnlisted(int x);
+        void setEnlisted(int x);
+        void setDeployed(int x);
+        void setFighting(int x);
+        void setStationed(int x);
+        void setReturned(int x);
+        void setDeath(int x);
+        void setBudget(long x);
+        void setMil(Military* m);
 };
 
 #endif

@@ -2,24 +2,30 @@
 #define _COUNTRYGROUP_H
 #include "AlliedForce.h"
 #include "Country.h"
-#include <list>
+#include <vector>
 
+class CountryGroupIterator;
 class CountryGroup : public AlliedForce{
 
     private:
-        list<AlliedForce*> Allies;
+        vector<AlliedForce*> Allies;
+        //vector<Country*> Countries;
+
         CountryGroup* enemy;
-        string name;
+        string name ;
     public:
         CountryGroup(string name);
         void print();
         void setEnemy(CountryGroup* e);
+        AlliedForce* getEnemy();
+        void add(AlliedForce* ptr);
         void remove(AlliedForce* ptr);
+        CountryGroupIterator* CreateGroupIterator(vector<AlliedForce*> a);
+        //CountryGroupIterator* CreateGroupIteratorC(vector <Country*> a);
         string getName();
         // void notify();
         // void attach(Observer warPhaseObserver);
-        // void detach(Observer parameter);
-        //CountryGroupIterator* CreateGroupIterator();
+        // void detach(Observer parameter);       
 };
 
 #endif
