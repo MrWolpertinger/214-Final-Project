@@ -9,8 +9,6 @@ class Army {
         virtual double getHP() = 0;//--
         virtual double getDMG() = 0;//--
         virtual char getType() {return 'X';};
-        virtual bool incHP(int) {};//--
-        virtual bool decHP(int) {};
     private:
         int id;
 };
