@@ -1,20 +1,16 @@
-ofiles = main.o CountryGroup.o Country.o
-gpp_o = g++ -g -c -std=c++11 -static
- 
-main: $(ofiles)
-	g++ -std=c++11 -static $(ofiles) -o main
+main: *.cpp
+	g++ -std=c++11 *.cpp -o main
 
-main.o: main.cpp AlliedForce.h CountryGroup.h Country.h
-	$(gpp_o) main.cpp
 
-CountryGroup.o: AlliedForce.h CountryGroup.cpp CountryGroup.h Country.h
-	$(gpp_o) CountryGroup.cpp
 
-Country.o: AlliedForce.h Country.cpp Country.h
-	$(gpp_o) Country.cpp
-
-run: main
+run:
 	./main
 
+
+
 clean:
-	rm *.o main
+	rm -f *.out *.o main
+
+
+valgrind:
+	valgrind --tool=memcheck --leak-check=yes ./main

@@ -1,13 +1,17 @@
-#include "CountryGroup.h"
-#include "AlliedForce.h"
-#include "Country.h"
-#include <iostream>
+ #include <iostream>
+ #include "SimulationManager.h"
+ #include "WarSimulation.h"
+ #include "RealModeWarSimulation.h"
+ #include "DesignModeWarSimulation.h"
 
-using namespace std;
 
-int main(){
-    CountryGroup* allies = new CountryGroup("allies");
-    Country* USA = new Country("USA");
-    Country* France = new Country("France");
+ using namespace std;
+
+
+ int main() {
+    SimulationManager* ourSimulator = new SimulationManager();
+
+    delete ourSimulator;
     
-}
+    return 0;
+ }
