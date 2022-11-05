@@ -13,6 +13,7 @@ public:
     ~Airspace_war_theatre();
     War_Theatre* cloneTheatre();//
     virtual std::string getDescription();//
+    int getType() {return 1;};
 };
 
 #endif

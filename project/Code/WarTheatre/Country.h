@@ -6,6 +6,6 @@ class Country
 private:
 public:
     Country();
-    ~Country();
+    ~Country() {};
 };
 #endif // COUNTRY_H

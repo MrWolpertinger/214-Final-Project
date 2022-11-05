@@ -4,7 +4,8 @@ LoChanceObs::LoChanceObs(War_Theatre *W) : Obstacle(W){};
 
 std::string LoChanceObs::getDescription() {
     std::string sf, ss = "";
-    switch (Component->TT)
+    int Type = Component->getType();
+    switch (Type)
     {
     case 1://air
         ss = " is prime for flying.";

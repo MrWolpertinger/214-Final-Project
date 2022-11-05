@@ -4,7 +4,8 @@ MedChanceObs::MedChanceObs(War_Theatre *W) : Obstacle(W){};
 
 std::string MedChanceObs::getDescription() {
     std::string sf, ss = "";
-    switch (Component->TT)
+    int Type = Component->getType();
+    switch (Type)
     {
     case 1://air
         ss = " is difficult to fly in.";

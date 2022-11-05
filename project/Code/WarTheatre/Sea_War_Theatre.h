@@ -14,6 +14,7 @@ public:
     ~Sea_War_Theatre();
     War_Theatre* cloneTheatre();//
     std::string getDescription();//
+    int getType() {return 3;};
 };
 
 #endif

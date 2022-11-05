@@ -13,6 +13,7 @@ public:
     ~Land_War_Theatre();
     War_Theatre* cloneTheatre();//
     std::string getDescription();//
+    int getType() {return 2;};
 };
 
 #endif

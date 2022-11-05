@@ -1,7 +1,7 @@
 #ifndef WAR_THEATRE_H
 #define WAR_THEATRE_H
 #include <string>
-#include "AlliedForce/HeaderFiles/Country.h"
+#include "Country.h"
 
 class War_Theatre {
 protected:
@@ -29,6 +29,7 @@ public:
     void setSideA(Country* sideA);
     void setSideB(Country* sideB);
     virtual std::string getDescription() { return "";};
+    virtual int getType() {return 0;};
 };
 
 #endif
