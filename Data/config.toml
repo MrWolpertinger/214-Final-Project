@@ -1,31 +1,406 @@
-#Global Settings
-WarSettings = {wartheatreRangeOfMultiplierToImpede = [10,50]}
-
-
-
 #per country initial settings
-CountryNumber = 10
-Totaltroops = 10
+CountryNumber = 200
+Totaltroops = 200
 
-Country1 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 2}
-Country2 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 2}
-Country3 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 2}
-Country4 = {Side = "B", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 2}
-Country5 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 1}
-Country6 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 0}
-Country7 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 0}
-Country8 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 0}
-Country9 = {Side = "A", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 0}
-Country10 = {SideA = "N", NumberOfWeapons = [1,3,5,3,0,0,0,0], WeaponsMultiplier = [1,3,5,3,0,0,0,0], supportMultiplier = 5, NumberOfForces = 1}
+Country1   = {Name = "China", Leader = "Gwendolen Scanderet", supportMultiplier = 3, NumberOfForces = 25, NumberOfWeapons = [17, 50, 33, 48, 13, 5, 1, 3], WeaponsMultiplier = [3, 4, 4, 3, 1, 1, 4, 1], CountryStats = [514, 965, 858, 761, 706, 821, 783, 821], totalSpending = 53054.6}
+Country2   = {Name = "Russia", Leader = "Silvie Else", supportMultiplier = 2, NumberOfForces = 3, NumberOfWeapons = [18, 10, 34, 6, 33, 45, 25, 0], WeaponsMultiplier = [1, 1, 2, 1, 5, 3, 1, 3], CountryStats = [128, 284, 245, 348, 805, 934, 376, 574], totalSpending = 63444.9}
+Country3   = {Name = "Uganda", Leader = "Conrade Lindermann", supportMultiplier = 2, NumberOfForces = 4, NumberOfWeapons = [6, 3, 23, 41, 44, 27, 35, 45], WeaponsMultiplier = [4, 2, 3, 3, 1, 3, 5, 2], CountryStats = [563, 770, 122, 869, 824, 809, 979, 63], totalSpending = 65498.2}
+Country4   = {Name = "Ireland", Leader = "Patsy Zanutti", supportMultiplier = 3, NumberOfForces = 16, NumberOfWeapons = [31, 39, 32, 9, 20, 23, 22, 20], WeaponsMultiplier = [4, 1, 2, 3, 2, 5, 3, 2], CountryStats = [943, 706, 264, 564, 39, 704, 863, 608], totalSpending = 76397.3}
+Country5   = {Name = "Indonesia", Leader = "Hazlett Leavens", supportMultiplier = 5, NumberOfForces = 9, NumberOfWeapons = [23, 24, 45, 50, 15, 0, 35, 5], WeaponsMultiplier = [1, 2, 3, 3, 1, 1, 2, 1], CountryStats = [217, 465, 695, 717, 57, 625, 214, 864], totalSpending = 51950.5}
+Country6   = {Name = "Canada", Leader = "Rab Shayler", supportMultiplier = 3, NumberOfForces = 6, NumberOfWeapons = [28, 16, 12, 22, 36, 25, 0, 50], WeaponsMultiplier = [5, 1, 4, 5, 5, 4, 2, 2], CountryStats = [253, 435, 437, 804, 791, 767, 702, 903], totalSpending = 67880.2}
+Country7   = {Name = "Poland", Leader = "Marabel Maffezzoli", supportMultiplier = 3, NumberOfForces = 12, NumberOfWeapons = [40, 31, 22, 9, 30, 34, 49, 29], WeaponsMultiplier = [3, 5, 2, 2, 4, 2, 1, 2], CountryStats = [321, 908, 573, 266, 258, 151, 517, 930], totalSpending = 76215.4}
+Country8   = {Name = "Mexico", Leader = "Luca Boult", supportMultiplier = 5, NumberOfForces = 5, NumberOfWeapons = [16, 2, 4, 49, 37, 21, 46, 20], WeaponsMultiplier = [2, 3, 1, 4, 2, 1, 2, 5], CountryStats = [172, 362, 520, 135, 384, 480, 914, 310], totalSpending = 59558.2}
+Country9   = {Name = "Laos", Leader = "Chaddy Maffulli", supportMultiplier = 5, NumberOfForces = 10, NumberOfWeapons = [39, 19, 6, 18, 46, 27, 16, 22], WeaponsMultiplier = [2, 2, 1, 3, 1, 3, 4, 4], CountryStats = [95, 26, 575, 636, 424, 340, 837, 92], totalSpending = 93754.8}
+Country10  = {Name = "Afghanistan", Leader = "Rand Menchenton", supportMultiplier = 1, NumberOfForces = 5, NumberOfWeapons = [6, 38, 2, 26, 13, 47, 48, 21], WeaponsMultiplier = [1, 1, 3, 1, 1, 5, 3, 2], CountryStats = [844, 37, 253, 550, 851, 64, 447, 396], totalSpending = 30440.8}
+Country11  = {Name = "Kazakhstan", Leader = "Bili Semeradova", supportMultiplier = 4, NumberOfForces = 15, NumberOfWeapons = [39, 3, 37, 30, 36, 20, 16, 41], WeaponsMultiplier = [2, 3, 5, 5, 4, 5, 2, 4], CountryStats = [869, 133, 897, 761, 58, 786, 447, 57], totalSpending = 31830.2}
+Country12  = {Name = "China", Leader = "Doralyn Stribbling", supportMultiplier = 5, NumberOfForces = 6, NumberOfWeapons = [13, 49, 26, 12, 23, 47, 16, 11], WeaponsMultiplier = [2, 3, 2, 4, 4, 3, 3, 1], CountryStats = [232, 124, 786, 738, 128, 782, 961, 262], totalSpending = 90580.7}
+Country13  = {Name = "Czech Republic", Leader = "Wrennie Van Velde", supportMultiplier = 2, NumberOfForces = 3, NumberOfWeapons = [45, 34, 2, 28, 35, 6, 13, 15], WeaponsMultiplier = [2, 5, 1, 4, 5, 3, 5, 1], CountryStats = [894, 968, 85, 113, 176, 488, 604, 187], totalSpending = 10569.2}
+Country14  = {Name = "France", Leader = "Gerri Saladino", supportMultiplier = 5, NumberOfForces = 4, NumberOfWeapons = [44, 5, 27, 48, 35, 45, 49, 4], WeaponsMultiplier = [5, 5, 1, 4, 3, 2, 2, 2], CountryStats = [916, 264, 712, 894, 733, 216, 500, 775], totalSpending = 99324.7}
+Country15  = {Name = "Guatemala", Leader = "Gail Petticrow", supportMultiplier = 4, NumberOfForces = 20, NumberOfWeapons = [7, 26, 44, 18, 7, 16, 33, 5], WeaponsMultiplier = [5, 5, 5, 3, 1, 3, 1, 5], CountryStats = [185, 818, 492, 66, 204, 542, 68, 866], totalSpending = 37642.4}
+Country16  = {Name = "Nigeria", Leader = "Gibby Cavalier", supportMultiplier = 4, NumberOfForces = 22, NumberOfWeapons = [13, 30, 21, 37, 18, 8, 18, 37], WeaponsMultiplier = [1, 5, 4, 2, 4, 2, 5, 2], CountryStats = [304, 221, 610, 300, 494, 496, 14, 942], totalSpending = 4253.3}
+Country17  = {Name = "Armenia", Leader = "Izak Dickman", supportMultiplier = 2, NumberOfForces = 5, NumberOfWeapons = [46, 30, 35, 26, 11, 25, 8, 14], WeaponsMultiplier = [5, 4, 3, 3, 4, 2, 2, 1], CountryStats = [59, 564, 303, 738, 98, 863, 688, 273], totalSpending = 50300.1}
+Country18  = {Name = "Philippines", Leader = "Frederico Connachan", supportMultiplier = 5, NumberOfForces = 22, NumberOfWeapons = [45, 47, 22, 50, 9, 24, 31, 25], WeaponsMultiplier = [5, 4, 5, 2, 5, 2, 3, 4], CountryStats = [818, 675, 481, 881, 791, 81, 198, 30], totalSpending = 95283.4}
+Country19  = {Name = "Indonesia", Leader = "Valdemar Lumox", supportMultiplier = 2, NumberOfForces = 2, NumberOfWeapons = [25, 38, 36, 39, 45, 34, 47, 49], WeaponsMultiplier = [5, 2, 4, 4, 1, 2, 4, 3], CountryStats = [336, 841, 726, 698, 519, 632, 956, 294], totalSpending = 58549.7}
+Country20  = {Name = "China", Leader = "Delphine Challener", supportMultiplier = 5, NumberOfForces = 21, NumberOfWeapons = [24, 48, 35, 37, 28, 10, 0, 29], WeaponsMultiplier = [4, 1, 4, 2, 3, 1, 4, 4], CountryStats = [30, 931, 234, 386, 517, 659, 192, 711], totalSpending = 16006.8}
+Country21  = {Name = "Syria", Leader = "Clarisse Brownfield", supportMultiplier = 4, NumberOfForces = 7, NumberOfWeapons = [20, 47, 11, 38, 16, 3, 13, 1], WeaponsMultiplier = [1, 3, 1, 2, 2, 5, 4, 3], CountryStats = [249, 599, 489, 250, 561, 945, 872, 166], totalSpending = 70875.1}
+Country22  = {Name = "China", Leader = "Kathryn Persitt", supportMultiplier = 5, NumberOfForces = 9, NumberOfWeapons = [14, 18, 2, 17, 48, 31, 14, 31], WeaponsMultiplier = [2, 1, 2, 2, 5, 5, 1, 2], CountryStats = [115, 126, 61, 313, 242, 155, 988, 775], totalSpending = 29797.6}
+Country23  = {Name = "China", Leader = "Christan Ludewig", supportMultiplier = 2, NumberOfForces = 7, NumberOfWeapons = [27, 5, 36, 17, 9, 11, 37, 48], WeaponsMultiplier = [1, 5, 3, 2, 5, 3, 2, 4], CountryStats = [942, 552, 175, 238, 227, 831, 718, 318], totalSpending = 85143.7}
+Country24  = {Name = "Poland", Leader = "Bertha Creavin", supportMultiplier = 3, NumberOfForces = 13, NumberOfWeapons = [21, 48, 48, 27, 36, 6, 32, 50], WeaponsMultiplier = [1, 1, 2, 3, 3, 2, 5, 5], CountryStats = [204, 656, 911, 587, 658, 221, 190, 715], totalSpending = 16124.8}
+Country25  = {Name = "Russia", Leader = "Pippo Weddeburn", supportMultiplier = 1, NumberOfForces = 11, NumberOfWeapons = [35, 13, 18, 44, 24, 35, 50, 3], WeaponsMultiplier = [3, 4, 2, 1, 3, 3, 1, 1], CountryStats = [181, 870, 604, 107, 387, 239, 404, 589], totalSpending = 78881.0}
+Country26  = {Name = "Guatemala", Leader = "Alan Udey", supportMultiplier = 4, NumberOfForces = 12, NumberOfWeapons = [28, 30, 25, 33, 1, 6, 20, 40], WeaponsMultiplier = [4, 4, 4, 4, 2, 2, 1, 2], CountryStats = [963, 986, 686, 237, 627, 728, 998, 258], totalSpending = 84503.4}
+Country27  = {Name = "Serbia", Leader = "Alon Stiger", supportMultiplier = 4, NumberOfForces = 2, NumberOfWeapons = [45, 49, 4, 29, 10, 7, 34, 15], WeaponsMultiplier = [1, 3, 4, 5, 5, 5, 4, 3], CountryStats = [181, 440, 723, 723, 349, 185, 281, 776], totalSpending = 73837.8}
+Country28  = {Name = "Portugal", Leader = "Putnem Bishopp", supportMultiplier = 5, NumberOfForces = 2, NumberOfWeapons = [25, 18, 24, 37, 9, 28, 28, 4], WeaponsMultiplier = [4, 4, 5, 1, 2, 1, 4, 3], CountryStats = [972, 996, 588, 649, 777, 489, 704, 52], totalSpending = 66354.0}
+Country29  = {Name = "Indonesia", Leader = "Hamid Bonniface", supportMultiplier = 5, NumberOfForces = 19, NumberOfWeapons = [27, 43, 22, 11, 43, 28, 2, 49], WeaponsMultiplier = [1, 3, 5, 4, 4, 1, 2, 4], CountryStats = [739, 755, 759, 70, 558, 798, 470, 24], totalSpending = 54047.7}
+Country30  = {Name = "Japan", Leader = "Adara L'argent", supportMultiplier = 4, NumberOfForces = 12, NumberOfWeapons = [10, 30, 8, 40, 27, 15, 15, 17], WeaponsMultiplier = [5, 2, 5, 3, 1, 1, 2, 4], CountryStats = [785, 431, 518, 533, 881, 277, 719, 923], totalSpending = 76453.3}
+Country31  = {Name = "Sweden", Leader = "Sigismundo Aidler", supportMultiplier = 4, NumberOfForces = 4, NumberOfWeapons = [30, 44, 42, 16, 50, 38, 16, 16], WeaponsMultiplier = [4, 2, 5, 1, 5, 4, 2, 1], CountryStats = [371, 640, 468, 393, 744, 169, 291, 119], totalSpending = 97960.9}
+Country32  = {Name = "Portugal", Leader = "Tessa Chidzoy", supportMultiplier = 3, NumberOfForces = 15, NumberOfWeapons = [33, 5, 49, 50, 34, 12, 17, 29], WeaponsMultiplier = [5, 1, 3, 1, 4, 1, 4, 2], CountryStats = [658, 522, 299, 831, 867, 846, 972, 810], totalSpending = 66179.0}
+Country33  = {Name = "Russia", Leader = "Deerdre Roycraft", supportMultiplier = 4, NumberOfForces = 6, NumberOfWeapons = [36, 10, 4, 28, 9, 6, 39, 15], WeaponsMultiplier = [3, 5, 4, 4, 4, 4, 1, 5], CountryStats = [331, 748, 528, 816, 257, 440, 955, 154], totalSpending = 27151.3}
+Country34  = {Name = "China", Leader = "Eben Spuner", supportMultiplier = 5, NumberOfForces = 6, NumberOfWeapons = [31, 34, 30, 50, 20, 7, 40, 8], WeaponsMultiplier = [4, 4, 1, 1, 2, 4, 1, 5], CountryStats = [300, 528, 50, 592, 962, 227, 533, 590], totalSpending = 76983.0}
+Country35  = {Name = "Lithuania", Leader = "Maud Roads", supportMultiplier = 5, NumberOfForces = 12, NumberOfWeapons = [48, 2, 12, 32, 37, 44, 32, 25], WeaponsMultiplier = [4, 4, 1, 4, 3, 3, 3, 4], CountryStats = [68, 758, 757, 389, 223, 23, 7, 155], totalSpending = 73053.0}
+Country36  = {Name = "China", Leader = "Janice Dawney", supportMultiplier = 1, NumberOfForces = 3, NumberOfWeapons = [29, 37, 4, 1, 38, 17, 5, 13], WeaponsMultiplier = [5, 5, 2, 1, 4, 4, 5, 4], CountryStats = [729, 299, 254, 387, 543, 484, 53, 388], totalSpending = 77869.0}
+Country37  = {Name = "Mexico", Leader = "Kippy Kimpton", supportMultiplier = 5, NumberOfForces = 19, NumberOfWeapons = [25, 0, 50, 27, 11, 24, 48, 40], WeaponsMultiplier = [3, 1, 2, 1, 3, 2, 4, 2], CountryStats = [63, 707, 494, 991, 833, 788, 945, 200], totalSpending = 18645.2}
+Country38  = {Name = "Israel", Leader = "Connie Caustic", supportMultiplier = 5, NumberOfForces = 25, NumberOfWeapons = [39, 15, 29, 42, 6, 11, 25, 35], WeaponsMultiplier = [1, 4, 4, 4, 4, 4, 2, 2], CountryStats = [476, 935, 76, 330, 810, 882, 122, 285], totalSpending = 31040.6}
+Country39  = {Name = "Czech Republic", Leader = "Thea Kenright", supportMultiplier = 3, NumberOfForces = 2, NumberOfWeapons = [28, 21, 49, 35, 39, 44, 21, 14], WeaponsMultiplier = [4, 2, 2, 4, 4, 4, 2, 5], CountryStats = [457, 681, 689, 74, 372, 722, 821, 374], totalSpending = 38614.7}
+Country40  = {Name = "China", Leader = "Craig Dodd", supportMultiplier = 1, NumberOfForces = 13, NumberOfWeapons = [50, 32, 7, 50, 39, 41, 43, 6], WeaponsMultiplier = [5, 4, 2, 1, 1, 5, 4, 5], CountryStats = [622, 887, 396, 636, 480, 636, 560, 735], totalSpending = 69065.6}
+Country41  = {Name = "Japan", Leader = "Evie Guion", supportMultiplier = 4, NumberOfForces = 21, NumberOfWeapons = [36, 30, 8, 1, 37, 16, 46, 9], WeaponsMultiplier = [2, 1, 3, 4, 5, 4, 2, 5], CountryStats = [891, 215, 540, 971, 700, 723, 141, 420], totalSpending = 32013.6}
+Country42  = {Name = "Slovenia", Leader = "Violette Ramas", supportMultiplier = 1, NumberOfForces = 12, NumberOfWeapons = [12, 36, 17, 16, 25, 7, 49, 48], WeaponsMultiplier = [2, 3, 1, 2, 4, 4, 5, 5], CountryStats = [343, 99, 263, 893, 520, 348, 261, 730], totalSpending = 48583.5}
+Country43  = {Name = "China", Leader = "Lita Atchly", supportMultiplier = 4, NumberOfForces = 16, NumberOfWeapons = [25, 26, 29, 26, 9, 22, 42, 6], WeaponsMultiplier = [1, 1, 3, 3, 4, 1, 1, 3], CountryStats = [963, 981, 996, 398, 364, 32, 444, 191], totalSpending = 91325.3}
+Country44  = {Name = "China", Leader = "Oliviero Treven", supportMultiplier = 5, NumberOfForces = 9, NumberOfWeapons = [24, 3, 35, 22, 9, 50, 12, 20], WeaponsMultiplier = [2, 2, 3, 4, 5, 2, 5, 4], CountryStats = [54, 788, 779, 80, 315, 544, 359, 97], totalSpending = 41116.1}
+Country45  = {Name = "Libya", Leader = "Shayna Dake", supportMultiplier = 4, NumberOfForces = 14, NumberOfWeapons = [26, 25, 27, 28, 11, 16, 22, 9], WeaponsMultiplier = [4, 4, 4, 5, 4, 1, 1, 4], CountryStats = [314, 654, 762, 817, 16, 883, 217, 772], totalSpending = 14736.7}
+Country46  = {Name = "Philippines", Leader = "Eberto Hamlen", supportMultiplier = 5, NumberOfForces = 7, NumberOfWeapons = [21, 21, 35, 14, 15, 21, 22, 29], WeaponsMultiplier = [3, 4, 3, 2, 2, 4, 5, 5], CountryStats = [656, 69, 986, 320, 741, 332, 320, 184], totalSpending = 61706.8}
+Country47  = {Name = "Tajikistan", Leader = "Berte Missenden", supportMultiplier = 1, NumberOfForces = 12, NumberOfWeapons = [23, 12, 25, 4, 22, 24, 37, 26], WeaponsMultiplier = [1, 5, 5, 2, 1, 5, 2, 4], CountryStats = [160, 148, 771, 687, 761, 327, 376, 204], totalSpending = 56506.3}
+Country48  = {Name = "Jordan", Leader = "Brittany Ligertwood", supportMultiplier = 2, NumberOfForces = 1, NumberOfWeapons = [35, 3, 16, 19, 47, 25, 11, 15], WeaponsMultiplier = [1, 4, 1, 2, 1, 4, 2, 2], CountryStats = [456, 699, 489, 55, 717, 354, 89, 560], totalSpending = 26822.8}
+Country49  = {Name = "Panama", Leader = "Levi Dewerson", supportMultiplier = 3, NumberOfForces = 3, NumberOfWeapons = [40, 48, 36, 33, 46, 49, 14, 40], WeaponsMultiplier = [2, 5, 2, 5, 2, 5, 1, 4], CountryStats = [377, 405, 264, 900, 373, 419, 51, 443], totalSpending = 93422.2}
+Country50  = {Name = "China", Leader = "Mozelle O'Dowling", supportMultiplier = 5, NumberOfForces = 16, NumberOfWeapons = [43, 19, 39, 30, 0, 45, 42, 32], WeaponsMultiplier = [1, 3, 3, 4, 4, 4, 2, 1], CountryStats = [227, 777, 657, 927, 395, 407, 484, 726], totalSpending = 91241.3}
+Country51  = {Name = "Russia", Leader = "Clio Ingold", supportMultiplier = 5, NumberOfForces = 14, NumberOfWeapons = [32, 38, 46, 38, 36, 6, 50, 37], WeaponsMultiplier = [2, 2, 1, 2, 2, 5, 2, 5], CountryStats = [905, 566, 826, 233, 626, 88, 494, 157], totalSpending = 76023.9}
+Country52  = {Name = "Russia", Leader = "Marsh Marusik", supportMultiplier = 4, NumberOfForces = 14, NumberOfWeapons = [32, 23, 18, 45, 46, 10, 10, 15], WeaponsMultiplier = [4, 5, 5, 5, 1, 5, 3, 5], CountryStats = [728, 114, 472, 760, 946, 312, 989, 236], totalSpending = 51360.1}
+Country53  = {Name = "Russia", Leader = "Noah Grattage", supportMultiplier = 3, NumberOfForces = 20, NumberOfWeapons = [12, 37, 8, 18, 22, 7, 17, 1], WeaponsMultiplier = [1, 3, 2, 3, 1, 4, 2, 3], CountryStats = [840, 473, 266, 366, 85, 138, 98, 215], totalSpending = 65180.5}
+Country54  = {Name = "Poland", Leader = "Percival Felmingham", supportMultiplier = 3, NumberOfForces = 16, NumberOfWeapons = [34, 28, 39, 13, 37, 24, 5, 8], WeaponsMultiplier = [5, 1, 2, 1, 4, 2, 2, 4], CountryStats = [451, 744, 746, 310, 923, 593, 926, 666], totalSpending = 32514.8}
+Country55  = {Name = "Finland", Leader = "Leanor Richardt", supportMultiplier = 5, NumberOfForces = 19, NumberOfWeapons = [31, 20, 24, 31, 44, 15, 20, 5], WeaponsMultiplier = [5, 2, 4, 1, 4, 1, 4, 5], CountryStats = [790, 232, 462, 566, 890, 83, 118, 428], totalSpending = 82790.6}
+Country56  = {Name = "Pakistan", Leader = "Bern Jansson", supportMultiplier = 3, NumberOfForces = 19, NumberOfWeapons = [46, 34, 35, 20, 39, 22, 22, 40], WeaponsMultiplier = [2, 4, 3, 5, 5, 1, 4, 2], CountryStats = [5, 218, 60, 189, 366, 954, 496, 872], totalSpending = 59351.6}
+Country57  = {Name = "Libya", Leader = "Stephan Olifaunt", supportMultiplier = 4, NumberOfForces = 23, NumberOfWeapons = [34, 31, 42, 36, 37, 21, 14, 1], WeaponsMultiplier = [3, 3, 5, 1, 2, 5, 5, 2], CountryStats = [692, 109, 915, 922, 728, 253, 20, 51], totalSpending = 76349.9}
+Country58  = {Name = "Peru", Leader = "Elvin Mumbeson", supportMultiplier = 2, NumberOfForces = 21, NumberOfWeapons = [32, 15, 29, 50, 4, 35, 41, 14], WeaponsMultiplier = [2, 2, 5, 4, 1, 3, 2, 4], CountryStats = [817, 633, 441, 622, 478, 459, 175, 973], totalSpending = 50395.5}
+Country59  = {Name = "China", Leader = "Katalin Downham", supportMultiplier = 4, NumberOfForces = 22, NumberOfWeapons = [4, 4, 21, 3, 41, 0, 7, 44], WeaponsMultiplier = [1, 2, 2, 3, 3, 3, 5, 3], CountryStats = [230, 915, 574, 217, 214, 260, 913, 786], totalSpending = 40740.1}
+Country60  = {Name = "Ireland", Leader = "Kingsley Syms", supportMultiplier = 1, NumberOfForces = 14, NumberOfWeapons = [1, 46, 37, 17, 45, 12, 6, 43], WeaponsMultiplier = [2, 3, 4, 5, 3, 5, 3, 4], CountryStats = [5, 51, 831, 666, 196, 581, 797, 702], totalSpending = 87514.9}
+Country61  = {Name = "Indonesia", Leader = "Ignacio Skillett", supportMultiplier = 3, NumberOfForces = 12, NumberOfWeapons = [1, 46, 1, 2, 48, 36, 12, 25], WeaponsMultiplier = [5, 1, 5, 5, 2, 2, 3, 2], CountryStats = [937, 163, 444, 538, 791, 690, 513, 873], totalSpending = 75014.4}
+Country62  = {Name = "Canada", Leader = "Judd Brandino", supportMultiplier = 2, NumberOfForces = 9, NumberOfWeapons = [38, 33, 42, 14, 17, 30, 29, 34], WeaponsMultiplier = [1, 3, 4, 3, 1, 4, 4, 3], CountryStats = [696, 690, 378, 263, 582, 868, 600, 566], totalSpending = 15448.4}
+Country63  = {Name = "China", Leader = "Hunter Aime", supportMultiplier = 3, NumberOfForces = 23, NumberOfWeapons = [47, 30, 3, 28, 27, 19, 35, 43], WeaponsMultiplier = [4, 2, 5, 1, 5, 3, 4, 4], CountryStats = [370, 424, 630, 933, 823, 573, 822, 152], totalSpending = 51545.2}
+Country64  = {Name = "Philippines", Leader = "Kelila Yarnton", supportMultiplier = 1, NumberOfForces = 13, NumberOfWeapons = [33, 50, 12, 47, 5, 10, 45, 13], WeaponsMultiplier = [2, 3, 5, 1, 4, 3, 2, 1], CountryStats = [951, 380, 563, 154, 769, 860, 915, 116], totalSpending = 78625.3}
+Country65  = {Name = "Indonesia", Leader = "Sashenka Alldis", supportMultiplier = 3, NumberOfForces = 12, NumberOfWeapons = [40, 16, 38, 45, 30, 5, 17, 9], WeaponsMultiplier = [3, 2, 4, 5, 2, 5, 5, 4], CountryStats = [446, 904, 123, 506, 997, 878, 15, 669], totalSpending = 25698.1}
+Country66  = {Name = "Pakistan", Leader = "Lindsey Masseo", supportMultiplier = 4, NumberOfForces = 8, NumberOfWeapons = [44, 12, 32, 47, 47, 21, 10, 9], WeaponsMultiplier = [5, 5, 5, 5, 1, 3, 2, 5], CountryStats = [862, 495, 250, 370, 897, 87, 157, 115], totalSpending = 97059.8}
+Country67  = {Name = "China", Leader = "Ikey Kindle", supportMultiplier = 5, NumberOfForces = 8, NumberOfWeapons = [45, 47, 37, 25, 39, 7, 38, 19], WeaponsMultiplier = [3, 5, 4, 2, 3, 4, 3, 5], CountryStats = [29, 436, 221, 615, 755, 164, 383, 978], totalSpending = 45187.8}
+Country68  = {Name = "Brazil", Leader = "Lawrence Gillie", supportMultiplier = 5, NumberOfForces = 7, NumberOfWeapons = [18, 7, 37, 40, 25, 40, 35, 19], WeaponsMultiplier = [5, 3, 5, 5, 2, 1, 3, 1], CountryStats = [430, 708, 253, 787, 767, 367, 398, 480], totalSpending = 44920.7}
+Country69  = {Name = "Czech Republic", Leader = "Robin Raund", supportMultiplier = 5, NumberOfForces = 24, NumberOfWeapons = [48, 39, 11, 7, 13, 13, 20, 36], WeaponsMultiplier = [3, 2, 4, 2, 4, 5, 1, 2], CountryStats = [742, 462, 104, 847, 153, 424, 819, 799], totalSpending = 92979.8}
+Country70  = {Name = "Sweden", Leader = "Raynard Hessel", supportMultiplier = 4, NumberOfForces = 9, NumberOfWeapons = [31, 31, 13, 29, 35, 25, 21, 22], WeaponsMultiplier = [5, 2, 2, 2, 3, 4, 2, 4], CountryStats = [587, 71, 616, 821, 288, 852, 833, 904], totalSpending = 65932.9}
+Country71  = {Name = "Philippines", Leader = "Octavius Wattinham", supportMultiplier = 3, NumberOfForces = 21, NumberOfWeapons = [16, 33, 2, 1, 24, 39, 23, 19], WeaponsMultiplier = [2, 3, 3, 3, 2, 1, 4, 2], CountryStats = [323, 776, 183, 811, 73, 491, 283, 874], totalSpending = 51965.1}
+Country72  = {Name = "Russia", Leader = "Nanon Gherarducci", supportMultiplier = 2, NumberOfForces = 2, NumberOfWeapons = [22, 41, 11, 18, 39, 41, 37, 45], WeaponsMultiplier = [4, 4, 2, 1, 4, 2, 1, 2], CountryStats = [248, 487, 736, 484, 444, 730, 912, 195], totalSpending = 2281.6}
+Country73  = {Name = "China", Leader = "Lelia Normanville", supportMultiplier = 3, NumberOfForces = 1, NumberOfWeapons = [36, 42, 37, 28, 29, 17, 26, 5], WeaponsMultiplier = [1, 5, 5, 1, 5, 3, 5, 5], CountryStats = [604, 643, 833, 522, 486, 308, 913, 1000], totalSpending = 74681.8}
+Country74  = {Name = "Macedonia", Leader = "Ola Bootton", supportMultiplier = 3, NumberOfForces = 3, NumberOfWeapons = [39, 15, 19, 3, 3, 40, 42, 47], WeaponsMultiplier = [3, 3, 3, 1, 3, 1, 5, 2], CountryStats = [709, 846, 768, 689, 774, 856, 974, 781], totalSpending = 4205.2}
+Country75  = {Name = "China", Leader = "Dalli Norkutt", supportMultiplier = 4, NumberOfForces = 15, NumberOfWeapons = [18, 36, 2, 24, 7, 4, 35, 24], WeaponsMultiplier = [5, 2, 4, 2, 4, 2, 5, 2], CountryStats = [578, 673, 174, 672, 55, 250, 287, 111], totalSpending = 97436.0}
+Country76  = {Name = "Tunisia", Leader = "Megen Newlin", supportMultiplier = 5, NumberOfForces = 3, NumberOfWeapons = [48, 43, 47, 41, 43, 35, 16, 30], WeaponsMultiplier = [5, 2, 2, 4, 2, 1, 2, 4], CountryStats = [108, 227, 519, 168, 313, 171, 365, 668], totalSpending = 69853.5}
+Country77  = {Name = "Czech Republic", Leader = "Lyndsey Mapham", supportMultiplier = 3, NumberOfForces = 4, NumberOfWeapons = [33, 14, 43, 19, 12, 7, 24, 13], WeaponsMultiplier = [2, 1, 2, 1, 1, 4, 3, 5], CountryStats = [966, 156, 661, 424, 818, 12, 301, 306], totalSpending = 62203.1}
+Country78  = {Name = "Malaysia", Leader = "Rafi McTurlough", supportMultiplier = 2, NumberOfForces = 15, NumberOfWeapons = [45, 8, 30, 18, 39, 36, 39, 21], WeaponsMultiplier = [3, 2, 4, 5, 3, 5, 3, 3], CountryStats = [414, 253, 601, 824, 353, 432, 795, 142], totalSpending = 86296.7}
+Country79  = {Name = "Iran", Leader = "Cthrine Lambarth", supportMultiplier = 4, NumberOfForces = 5, NumberOfWeapons = [49, 12, 11, 2, 4, 36, 12, 35], WeaponsMultiplier = [5, 3, 2, 5, 2, 5, 1, 3], CountryStats = [917, 278, 502, 978, 327, 656, 192, 903], totalSpending = 33698.7}
+Country80  = {Name = "United States", Leader = "Torey Dysart", supportMultiplier = 2, NumberOfForces = 25, NumberOfWeapons = [48, 22, 25, 18, 3, 15, 26, 9], WeaponsMultiplier = [2, 1, 1, 5, 1, 4, 3, 2], CountryStats = [362, 499, 630, 9, 374, 591, 812, 60], totalSpending = 2024.8}
+Country81  = {Name = "Japan", Leader = "Prudence Van Geffen", supportMultiplier = 2, NumberOfForces = 7, NumberOfWeapons = [37, 12, 30, 18, 45, 44, 33, 25], WeaponsMultiplier = [3, 2, 2, 2, 1, 3, 4, 3], CountryStats = [567, 999, 289, 190, 939, 823, 442, 696], totalSpending = 34132.3}
+Country82  = {Name = "Ireland", Leader = "Asher Dongate", supportMultiplier = 4, NumberOfForces = 16, NumberOfWeapons = [12, 49, 14, 35, 42, 44, 24, 1], WeaponsMultiplier = [1, 1, 5, 1, 1, 3, 2, 1], CountryStats = [430, 613, 598, 659, 67, 807, 492, 534], totalSpending = 93746.6}
+Country83  = {Name = "Indonesia", Leader = "Bastien Ramsted", supportMultiplier = 4, NumberOfForces = 1, NumberOfWeapons = [1, 44, 37, 10, 22, 20, 2, 27], WeaponsMultiplier = [4, 3, 4, 1, 1, 1, 5, 3], CountryStats = [359, 414, 850, 5, 282, 416, 932, 763], totalSpending = 67028.7}
+Country84  = {Name = "Poland", Leader = "Lewiss Gostyke", supportMultiplier = 5, NumberOfForces = 11, NumberOfWeapons = [5, 44, 48, 47, 41, 16, 32, 20], WeaponsMultiplier = [3, 5, 1, 1, 3, 3, 1, 5], CountryStats = [267, 839, 480, 930, 253, 894, 115, 776], totalSpending = 12476.1}
+Country85  = {Name = "Portugal", Leader = "Silva Somerton", supportMultiplier = 3, NumberOfForces = 9, NumberOfWeapons = [5, 29, 5, 50, 30, 10, 49, 23], WeaponsMultiplier = [2, 5, 3, 2, 5, 2, 4, 5], CountryStats = [956, 991, 592, 113, 184, 689, 799, 294], totalSpending = 57208.7}
+Country86  = {Name = "Brazil", Leader = "Patten Paish", supportMultiplier = 1, NumberOfForces = 16, NumberOfWeapons = [26, 2, 0, 21, 34, 3, 41, 38], WeaponsMultiplier = [5, 5, 5, 5, 3, 2, 2, 3], CountryStats = [93, 99, 147, 96, 754, 688, 110, 793], totalSpending = 19964.0}
+Country87  = {Name = "Sweden", Leader = "Stillman Starsmeare", supportMultiplier = 5, NumberOfForces = 13, NumberOfWeapons = [3, 10, 48, 37, 43, 2, 43, 36], WeaponsMultiplier = [2, 3, 2, 2, 2, 2, 5, 4], CountryStats = [479, 412, 99, 579, 869, 410, 256, 535], totalSpending = 28821.6}
+Country88  = {Name = "North Korea", Leader = "Carrie Bruinsma", supportMultiplier = 1, NumberOfForces = 2, NumberOfWeapons = [11, 45, 28, 47, 26, 50, 45, 39], WeaponsMultiplier = [1, 5, 3, 2, 4, 3, 2, 4], CountryStats = [608, 808, 810, 6, 220, 742, 450, 998], totalSpending = 76145.2}
+Country89  = {Name = "China", Leader = "Pincas Cotelard", supportMultiplier = 4, NumberOfForces = 24, NumberOfWeapons = [21, 30, 24, 12, 23, 2, 31, 26], WeaponsMultiplier = [3, 4, 1, 3, 2, 4, 5, 2], CountryStats = [569, 254, 806, 442, 625, 725, 792, 649], totalSpending = 88129.3}
+Country90  = {Name = "Indonesia", Leader = "Darrell Fomichyov", supportMultiplier = 4, NumberOfForces = 11, NumberOfWeapons = [3, 33, 26, 18, 0, 6, 0, 18], WeaponsMultiplier = [5, 5, 4, 5, 2, 2, 1, 2], CountryStats = [156, 119, 198, 927, 470, 928, 568, 171], totalSpending = 88677.8}
+Country91  = {Name = "China", Leader = "Rodi Mayhou", supportMultiplier = 1, NumberOfForces = 4, NumberOfWeapons = [39, 49, 0, 4, 1, 10, 24, 8], WeaponsMultiplier = [5, 4, 2, 1, 4, 1, 1, 2], CountryStats = [700, 668, 466, 654, 743, 666, 165, 117], totalSpending = 67750.6}
+Country92  = {Name = "China", Leader = "Scotti Stonham", supportMultiplier = 4, NumberOfForces = 13, NumberOfWeapons = [34, 20, 23, 26, 12, 23, 35, 3], WeaponsMultiplier = [5, 4, 3, 3, 1, 5, 4, 2], CountryStats = [164, 248, 856, 196, 101, 745, 47, 861], totalSpending = 64775.2}
+Country93  = {Name = "Poland", Leader = "Dorella Aslum", supportMultiplier = 1, NumberOfForces = 5, NumberOfWeapons = [3, 12, 1, 17, 21, 17, 24, 47], WeaponsMultiplier = [5, 2, 5, 3, 4, 1, 5, 3], CountryStats = [175, 405, 191, 326, 873, 789, 635, 890], totalSpending = 51182.5}
+Country94  = {Name = "Finland", Leader = "Sybil Felton", supportMultiplier = 3, NumberOfForces = 16, NumberOfWeapons = [1, 6, 16, 0, 10, 29, 31, 24], WeaponsMultiplier = [2, 2, 3, 4, 3, 1, 1, 5], CountryStats = [95, 439, 377, 914, 133, 241, 292, 531], totalSpending = 57238.1}
+Country95  = {Name = "France", Leader = "Tris Matts", supportMultiplier = 5, NumberOfForces = 20, NumberOfWeapons = [35, 7, 34, 41, 5, 16, 29, 26], WeaponsMultiplier = [3, 4, 2, 5, 1, 2, 5, 3], CountryStats = [621, 622, 393, 606, 10, 372, 97, 907], totalSpending = 54233.4}
+Country96  = {Name = "Indonesia", Leader = "Gregoire Shuxsmith", supportMultiplier = 3, NumberOfForces = 8, NumberOfWeapons = [12, 26, 34, 48, 7, 6, 5, 16], WeaponsMultiplier = [4, 5, 4, 4, 1, 5, 4, 4], CountryStats = [488, 985, 582, 640, 648, 797, 942, 35], totalSpending = 30410.2}
+Country97  = {Name = "Indonesia", Leader = "Lorilyn O'Fearguise", supportMultiplier = 1, NumberOfForces = 8, NumberOfWeapons = [43, 14, 20, 50, 3, 16, 21, 25], WeaponsMultiplier = [3, 4, 2, 1, 3, 5, 3, 1], CountryStats = [768, 692, 224, 719, 227, 386, 997, 560], totalSpending = 27169.4}
+Country98  = {Name = "Poland", Leader = "Adele Mattei", supportMultiplier = 5, NumberOfForces = 6, NumberOfWeapons = [45, 32, 7, 24, 37, 2, 30, 9], WeaponsMultiplier = [2, 1, 5, 5, 3, 3, 4, 4], CountryStats = [194, 773, 452, 121, 906, 304, 28, 467], totalSpending = 24822.9}
+Country99  = {Name = "China", Leader = "Farah Pettwood", supportMultiplier = 1, NumberOfForces = 13, NumberOfWeapons = [32, 12, 44, 25, 18, 36, 5, 33], WeaponsMultiplier = [3, 5, 3, 2, 2, 5, 2, 2], CountryStats = [139, 317, 20, 271, 4, 437, 898, 524], totalSpending = 31346.9}
+Country100 = {Name = "Indonesia", Leader = "Charlie Wyse", supportMultiplier = 4, NumberOfForces = 13, NumberOfWeapons = [24, 39, 25, 10, 45, 26, 36, 12], WeaponsMultiplier = [2, 2, 2, 5, 1, 5, 4, 4], CountryStats = [243, 38, 518, 646, 95, 703, 315, 260], totalSpending = 97498.7}
+Country101 = {Name = "Poland", Leader = "Valma Clew", supportMultiplier = 3, NumberOfForces = 10, NumberOfWeapons = [13, 22, 32, 12, 18, 26, 2, 43], WeaponsMultiplier = [1, 2, 1, 3, 2, 5, 1, 1], CountryStats = [331, 968, 720, 166, 459, 279, 407, 83], totalSpending = 61705.8}
+Country102 = {Name = "France", Leader = "Elane Hutcheson", supportMultiplier = 5, NumberOfForces = 25, NumberOfWeapons = [4, 11, 31, 31, 36, 38, 37, 36], WeaponsMultiplier = [4, 4, 4, 2, 3, 5, 3, 3], CountryStats = [425, 796, 142, 662, 792, 315, 680, 684], totalSpending = 59887.9}
+Country103 = {Name = "Colombia", Leader = "Tristam McGinty", supportMultiplier = 1, NumberOfForces = 11, NumberOfWeapons = [8, 1, 40, 49, 49, 3, 6, 43], WeaponsMultiplier = [1, 4, 5, 3, 1, 2, 4, 2], CountryStats = [247, 653, 926, 106, 445, 332, 270, 42], totalSpending = 51480.8}
+Country104 = {Name = "China", Leader = "Darby Burriss", supportMultiplier = 1, NumberOfForces = 17, NumberOfWeapons = [13, 29, 5, 23, 30, 41, 27, 16], WeaponsMultiplier = [2, 2, 5, 5, 3, 2, 3, 3], CountryStats = [869, 569, 689, 819, 889, 962, 160, 260], totalSpending = 32749.5}
+Country105 = {Name = "Mexico", Leader = "Budd Keynd", supportMultiplier = 2, NumberOfForces = 5, NumberOfWeapons = [37, 31, 15, 33, 17, 11, 43, 17], WeaponsMultiplier = [3, 1, 5, 5, 5, 4, 1, 3], CountryStats = [436, 287, 807, 215, 381, 960, 215, 100], totalSpending = 30701.2}
+Country106 = {Name = "Mongolia", Leader = "Ruby Kemer", supportMultiplier = 4, NumberOfForces = 19, NumberOfWeapons = [28, 46, 21, 19, 21, 27, 27, 34], WeaponsMultiplier = [4, 2, 3, 1, 4, 4, 2, 2], CountryStats = [606, 687, 259, 549, 932, 403, 408, 886], totalSpending = 91150.7}
+Country107 = {Name = "Portugal", Leader = "Tallou Pinder", supportMultiplier = 4, NumberOfForces = 10, NumberOfWeapons = [32, 32, 8, 22, 41, 38, 13, 35], WeaponsMultiplier = [2, 4, 1, 2, 4, 4, 3, 5], CountryStats = [836, 465, 394, 540, 282, 649, 534, 299], totalSpending = 24976.3}
+Country108 = {Name = "Peru", Leader = "Robbie Croce", supportMultiplier = 4, NumberOfForces = 25, NumberOfWeapons = [16, 16, 43, 0, 13, 33, 13, 1], WeaponsMultiplier = [2, 3, 5, 2, 4, 3, 3, 4], CountryStats = [650, 603, 369, 73, 458, 474, 214, 50], totalSpending = 56029.5}
+Country109 = {Name = "Sweden", Leader = "Hortense Okker", supportMultiplier = 5, NumberOfForces = 5, NumberOfWeapons = [27, 25, 39, 50, 50, 48, 1, 28], WeaponsMultiplier = [5, 1, 2, 3, 4, 2, 4, 3], CountryStats = [646, 258, 345, 366, 984, 115, 904, 756], totalSpending = 77696.1}
+Country110 = {Name = "Brazil", Leader = "Carney Shambrooke", supportMultiplier = 3, NumberOfForces = 23, NumberOfWeapons = [5, 9, 9, 36, 11, 20, 23, 18], WeaponsMultiplier = [1, 1, 4, 2, 5, 1, 1, 4], CountryStats = [973, 447, 127, 641, 57, 334, 440, 938], totalSpending = 21281.2}
+Country111 = {Name = "Poland", Leader = "Cello Vynoll", supportMultiplier = 1, NumberOfForces = 20, NumberOfWeapons = [42, 2, 2, 9, 18, 6, 39, 38], WeaponsMultiplier = [5, 2, 3, 3, 5, 2, 4, 2], CountryStats = [523, 739, 733, 725, 683, 259, 243, 140], totalSpending = 31729.7}
+Country112 = {Name = "Indonesia", Leader = "Clovis De Dantesie", supportMultiplier = 2, NumberOfForces = 11, NumberOfWeapons = [44, 31, 31, 38, 36, 16, 16, 1], WeaponsMultiplier = [5, 5, 5, 4, 1, 5, 1, 2], CountryStats = [685, 917, 607, 450, 673, 653, 252, 67], totalSpending = 96349.9}
+Country113 = {Name = "Ethiopia", Leader = "Casandra Harpin", supportMultiplier = 5, NumberOfForces = 9, NumberOfWeapons = [9, 1, 22, 8, 41, 44, 38, 24], WeaponsMultiplier = [2, 4, 1, 5, 3, 1, 3, 2], CountryStats = [144, 438, 490, 353, 444, 453, 564, 626], totalSpending = 17210.1}
+Country114 = {Name = "Pakistan", Leader = "Aldridge Cartmell", supportMultiplier = 2, NumberOfForces = 12, NumberOfWeapons = [6, 34, 21, 7, 32, 27, 43, 46], WeaponsMultiplier = [2, 4, 2, 3, 2, 1, 3, 2], CountryStats = [802, 429, 496, 87, 356, 578, 400, 626], totalSpending = 5064.6}
+Country115 = {Name = "France", Leader = "Theodore McQuaid", supportMultiplier = 4, NumberOfForces = 22, NumberOfWeapons = [41, 28, 3, 25, 34, 42, 26, 40], WeaponsMultiplier = [4, 4, 4, 2, 2, 4, 1, 3], CountryStats = [414, 919, 640, 970, 905, 348, 563, 136], totalSpending = 86897.5}
+Country116 = {Name = "United States", Leader = "Renelle Brennand", supportMultiplier = 5, NumberOfForces = 15, NumberOfWeapons = [19, 42, 41, 4, 0, 30, 22, 48], WeaponsMultiplier = [3, 5, 3, 5, 5, 5, 3, 1], CountryStats = [387, 593, 4, 367, 342, 170, 987, 536], totalSpending = 47280.4}
+Country117 = {Name = "China", Leader = "Isaiah Wastling", supportMultiplier = 5, NumberOfForces = 4, NumberOfWeapons = [48, 47, 5, 37, 27, 10, 45, 37], WeaponsMultiplier = [2, 4, 3, 3, 1, 5, 4, 2], CountryStats = [163, 600, 396, 857, 153, 670, 221, 830], totalSpending = 62360.9}
+Country118 = {Name = "North Korea", Leader = "Maryrose Sture", supportMultiplier = 2, NumberOfForces = 16, NumberOfWeapons = [15, 19, 45, 3, 50, 7, 3, 40], WeaponsMultiplier = [5, 4, 1, 1, 5, 1, 2, 2], CountryStats = [757, 913, 441, 608, 981, 335, 85, 279], totalSpending = 96230.0}
+Country119 = {Name = "China", Leader = "Dyana Brookesbie", supportMultiplier = 2, NumberOfForces = 13, NumberOfWeapons = [22, 23, 20, 12, 48, 11, 25, 0], WeaponsMultiplier = [3, 4, 4, 1, 3, 3, 2, 2], CountryStats = [290, 145, 128, 325, 932, 430, 617, 165], totalSpending = 93475.5}
+Country120 = {Name = "Slovenia", Leader = "Sherwood Foort", supportMultiplier = 2, NumberOfForces = 13, NumberOfWeapons = [0, 6, 5, 39, 30, 28, 48, 46], WeaponsMultiplier = [2, 2, 1, 5, 5, 4, 2, 2], CountryStats = [468, 531, 591, 333, 756, 230, 399, 683], totalSpending = 16978.7}
+Country121 = {Name = "Macedonia", Leader = "Rosabelle Barnicott", supportMultiplier = 2, NumberOfForces = 13, NumberOfWeapons = [49, 19, 3, 32, 18, 46, 32, 6], WeaponsMultiplier = [2, 1, 1, 3, 3, 5, 4, 3], CountryStats = [596, 235, 747, 731, 380, 853, 674, 214], totalSpending = 85942.8}
+Country122 = {Name = "Philippines", Leader = "Mariejeanne Trumper", supportMultiplier = 1, NumberOfForces = 22, NumberOfWeapons = [3, 31, 39, 36, 45, 9, 14, 5], WeaponsMultiplier = [5, 4, 4, 4, 4, 3, 4, 2], CountryStats = [675, 213, 656, 269, 685, 519, 725, 839], totalSpending = 73724.6}
+Country123 = {Name = "Indonesia", Leader = "Bobette Watson", supportMultiplier = 5, NumberOfForces = 5, NumberOfWeapons = [22, 15, 44, 38, 35, 46, 27, 13], WeaponsMultiplier = [4, 1, 4, 5, 3, 3, 4, 1], CountryStats = [653, 42, 656, 631, 825, 110, 261, 74], totalSpending = 98319.5}
+Country124 = {Name = "Indonesia", Leader = "Llywellyn Levene", supportMultiplier = 3, NumberOfForces = 21, NumberOfWeapons = [28, 41, 36, 47, 18, 29, 3, 50], WeaponsMultiplier = [4, 4, 5, 1, 4, 4, 1, 5], CountryStats = [923, 827, 246, 526, 663, 400, 43, 207], totalSpending = 13364.2}
+Country125 = {Name = "China", Leader = "Germana Jiracek", supportMultiplier = 2, NumberOfForces = 11, NumberOfWeapons = [12, 20, 21, 50, 11, 27, 9, 37], WeaponsMultiplier = [1, 2, 2, 2, 5, 3, 5, 1], CountryStats = [950, 889, 852, 713, 377, 95, 4, 940], totalSpending = 49806.1}
+Country126 = {Name = "Mauritius", Leader = "Ashby Silkstone", supportMultiplier = 4, NumberOfForces = 17, NumberOfWeapons = [41, 47, 31, 20, 41, 30, 7, 46], WeaponsMultiplier = [3, 1, 2, 5, 1, 5, 5, 2], CountryStats = [910, 143, 196, 1000, 591, 999, 605, 202], totalSpending = 61853.2}
+Country127 = {Name = "Peru", Leader = "Ginni Bunn", supportMultiplier = 1, NumberOfForces = 1, NumberOfWeapons = [31, 7, 43, 23, 8, 19, 7, 38], WeaponsMultiplier = [3, 5, 3, 5, 4, 4, 5, 3], CountryStats = [606, 460, 592, 319, 377, 155, 436, 235], totalSpending = 92805.4}
+Country128 = {Name = "China", Leader = "Hughie Roggerone", supportMultiplier = 3, NumberOfForces = 24, NumberOfWeapons = [41, 43, 12, 39, 23, 43, 39, 22], WeaponsMultiplier = [1, 4, 2, 5, 3, 2, 1, 4], CountryStats = [612, 452, 670, 566, 691, 102, 569, 516], totalSpending = 80592.7}
+Country129 = {Name = "Iceland", Leader = "Alfy Hasted", supportMultiplier = 2, NumberOfForces = 9, NumberOfWeapons = [50, 4, 8, 5, 40, 15, 13, 38], WeaponsMultiplier = [4, 5, 3, 5, 3, 4, 2, 2], CountryStats = [856, 132, 44, 280, 693, 295, 165, 355], totalSpending = 54231.2}
+Country130 = {Name = "Russia", Leader = "Hewet Raywood", supportMultiplier = 1, NumberOfForces = 24, NumberOfWeapons = [5, 22, 41, 24, 4, 23, 48, 30], WeaponsMultiplier = [4, 4, 3, 1, 1, 4, 2, 2], CountryStats = [313, 770, 75, 71, 812, 267, 453, 739], totalSpending = 40250.0}
+Country131 = {Name = "Uzbekistan", Leader = "Verina Garstang", supportMultiplier = 5, NumberOfForces = 11, NumberOfWeapons = [9, 5, 17, 33, 4, 45, 37, 17], WeaponsMultiplier = [2, 1, 2, 4, 2, 5, 3, 1], CountryStats = [522, 613, 21, 570, 223, 811, 495, 587], totalSpending = 44854.5}
+Country132 = {Name = "Lithuania", Leader = "Amerigo Marwood", supportMultiplier = 3, NumberOfForces = 20, NumberOfWeapons = [20, 24, 28, 13, 25, 48, 4, 22], WeaponsMultiplier = [5, 5, 2, 1, 5, 1, 5, 4], CountryStats = [565, 69, 596, 220, 896, 374, 629, 849], totalSpending = 74762.6}
+Country133 = {Name = "Indonesia", Leader = "Pail Branni", supportMultiplier = 2, NumberOfForces = 17, NumberOfWeapons = [49, 47, 36, 36, 50, 0, 44, 39], WeaponsMultiplier = [4, 3, 3, 4, 2, 5, 4, 5], CountryStats = [219, 113, 97, 448, 558, 134, 437, 61], totalSpending = 47169.7}
+Country134 = {Name = "Czech Republic", Leader = "Geraldine Whitmore", supportMultiplier = 2, NumberOfForces = 21, NumberOfWeapons = [25, 0, 0, 40, 37, 27, 23, 10], WeaponsMultiplier = [1, 4, 5, 2, 5, 1, 2, 1], CountryStats = [477, 943, 375, 325, 484, 346, 692, 205], totalSpending = 34564.8}
+Country135 = {Name = "Philippines", Leader = "Isabelita Currao", supportMultiplier = 5, NumberOfForces = 19, NumberOfWeapons = [6, 6, 34, 36, 8, 47, 28, 12], WeaponsMultiplier = [4, 5, 3, 1, 1, 1, 2, 5], CountryStats = [821, 842, 566, 839, 23, 844, 754, 82], totalSpending = 99166.7}
+Country136 = {Name = "Cameroon", Leader = "Estella Younger", supportMultiplier = 2, NumberOfForces = 6, NumberOfWeapons = [11, 18, 28, 23, 43, 34, 40, 18], WeaponsMultiplier = [1, 4, 3, 3, 5, 3, 1, 1], CountryStats = [399, 864, 909, 77, 101, 883, 677, 754], totalSpending = 70886.6}
+Country137 = {Name = "Philippines", Leader = "Belinda Rutland", supportMultiplier = 3, NumberOfForces = 17, NumberOfWeapons = [29, 3, 33, 22, 4, 50, 12, 47], WeaponsMultiplier = [1, 2, 5, 2, 2, 2, 4, 5], CountryStats = [723, 265, 457, 854, 540, 987, 420, 853], totalSpending = 13042.7}
+Country138 = {Name = "China", Leader = "Janela Mateus", supportMultiplier = 3, NumberOfForces = 14, NumberOfWeapons = [25, 33, 14, 1, 13, 23, 24, 34], WeaponsMultiplier = [3, 5, 3, 2, 3, 3, 1, 3], CountryStats = [2, 52, 694, 349, 150, 724, 91, 630], totalSpending = 52368.8}
+Country139 = {Name = "Indonesia", Leader = "Daphna Kinch", supportMultiplier = 3, NumberOfForces = 24, NumberOfWeapons = [32, 42, 12, 25, 23, 10, 4, 22], WeaponsMultiplier = [2, 2, 4, 3, 4, 2, 4, 1], CountryStats = [284, 235, 443, 280, 106, 868, 549, 780], totalSpending = 13287.5}
+Country140 = {Name = "France", Leader = "Evan Clemens", supportMultiplier = 1, NumberOfForces = 25, NumberOfWeapons = [10, 12, 4, 32, 32, 21, 21, 26], WeaponsMultiplier = [3, 1, 3, 4, 4, 3, 1, 1], CountryStats = [950, 296, 191, 611, 21, 513, 36, 292], totalSpending = 55641.5}
+Country141 = {Name = "Honduras", Leader = "Deb Chinnock", supportMultiplier = 3, NumberOfForces = 21, NumberOfWeapons = [30, 15, 29, 28, 18, 16, 39, 42], WeaponsMultiplier = [4, 1, 2, 3, 1, 1, 1, 1], CountryStats = [264, 603, 231, 962, 301, 261, 287, 341], totalSpending = 73031.0}
+Country142 = {Name = "Russia", Leader = "Padriac Yggo", supportMultiplier = 4, NumberOfForces = 17, NumberOfWeapons = [31, 23, 22, 29, 45, 21, 20, 39], WeaponsMultiplier = [5, 4, 5, 4, 2, 5, 3, 1], CountryStats = [500, 125, 841, 971, 810, 617, 212, 867], totalSpending = 96308.0}
+Country143 = {Name = "Yemen", Leader = "Kevan Franz", supportMultiplier = 1, NumberOfForces = 1, NumberOfWeapons = [40, 19, 22, 14, 9, 30, 21, 43], WeaponsMultiplier = [2, 2, 3, 4, 4, 5, 3, 5], CountryStats = [566, 84, 63, 362, 702, 26, 589, 744], totalSpending = 35075.8}
+Country144 = {Name = "Russia", Leader = "Ricky Mullany", supportMultiplier = 5, NumberOfForces = 23, NumberOfWeapons = [15, 24, 19, 42, 50, 14, 49, 47], WeaponsMultiplier = [4, 3, 5, 5, 5, 2, 4, 4], CountryStats = [992, 3, 918, 746, 249, 747, 354, 644], totalSpending = 90580.1}
+Country145 = {Name = "Norway", Leader = "Marcelia Ramel", supportMultiplier = 1, NumberOfForces = 24, NumberOfWeapons = [46, 45, 42, 28, 50, 32, 28, 43], WeaponsMultiplier = [1, 4, 4, 3, 4, 2, 3, 5], CountryStats = [186, 931, 816, 148, 974, 57, 469, 831], totalSpending = 86942.7}
+Country146 = {Name = "China", Leader = "Agnes Piell", supportMultiplier = 2, NumberOfForces = 4, NumberOfWeapons = [30, 35, 42, 48, 17, 30, 38, 4], WeaponsMultiplier = [5, 1, 3, 2, 3, 4, 2, 1], CountryStats = [894, 46, 475, 784, 142, 446, 963, 858], totalSpending = 94669.7}
+Country147 = {Name = "Azerbaijan", Leader = "Bay Cleynaert", supportMultiplier = 5, NumberOfForces = 22, NumberOfWeapons = [1, 45, 20, 22, 2, 39, 12, 26], WeaponsMultiplier = [1, 2, 5, 4, 4, 1, 3, 2], CountryStats = [548, 759, 267, 805, 333, 404, 455, 877], totalSpending = 46082.5}
+Country148 = {Name = "Mauritius", Leader = "Barbee Emmitt", supportMultiplier = 2, NumberOfForces = 7, NumberOfWeapons = [38, 0, 41, 18, 0, 8, 13, 8], WeaponsMultiplier = [2, 2, 5, 3, 2, 5, 1, 1], CountryStats = [162, 784, 177, 673, 207, 883, 777, 551], totalSpending = 3830.7}
+Country149 = {Name = "Spain", Leader = "Merle Birrane", supportMultiplier = 5, NumberOfForces = 20, NumberOfWeapons = [12, 30, 7, 46, 27, 33, 37, 36], WeaponsMultiplier = [1, 1, 4, 2, 1, 3, 4, 4], CountryStats = [379, 459, 102, 824, 845, 341, 973, 909], totalSpending = 49824.3}
+Country150 = {Name = "Indonesia", Leader = "Stoddard Pipworth", supportMultiplier = 1, NumberOfForces = 17, NumberOfWeapons = [13, 32, 30, 4, 10, 45, 22, 41], WeaponsMultiplier = [3, 4, 5, 3, 4, 3, 1, 1], CountryStats = [122, 192, 612, 371, 439, 650, 932, 434], totalSpending = 40206.8}
+Country151 = {Name = "Croatia", Leader = "Anastasie Henniger", supportMultiplier = 2, NumberOfForces = 18, NumberOfWeapons = [32, 9, 33, 31, 1, 5, 38, 32], WeaponsMultiplier = [2, 2, 3, 1, 3, 2, 3, 4], CountryStats = [405, 364, 329, 159, 982, 435, 814, 491], totalSpending = 11710.7}
+Country152 = {Name = "Norway", Leader = "Chrissy Catlette", supportMultiplier = 5, NumberOfForces = 14, NumberOfWeapons = [14, 16, 49, 33, 18, 4, 0, 21], WeaponsMultiplier = [1, 3, 3, 4, 4, 2, 4, 2], CountryStats = [972, 700, 109, 556, 785, 63, 361, 876], totalSpending = 51783.2}
+Country153 = {Name = "Indonesia", Leader = "Donica Kleisel", supportMultiplier = 4, NumberOfForces = 12, NumberOfWeapons = [17, 26, 6, 13, 25, 31, 38, 47], WeaponsMultiplier = [4, 1, 3, 3, 1, 3, 4, 5], CountryStats = [301, 347, 360, 679, 20, 170, 770, 494], totalSpending = 98229.4}
+Country154 = {Name = "China", Leader = "Sibeal Relton", supportMultiplier = 5, NumberOfForces = 9, NumberOfWeapons = [1, 45, 46, 23, 3, 32, 40, 16], WeaponsMultiplier = [5, 2, 5, 2, 3, 5, 1, 1], CountryStats = [701, 188, 869, 196, 194, 851, 581, 282], totalSpending = 46607.3}
+Country155 = {Name = "Iran", Leader = "Byrle Grishanin", supportMultiplier = 2, NumberOfForces = 23, NumberOfWeapons = [13, 1, 42, 1, 45, 6, 42, 39], WeaponsMultiplier = [4, 3, 2, 5, 2, 1, 2, 5], CountryStats = [498, 979, 78, 571, 372, 956, 812, 254], totalSpending = 5820.3}
+Country156 = {Name = "Afghanistan", Leader = "Blondell Lilly", supportMultiplier = 1, NumberOfForces = 6, NumberOfWeapons = [26, 25, 13, 43, 9, 10, 23, 41], WeaponsMultiplier = [5, 3, 5, 3, 5, 5, 4, 3], CountryStats = [927, 84, 897, 788, 60, 228, 194, 914], totalSpending = 96363.2}
+Country157 = {Name = "China", Leader = "Carlina Gives", supportMultiplier = 4, NumberOfForces = 13, NumberOfWeapons = [50, 22, 12, 31, 9, 19, 5, 48], WeaponsMultiplier = [1, 5, 3, 1, 1, 2, 1, 1], CountryStats = [640, 990, 280, 318, 235, 8, 355, 327], totalSpending = 97094.4}
+Country158 = {Name = "Portugal", Leader = "Dosi Skipsea", supportMultiplier = 3, NumberOfForces = 13, NumberOfWeapons = [31, 38, 10, 37, 25, 40, 2, 41], WeaponsMultiplier = [4, 3, 3, 3, 2, 1, 1, 3], CountryStats = [1, 564, 485, 669, 25, 453, 567, 655], totalSpending = 55328.5}
+Country159 = {Name = "Ireland", Leader = "Abramo Potteridge", supportMultiplier = 2, NumberOfForces = 16, NumberOfWeapons = [36, 33, 29, 28, 38, 39, 15, 43], WeaponsMultiplier = [2, 2, 2, 4, 2, 2, 2, 4], CountryStats = [845, 969, 811, 635, 633, 933, 979, 152], totalSpending = 62908.4}
+Country160 = {Name = "Czech Republic", Leader = "Carmine Duddan", supportMultiplier = 2, NumberOfForces = 4, NumberOfWeapons = [36, 45, 42, 22, 47, 40, 31, 41], WeaponsMultiplier = [2, 4, 3, 1, 3, 2, 5, 3], CountryStats = [906, 867, 866, 358, 314, 361, 308, 786], totalSpending = 96127.4}
+Country161 = {Name = "Japan", Leader = "Cassandra Spare", supportMultiplier = 3, NumberOfForces = 12, NumberOfWeapons = [26, 19, 39, 32, 29, 22, 3, 25], WeaponsMultiplier = [1, 5, 3, 4, 4, 1, 5, 4], CountryStats = [234, 643, 471, 282, 226, 463, 624, 706], totalSpending = 69395.0}
+Country162 = {Name = "Poland", Leader = "Livvie Brennans", supportMultiplier = 2, NumberOfForces = 2, NumberOfWeapons = [15, 20, 10, 10, 48, 40, 14, 4], WeaponsMultiplier = [4, 3, 1, 4, 5, 1, 5, 4], CountryStats = [908, 214, 451, 879, 42, 556, 82, 806], totalSpending = 6080.1}
+Country163 = {Name = "Croatia", Leader = "Guy Weekly", supportMultiplier = 5, NumberOfForces = 4, NumberOfWeapons = [33, 45, 0, 37, 10, 22, 28, 25], WeaponsMultiplier = [5, 2, 4, 1, 3, 1, 3, 5], CountryStats = [457, 786, 971, 596, 719, 470, 376, 293], totalSpending = 36354.4}
+Country164 = {Name = "China", Leader = "Dion Merry", supportMultiplier = 1, NumberOfForces = 11, NumberOfWeapons = [46, 15, 9, 48, 48, 13, 43, 46], WeaponsMultiplier = [1, 3, 3, 5, 1, 4, 5, 3], CountryStats = [441, 48, 667, 580, 777, 497, 48, 229], totalSpending = 78785.0}
+Country165 = {Name = "Indonesia", Leader = "Doti Casper", supportMultiplier = 4, NumberOfForces = 23, NumberOfWeapons = [12, 45, 40, 28, 4, 35, 7, 4], WeaponsMultiplier = [4, 5, 5, 1, 1, 3, 2, 4], CountryStats = [139, 917, 787, 559, 623, 905, 25, 560], totalSpending = 66946.3}
+Country166 = {Name = "France", Leader = "Thedrick McFee", supportMultiplier = 1, NumberOfForces = 14, NumberOfWeapons = [30, 49, 29, 49, 8, 1, 8, 27], WeaponsMultiplier = [5, 3, 2, 2, 2, 1, 2, 3], CountryStats = [169, 889, 597, 106, 381, 712, 676, 330], totalSpending = 26597.0}
+Country167 = {Name = "Slovenia", Leader = "Norri Ebsworth", supportMultiplier = 3, NumberOfForces = 17, NumberOfWeapons = [47, 44, 38, 21, 38, 35, 8, 32], WeaponsMultiplier = [4, 5, 3, 1, 1, 2, 3, 2], CountryStats = [332, 926, 850, 912, 782, 985, 516, 80], totalSpending = 74447.3}
+Country168 = {Name = "Indonesia", Leader = "Zachery Mayor", supportMultiplier = 1, NumberOfForces = 3, NumberOfWeapons = [17, 27, 44, 15, 22, 31, 34, 12], WeaponsMultiplier = [3, 5, 2, 2, 1, 3, 3, 3], CountryStats = [506, 525, 916, 838, 388, 613, 398, 476], totalSpending = 54421.1}
+Country169 = {Name = "Poland", Leader = "Iago Borless", supportMultiplier = 5, NumberOfForces = 14, NumberOfWeapons = [6, 16, 42, 44, 42, 18, 30, 41], WeaponsMultiplier = [5, 2, 2, 5, 1, 3, 5, 5], CountryStats = [536, 695, 994, 989, 256, 379, 728, 225], totalSpending = 25792.0}
+Country170 = {Name = "Ukraine", Leader = "Dulce Stinchcombe", supportMultiplier = 2, NumberOfForces = 25, NumberOfWeapons = [48, 42, 30, 47, 2, 23, 36, 39], WeaponsMultiplier = [3, 4, 4, 3, 2, 3, 1, 2], CountryStats = [475, 4, 325, 290, 197, 510, 688, 31], totalSpending = 36551.7}
+Country171 = {Name = "Indonesia", Leader = "Olimpia Castelot", supportMultiplier = 3, NumberOfForces = 13, NumberOfWeapons = [14, 16, 24, 24, 16, 33, 41, 33], WeaponsMultiplier = [2, 4, 4, 1, 4, 3, 4, 2], CountryStats = [686, 639, 267, 60, 871, 755, 14, 401], totalSpending = 38704.3}
+Country172 = {Name = "Indonesia", Leader = "Jaclyn Khadir", supportMultiplier = 1, NumberOfForces = 24, NumberOfWeapons = [5, 16, 5, 48, 9, 8, 43, 34], WeaponsMultiplier = [3, 2, 5, 5, 2, 2, 2, 1], CountryStats = [691, 72, 804, 949, 53, 977, 152, 576], totalSpending = 64837.6}
+Country173 = {Name = "Bolivia", Leader = "Richmound Montague", supportMultiplier = 5, NumberOfForces = 25, NumberOfWeapons = [7, 16, 6, 35, 39, 13, 15, 15], WeaponsMultiplier = [2, 5, 1, 5, 3, 4, 2, 3], CountryStats = [976, 887, 578, 199, 309, 325, 747, 920], totalSpending = 57519.3}
+Country174 = {Name = "Philippines", Leader = "Georgiana Dimanche", supportMultiplier = 1, NumberOfForces = 8, NumberOfWeapons = [40, 8, 14, 24, 34, 17, 42, 31], WeaponsMultiplier = [4, 4, 3, 4, 2, 4, 3, 2], CountryStats = [753, 998, 526, 383, 851, 954, 311, 911], totalSpending = 65874.1}
+Country175 = {Name = "China", Leader = "Giacinta Sinnatt", supportMultiplier = 4, NumberOfForces = 10, NumberOfWeapons = [24, 15, 38, 12, 21, 22, 28, 3], WeaponsMultiplier = [2, 3, 4, 2, 3, 3, 4, 3], CountryStats = [675, 524, 670, 634, 565, 392, 401, 856], totalSpending = 20694.2}
+Country176 = {Name = "Yemen", Leader = "Polly Whysall", supportMultiplier = 5, NumberOfForces = 15, NumberOfWeapons = [48, 43, 38, 7, 50, 46, 21, 47], WeaponsMultiplier = [4, 4, 3, 5, 1, 3, 3, 2], CountryStats = [66, 104, 882, 834, 364, 358, 993, 416], totalSpending = 82161.3}
+Country177 = {Name = "United Kingdom", Leader = "Dolf Jamison", supportMultiplier = 3, NumberOfForces = 14, NumberOfWeapons = [49, 36, 31, 43, 0, 48, 14, 23], WeaponsMultiplier = [2, 3, 2, 4, 4, 3, 3, 4], CountryStats = [843, 792, 604, 870, 511, 298, 244, 474], totalSpending = 77578.1}
+Country178 = {Name = "Japan", Leader = "Quintana Asals", supportMultiplier = 3, NumberOfForces = 19, NumberOfWeapons = [24, 31, 7, 47, 16, 0, 28, 15], WeaponsMultiplier = [3, 1, 5, 4, 4, 5, 1, 1], CountryStats = [337, 132, 837, 143, 711, 338, 9, 634], totalSpending = 89285.0}
+Country179 = {Name = "Brazil", Leader = "Ann-marie Croyden", supportMultiplier = 3, NumberOfForces = 22, NumberOfWeapons = [33, 40, 10, 12, 4, 48, 11, 3], WeaponsMultiplier = [1, 1, 5, 4, 1, 3, 1, 4], CountryStats = [48, 603, 912, 467, 577, 932, 102, 498], totalSpending = 6108.6}
+Country180 = {Name = "Palestinian Territory", Leader = "Darrel Kettley", supportMultiplier = 5, NumberOfForces = 5, NumberOfWeapons = [43, 30, 0, 29, 10, 47, 41, 4], WeaponsMultiplier = [5, 1, 4, 5, 2, 4, 1, 1], CountryStats = [596, 522, 480, 573, 560, 925, 966, 668], totalSpending = 18485.6}
+Country181 = {Name = "Philippines", Leader = "Henrik Loosely", supportMultiplier = 5, NumberOfForces = 20, NumberOfWeapons = [49, 39, 12, 32, 50, 47, 13, 18], WeaponsMultiplier = [2, 5, 3, 4, 3, 4, 4, 5], CountryStats = [759, 809, 878, 70, 698, 326, 867, 58], totalSpending = 44811.5}
+Country182 = {Name = "Indonesia", Leader = "Elmo Gomm", supportMultiplier = 1, NumberOfForces = 16, NumberOfWeapons = [47, 1, 33, 15, 35, 4, 35, 17], WeaponsMultiplier = [2, 1, 1, 5, 3, 1, 1, 1], CountryStats = [30, 655, 683, 17, 256, 849, 586, 15], totalSpending = 55407.7}
+Country183 = {Name = "Indonesia", Leader = "Dov Chainey", supportMultiplier = 3, NumberOfForces = 22, NumberOfWeapons = [35, 47, 18, 23, 21, 32, 41, 26], WeaponsMultiplier = [4, 1, 4, 2, 3, 2, 4, 5], CountryStats = [389, 86, 557, 441, 91, 796, 454, 262], totalSpending = 18190.5}
+Country184 = {Name = "Portugal", Leader = "Fawne Mulvenna", supportMultiplier = 2, NumberOfForces = 17, NumberOfWeapons = [18, 18, 27, 49, 40, 43, 22, 48], WeaponsMultiplier = [1, 3, 4, 2, 2, 3, 1, 4], CountryStats = [863, 890, 178, 211, 296, 1, 545, 430], totalSpending = 15831.8}
+Country185 = {Name = "Morocco", Leader = "Odell Pollicote", supportMultiplier = 2, NumberOfForces = 21, NumberOfWeapons = [37, 39, 24, 25, 5, 8, 8, 27], WeaponsMultiplier = [5, 2, 5, 4, 4, 1, 5, 2], CountryStats = [185, 184, 515, 360, 916, 223, 574, 165], totalSpending = 4365.4}
+Country186 = {Name = "Turkey", Leader = "Amalea Burdett", supportMultiplier = 1, NumberOfForces = 10, NumberOfWeapons = [6, 37, 4, 50, 15, 42, 30, 10], WeaponsMultiplier = [2, 1, 5, 4, 4, 3, 4, 2], CountryStats = [235, 197, 838, 610, 224, 321, 446, 864], totalSpending = 87879.8}
+Country187 = {Name = "Indonesia", Leader = "Lou Kores", supportMultiplier = 4, NumberOfForces = 12, NumberOfWeapons = [29, 17, 26, 32, 20, 24, 40, 8], WeaponsMultiplier = [2, 5, 2, 1, 4, 3, 2, 4], CountryStats = [524, 341, 785, 62, 576, 447, 10, 636], totalSpending = 1973.4}
+Country188 = {Name = "Sweden", Leader = "Timoteo MacGinney", supportMultiplier = 3, NumberOfForces = 13, NumberOfWeapons = [28, 23, 13, 31, 22, 43, 20, 26], WeaponsMultiplier = [2, 1, 2, 1, 4, 5, 2, 3], CountryStats = [387, 249, 223, 725, 345, 838, 51, 137], totalSpending = 85204.8}
+Country189 = {Name = "Nepal", Leader = "Nicola Orcas", supportMultiplier = 5, NumberOfForces = 21, NumberOfWeapons = [43, 15, 33, 20, 39, 37, 42, 4], WeaponsMultiplier = [4, 5, 5, 2, 5, 2, 4, 5], CountryStats = [442, 930, 686, 484, 168, 783, 918, 627], totalSpending = 93172.8}
+Country190 = {Name = "Indonesia", Leader = "Faina Borrie", supportMultiplier = 3, NumberOfForces = 18, NumberOfWeapons = [17, 28, 40, 34, 19, 36, 35, 11], WeaponsMultiplier = [1, 4, 2, 2, 5, 1, 3, 1], CountryStats = [58, 505, 423, 482, 989, 638, 577, 153], totalSpending = 65513.6}
+Country191 = {Name = "Russia", Leader = "Kylen Tebbett", supportMultiplier = 4, NumberOfForces = 17, NumberOfWeapons = [13, 38, 40, 26, 36, 4, 8, 6], WeaponsMultiplier = [2, 1, 1, 3, 1, 1, 2, 1], CountryStats = [27, 485, 773, 793, 249, 100, 103, 573], totalSpending = 2162.2}
+Country192 = {Name = "China", Leader = "Inglis Odda", supportMultiplier = 4, NumberOfForces = 10, NumberOfWeapons = [30, 38, 2, 24, 4, 17, 1, 11], WeaponsMultiplier = [3, 5, 2, 4, 1, 3, 5, 1], CountryStats = [453, 555, 940, 27, 794, 239, 607, 873], totalSpending = 43349.0}
+Country193 = {Name = "Brazil", Leader = "Darnall Grundwater", supportMultiplier = 4, NumberOfForces = 23, NumberOfWeapons = [40, 40, 41, 32, 26, 27, 15, 16], WeaponsMultiplier = [1, 2, 4, 4, 5, 1, 3, 4], CountryStats = [820, 188, 562, 740, 910, 692, 418, 634], totalSpending = 5820.7}
+Country194 = {Name = "Philippines", Leader = "Kelci Goullee", supportMultiplier = 1, NumberOfForces = 10, NumberOfWeapons = [36, 19, 23, 47, 7, 0, 13, 15], WeaponsMultiplier = [3, 5, 3, 4, 3, 4, 5, 4], CountryStats = [497, 875, 317, 328, 378, 520, 129, 62], totalSpending = 26967.3}
+Country195 = {Name = "Sierra Leone", Leader = "Janna Svanetti", supportMultiplier = 2, NumberOfForces = 14, NumberOfWeapons = [8, 0, 38, 42, 24, 4, 23, 27], WeaponsMultiplier = [4, 3, 1, 4, 1, 4, 5, 1], CountryStats = [800, 709, 340, 22, 375, 541, 33, 993], totalSpending = 50028.6}
+Country196 = {Name = "Brazil", Leader = "Kilian Meltetal", supportMultiplier = 5, NumberOfForces = 16, NumberOfWeapons = [7, 30, 34, 10, 29, 23, 30, 10], WeaponsMultiplier = [1, 1, 4, 2, 4, 3, 1, 1], CountryStats = [628, 726, 112, 508, 477, 935, 749, 100], totalSpending = 57408.3}
+Country197 = {Name = "Philippines", Leader = "Dru Hatz", supportMultiplier = 2, NumberOfForces = 23, NumberOfWeapons = [50, 17, 36, 2, 20, 33, 18, 23], WeaponsMultiplier = [1, 4, 3, 5, 1, 1, 2, 1], CountryStats = [266, 335, 392, 462, 659, 121, 57, 273], totalSpending = 29892.4}
+Country198 = {Name = "Ukraine", Leader = "Garik Acosta", supportMultiplier = 5, NumberOfForces = 21, NumberOfWeapons = [2, 26, 37, 32, 9, 3, 37, 24], WeaponsMultiplier = [5, 3, 5, 4, 4, 3, 1, 3], CountryStats = [484, 234, 622, 788, 730, 421, 545, 86], totalSpending = 64100.6}
+Country199 = {Name = "China", Leader = "Melodee Francino", supportMultiplier = 5, NumberOfForces = 2, NumberOfWeapons = [37, 15, 28, 0, 2, 34, 28, 47], WeaponsMultiplier = [3, 5, 3, 1, 5, 5, 4, 2], CountryStats = [167, 391, 832, 484, 714, 38, 452, 375], totalSpending = 86985.8}
+Country200 = {Name = "Finland", Leader = "Miriam Bessent", supportMultiplier = 1, NumberOfForces = 21, NumberOfWeapons = [12, 25, 2, 16, 19, 28, 36, 2], WeaponsMultiplier = [1, 5, 5, 2, 2, 2, 3, 2], CountryStats = [357, 494, 498, 834, 315, 204, 558, 293], totalSpending = 40610.0}
 
 
-Force1 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country1", type = "G"}
-Force2 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country2", type = "A"}
-Force3 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country2", type = "N"}
-Force4 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country3", type = "N"}
-Force5 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country3", type = "G"}
-Force6 = {DMGX = 5, HPX = 8, maxTroops = 9, initTroops = 8, country = "Country4", type = "A"}
-Force7 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country4", type = "G"}
-Force8 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country5", type = "A"}
-Force9 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country10", type = "G"}
-Force10 = {DMGX = 5, HPX = 8, maxTroops = 10, initTroops = 8, country = "Country1", type = "A"}
+Force1 =   {DMGX = 3, HPX = 3, initTroops = 2382, type = "N"}
+Force2 =   {DMGX = 4, HPX = 1, initTroops = 6267, type = "N"}
+Force3 =   {DMGX = 4, HPX = 2, initTroops = 9327, type = "N"}
+Force4 =   {DMGX = 1, HPX = 2, initTroops = 2241, type = "N"}
+Force5 =   {DMGX = 4, HPX = 3, initTroops = 3686, type = "A"}
+Force6 =   {DMGX = 1, HPX = 4, initTroops = 3303, type = "G"}
+Force7 =   {DMGX = 1, HPX = 2, initTroops = 4496, type = "N"}
+Force8 =   {DMGX = 1, HPX = 1, initTroops = 1621, type = "A"}
+Force9 =   {DMGX = 1, HPX = 2, initTroops = 1514, type = "G"}
+Force10 =  {DMGX = 2, HPX = 5, initTroops = 1166, type = "N"}
+Force11 =  {DMGX = 3, HPX = 5, initTroops = 5458, type = "N"}
+Force12 =  {DMGX = 4, HPX = 4, initTroops = 4443, type = "A"}
+Force13 =  {DMGX = 1, HPX = 2, initTroops = 4387, type = "A"}
+Force14 =  {DMGX = 4, HPX = 1, initTroops = 3486, type = "N"}
+Force15 =  {DMGX = 2, HPX = 3, initTroops = 9288, type = "N"}
+Force16 =  {DMGX = 1, HPX = 2, initTroops = 4612, type = "N"}
+Force17 =  {DMGX = 5, HPX = 1, initTroops = 1673, type = "N"}
+Force18 =  {DMGX = 5, HPX = 4, initTroops = 4603, type = "G"}
+Force19 =  {DMGX = 2, HPX = 5, initTroops = 2858, type = "N"}
+Force20 =  {DMGX = 3, HPX = 2, initTroops = 7130, type = "N"}
+Force21 =  {DMGX = 1, HPX = 3, initTroops = 3501, type = "A"}
+Force22 =  {DMGX = 1, HPX = 3, initTroops = 1377, type = "A"}
+Force23 =  {DMGX = 1, HPX = 2, initTroops = 4978, type = "N"}
+Force24 =  {DMGX = 5, HPX = 2, initTroops = 1342, type = "A"}
+Force25 =  {DMGX = 4, HPX = 5, initTroops = 2861, type = "A"}
+Force26 =  {DMGX = 2, HPX = 4, initTroops = 8278, type = "A"}
+Force27 =  {DMGX = 1, HPX = 4, initTroops = 6568, type = "N"}
+Force28 =  {DMGX = 2, HPX = 5, initTroops = 5767, type = "N"}
+Force29 =  {DMGX = 1, HPX = 3, initTroops = 2763, type = "A"}
+Force30 =  {DMGX = 3, HPX = 3, initTroops = 7776, type = "N"}
+Force31 =  {DMGX = 3, HPX = 1, initTroops = 1917, type = "N"}
+Force32 =  {DMGX = 3, HPX = 3, initTroops = 4306, type = "N"}
+Force33 =  {DMGX = 2, HPX = 2, initTroops = 4728, type = "N"}
+Force34 =  {DMGX = 4, HPX = 2, initTroops = 9141, type = "G"}
+Force35 =  {DMGX = 2, HPX = 1, initTroops = 4550, type = "A"}
+Force36 =  {DMGX = 4, HPX = 2, initTroops = 2198, type = "N"}
+Force37 =  {DMGX = 2, HPX = 4, initTroops = 8894, type = "N"}
+Force38 =  {DMGX = 4, HPX = 2, initTroops = 7732, type = "A"}
+Force39 =  {DMGX = 2, HPX = 2, initTroops = 1302, type = "N"}
+Force40 =  {DMGX = 1, HPX = 2, initTroops = 1114, type = "G"}
+Force41 =  {DMGX = 5, HPX = 3, initTroops = 7987, type = "N"}
+Force42 =  {DMGX = 4, HPX = 3, initTroops = 2981, type = "N"}
+Force43 =  {DMGX = 5, HPX = 4, initTroops = 7936, type = "A"}
+Force44 =  {DMGX = 4, HPX = 1, initTroops = 4897, type = "N"}
+Force45 =  {DMGX = 2, HPX = 4, initTroops = 8560, type = "N"}
+Force46 =  {DMGX = 1, HPX = 4, initTroops = 8496, type = "A"}
+Force47 =  {DMGX = 4, HPX = 3, initTroops = 4935, type = "A"}
+Force48 =  {DMGX = 2, HPX = 5, initTroops = 1456, type = "G"}
+Force49 =  {DMGX = 3, HPX = 3, initTroops = 2492, type = "A"}
+Force50 =  {DMGX = 5, HPX = 5, initTroops = 5519, type = "N"}
+Force51 =  {DMGX = 1, HPX = 4, initTroops = 1732, type = "N"}
+Force52 =  {DMGX = 3, HPX = 2, initTroops = 2041, type = "N"}
+Force53 =  {DMGX = 1, HPX = 4, initTroops = 3181, type = "N"}
+Force54 =  {DMGX = 4, HPX = 5, initTroops = 2967, type = "A"}
+Force55 =  {DMGX = 2, HPX = 4, initTroops = 4675, type = "N"}
+Force56 =  {DMGX = 1, HPX = 1, initTroops = 2288, type = "N"}
+Force57 =  {DMGX = 4, HPX = 5, initTroops = 8805, type = "A"}
+Force58 =  {DMGX = 4, HPX = 4, initTroops = 2015, type = "N"}
+Force59 =  {DMGX = 2, HPX = 2, initTroops = 7044, type = "N"}
+Force60 =  {DMGX = 4, HPX = 2, initTroops = 2888, type = "N"}
+Force61 =  {DMGX = 1, HPX = 1, initTroops = 7525, type = "N"}
+Force62 =  {DMGX = 1, HPX = 5, initTroops = 3136, type = "N"}
+Force63 =  {DMGX = 5, HPX = 2, initTroops = 9089, type = "N"}
+Force64 =  {DMGX = 2, HPX = 2, initTroops = 7996, type = "A"}
+Force65 =  {DMGX = 4, HPX = 5, initTroops = 6513, type = "G"}
+Force66 =  {DMGX = 1, HPX = 5, initTroops = 6075, type = "N"}
+Force67 =  {DMGX = 3, HPX = 3, initTroops = 1598, type = "A"}
+Force68 =  {DMGX = 2, HPX = 3, initTroops = 8669, type = "A"}
+Force69 =  {DMGX = 1, HPX = 5, initTroops = 4278, type = "N"}
+Force70 =  {DMGX = 5, HPX = 5, initTroops = 8826, type = "A"}
+Force71 =  {DMGX = 1, HPX = 4, initTroops = 5968, type = "A"}
+Force72 =  {DMGX = 5, HPX = 3, initTroops = 9312, type = "N"}
+Force73 =  {DMGX = 5, HPX = 2, initTroops = 4380, type = "G"}
+Force74 =  {DMGX = 1, HPX = 2, initTroops = 4680, type = "N"}
+Force75 =  {DMGX = 3, HPX = 5, initTroops = 6805, type = "G"}
+Force76 =  {DMGX = 3, HPX = 2, initTroops = 1385, type = "N"}
+Force77 =  {DMGX = 1, HPX = 5, initTroops = 7461, type = "N"}
+Force78 =  {DMGX = 2, HPX = 2, initTroops = 2452, type = "A"}
+Force79 =  {DMGX = 5, HPX = 4, initTroops = 4725, type = "N"}
+Force80 =  {DMGX = 2, HPX = 5, initTroops = 8680, type = "N"}
+Force81 =  {DMGX = 5, HPX = 2, initTroops = 3517, type = "A"}
+Force82 =  {DMGX = 5, HPX = 3, initTroops = 3097, type = "G"}
+Force83 =  {DMGX = 2, HPX = 1, initTroops = 2503, type = "N"}
+Force84 =  {DMGX = 5, HPX = 2, initTroops = 8264, type = "N"}
+Force85 =  {DMGX = 3, HPX = 2, initTroops = 8759, type = "N"}
+Force86 =  {DMGX = 5, HPX = 5, initTroops = 8974, type = "A"}
+Force87 =  {DMGX = 1, HPX = 1, initTroops = 7735, type = "G"}
+Force88 =  {DMGX = 3, HPX = 2, initTroops = 2965, type = "N"}
+Force89 =  {DMGX = 2, HPX = 3, initTroops = 9208, type = "N"}
+Force90 =  {DMGX = 4, HPX = 2, initTroops = 8712, type = "N"}
+Force91 =  {DMGX = 3, HPX = 2, initTroops = 2775, type = "N"}
+Force92 =  {DMGX = 4, HPX = 2, initTroops = 7208, type = "A"}
+Force93 =  {DMGX = 3, HPX = 1, initTroops = 6877, type = "G"}
+Force94 =  {DMGX = 5, HPX = 3, initTroops = 4132, type = "N"}
+Force95 =  {DMGX = 3, HPX = 1, initTroops = 1633, type = "G"}
+Force96 =  {DMGX = 3, HPX = 3, initTroops = 7656, type = "A"}
+Force97 =  {DMGX = 5, HPX = 1, initTroops = 7340, type = "G"}
+Force98 =  {DMGX = 4, HPX = 5, initTroops = 7501, type = "N"}
+Force99 =  {DMGX = 4, HPX = 2, initTroops = 2795, type = "N"}
+Force100 = {DMGX = 2, HPX = 1, initTroops = 9668, type = "N"}
+Force101 = {DMGX = 2, HPX = 1, initTroops = 5955, type = "N"}
+Force102 = {DMGX = 1, HPX = 1, initTroops = 9064, type = "N"}
+Force103 = {DMGX = 2, HPX = 2, initTroops = 3743, type = "N"}
+Force104 = {DMGX = 5, HPX = 3, initTroops = 3957, type = "N"}
+Force105 = {DMGX = 4, HPX = 5, initTroops = 6312, type = "N"}
+Force106 = {DMGX = 5, HPX = 5, initTroops = 2702, type = "G"}
+Force107 = {DMGX = 5, HPX = 3, initTroops = 1815, type = "N"}
+Force108 = {DMGX = 3, HPX = 2, initTroops = 3587, type = "A"}
+Force109 = {DMGX = 2, HPX = 2, initTroops = 8174, type = "G"}
+Force110 = {DMGX = 5, HPX = 3, initTroops = 3808, type = "N"}
+Force111 = {DMGX = 5, HPX = 4, initTroops = 6509, type = "N"}
+Force112 = {DMGX = 3, HPX = 4, initTroops = 4463, type = "N"}
+Force113 = {DMGX = 2, HPX = 2, initTroops = 4579, type = "N"}
+Force114 = {DMGX = 4, HPX = 1, initTroops = 4384, type = "N"}
+Force115 = {DMGX = 3, HPX = 2, initTroops = 9938, type = "N"}
+Force116 = {DMGX = 2, HPX = 4, initTroops = 2178, type = "A"}
+Force117 = {DMGX = 1, HPX = 2, initTroops = 1054, type = "N"}
+Force118 = {DMGX = 2, HPX = 1, initTroops = 1193, type = "N"}
+Force119 = {DMGX = 5, HPX = 3, initTroops = 3505, type = "N"}
+Force120 = {DMGX = 1, HPX = 2, initTroops = 1975, type = "N"}
+Force121 = {DMGX = 5, HPX = 3, initTroops = 3815, type = "N"}
+Force122 = {DMGX = 5, HPX = 2, initTroops = 7900, type = "N"}
+Force123 = {DMGX = 4, HPX = 1, initTroops = 1226, type = "G"}
+Force124 = {DMGX = 5, HPX = 2, initTroops = 7090, type = "G"}
+Force125 = {DMGX = 1, HPX = 4, initTroops = 3624, type = "G"}
+Force126 = {DMGX = 5, HPX = 5, initTroops = 8957, type = "N"}
+Force127 = {DMGX = 2, HPX = 2, initTroops = 9835, type = "G"}
+Force128 = {DMGX = 2, HPX = 5, initTroops = 5405, type = "G"}
+Force129 = {DMGX = 5, HPX = 4, initTroops = 6309, type = "G"}
+Force130 = {DMGX = 3, HPX = 2, initTroops = 1678, type = "G"}
+Force131 = {DMGX = 3, HPX = 3, initTroops = 6481, type = "N"}
+Force132 = {DMGX = 5, HPX = 1, initTroops = 3286, type = "A"}
+Force133 = {DMGX = 5, HPX = 4, initTroops = 7548, type = "G"}
+Force134 = {DMGX = 4, HPX = 3, initTroops = 7462, type = "N"}
+Force135 = {DMGX = 5, HPX = 2, initTroops = 7817, type = "A"}
+Force136 = {DMGX = 5, HPX = 2, initTroops = 3088, type = "A"}
+Force137 = {DMGX = 3, HPX = 2, initTroops = 8830, type = "N"}
+Force138 = {DMGX = 5, HPX = 2, initTroops = 7017, type = "N"}
+Force139 = {DMGX = 5, HPX = 4, initTroops = 7341, type = "G"}
+Force140 = {DMGX = 5, HPX = 1, initTroops = 5046, type = "G"}
+Force141 = {DMGX = 3, HPX = 2, initTroops = 3237, type = "A"}
+Force142 = {DMGX = 3, HPX = 2, initTroops = 3007, type = "N"}
+Force143 = {DMGX = 3, HPX = 5, initTroops = 5636, type = "N"}
+Force144 = {DMGX = 1, HPX = 5, initTroops = 6860, type = "N"}
+Force145 = {DMGX = 3, HPX = 1, initTroops = 8447, type = "N"}
+Force146 = {DMGX = 2, HPX = 5, initTroops = 1680, type = "N"}
+Force147 = {DMGX = 5, HPX = 4, initTroops = 4157, type = "G"}
+Force148 = {DMGX = 5, HPX = 5, initTroops = 1244, type = "G"}
+Force149 = {DMGX = 1, HPX = 3, initTroops = 7833, type = "G"}
+Force150 = {DMGX = 4, HPX = 3, initTroops = 7734, type = "N"}
+Force151 = {DMGX = 4, HPX = 5, initTroops = 6665, type = "N"}
+Force152 = {DMGX = 3, HPX = 2, initTroops = 3619, type = "G"}
+Force153 = {DMGX = 5, HPX = 3, initTroops = 4668, type = "N"}
+Force154 = {DMGX = 4, HPX = 4, initTroops = 8624, type = "N"}
+Force155 = {DMGX = 4, HPX = 3, initTroops = 4000, type = "N"}
+Force156 = {DMGX = 2, HPX = 1, initTroops = 6857, type = "N"}
+Force157 = {DMGX = 3, HPX = 5, initTroops = 9953, type = "N"}
+Force158 = {DMGX = 5, HPX = 5, initTroops = 5749, type = "G"}
+Force159 = {DMGX = 2, HPX = 2, initTroops = 6528, type = "N"}
+Force160 = {DMGX = 5, HPX = 1, initTroops = 9810, type = "N"}
+Force161 = {DMGX = 5, HPX = 3, initTroops = 1979, type = "N"}
+Force162 = {DMGX = 1, HPX = 4, initTroops = 8680, type = "N"}
+Force163 = {DMGX = 4, HPX = 2, initTroops = 2142, type = "G"}
+Force164 = {DMGX = 3, HPX = 2, initTroops = 8045, type = "G"}
+Force165 = {DMGX = 3, HPX = 5, initTroops = 9452, type = "N"}
+Force166 = {DMGX = 5, HPX = 4, initTroops = 6548, type = "N"}
+Force167 = {DMGX = 4, HPX = 2, initTroops = 2787, type = "N"}
+Force168 = {DMGX = 2, HPX = 5, initTroops = 9447, type = "N"}
+Force169 = {DMGX = 1, HPX = 4, initTroops = 2406, type = "G"}
+Force170 = {DMGX = 4, HPX = 1, initTroops = 4216, type = "G"}
+Force171 = {DMGX = 3, HPX = 4, initTroops = 4116, type = "A"}
+Force172 = {DMGX = 1, HPX = 4, initTroops = 9442, type = "G"}
+Force173 = {DMGX = 3, HPX = 5, initTroops = 1125, type = "A"}
+Force174 = {DMGX = 3, HPX = 5, initTroops = 5285, type = "N"}
+Force175 = {DMGX = 4, HPX = 2, initTroops = 5538, type = "G"}
+Force176 = {DMGX = 1, HPX = 4, initTroops = 1823, type = "N"}
+Force177 = {DMGX = 3, HPX = 5, initTroops = 6001, type = "A"}
+Force178 = {DMGX = 4, HPX = 1, initTroops = 3411, type = "N"}
+Force179 = {DMGX = 2, HPX = 5, initTroops = 4109, type = "G"}
+Force180 = {DMGX = 5, HPX = 3, initTroops = 9335, type = "N"}
+Force181 = {DMGX = 2, HPX = 3, initTroops = 1068, type = "G"}
+Force182 = {DMGX = 3, HPX = 5, initTroops = 6390, type = "N"}
+Force183 = {DMGX = 1, HPX = 3, initTroops = 8256, type = "A"}
+Force184 = {DMGX = 1, HPX = 4, initTroops = 4475, type = "A"}
+Force185 = {DMGX = 1, HPX = 5, initTroops = 4464, type = "A"}
+Force186 = {DMGX = 5, HPX = 3, initTroops = 4786, type = "A"}
+Force187 = {DMGX = 3, HPX = 2, initTroops = 2748, type = "N"}
+Force188 = {DMGX = 1, HPX = 3, initTroops = 2828, type = "G"}
+Force189 = {DMGX = 1, HPX = 2, initTroops = 3418, type = "A"}
+Force190 = {DMGX = 2, HPX = 1, initTroops = 1809, type = "G"}
+Force191 = {DMGX = 5, HPX = 3, initTroops = 7877, type = "N"}
+Force192 = {DMGX = 4, HPX = 4, initTroops = 2692, type = "A"}
+Force193 = {DMGX = 2, HPX = 5, initTroops = 4408, type = "A"}
+Force194 = {DMGX = 2, HPX = 5, initTroops = 3680, type = "N"}
+Force195 = {DMGX = 3, HPX = 4, initTroops = 8786, type = "A"}
+Force196 = {DMGX = 2, HPX = 1, initTroops = 6343, type = "G"}
+Force197 = {DMGX = 1, HPX = 4, initTroops = 4619, type = "N"}
+Force198 = {DMGX = 4, HPX = 1, initTroops = 5983, type = "N"}
+Force199 = {DMGX = 5, HPX = 4, initTroops = 4962, type = "A"}
+Force200 = {DMGX = 4, HPX = 4, initTroops = 2672, type = "G"}
