@@ -3,8 +3,10 @@
 /**
  * @brief The constructor class for the AirForce class.
 */
-AirForce::AirForce() {
-
+AirForce::AirForce(int HPX, int DMGX, int Troops) {
+    _HPX = HPX;
+    _DMGX = DMGX;
+    _Troops = Troops;
 };
 
 /**
@@ -12,7 +14,7 @@ AirForce::AirForce() {
  * @return A health point for the airForce Soldier.
 */
 double AirForce::getHP() {
-    return _HPX/10*_Troops;
+    return _HPX*_Troops;
 };
 
 /**
@@ -20,7 +22,7 @@ double AirForce::getHP() {
  * @return A damage power for the airForce Soldier.
 */
 double AirForce::getDMG() {
-    return _DMGX/10*_Troops;
+    return _DMGX*_Troops;
 };
 
 /**

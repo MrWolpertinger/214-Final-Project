@@ -52,6 +52,7 @@ bool ArmyItorator::add(Army* element) {
     } catch (int i){
         return false;
     }
+    it = next.begin();
     return true; 
 };
 
@@ -60,6 +61,7 @@ bool ArmyItorator::remove(Army* element) {
     for(itTemp = next.begin(); itTemp != next.end(); itTemp++) {
         if(*itTemp == element) {
             next.erase(itTemp);
+            it = next.begin();
             return true;
         }
     }

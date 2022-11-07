@@ -3,8 +3,10 @@
 /**
  * @brief The constructor class for the GroundForce class.
 */
-GroundForce::GroundForce() {
-
+GroundForce::GroundForce(int HPX, int DMGX, int Troops) {
+    _HPX = HPX;
+    _DMGX = DMGX;
+    _Troops = Troops;
 };
 
 /**
@@ -12,7 +14,7 @@ GroundForce::GroundForce() {
  * @return A health point for the GroundForce Soldier.
 */
 double GroundForce::getHP() {
-    return _HPX/10*_Troops;
+    return _HPX*_Troops;
 };
 
 /**
@@ -20,7 +22,7 @@ double GroundForce::getHP() {
  * @return A damage power for the GroundForce Soldier.
 */
 double GroundForce::getDMG() {
-    return _DMGX/10*_Troops;
+    return _DMGX*_Troops;
 };
 
 /**

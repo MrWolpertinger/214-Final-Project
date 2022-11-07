@@ -7,7 +7,7 @@
 
 class Military : public Army{
     public:
-        Military();
+        Military() {};
         ArmyItorator* createIterator();
         int getMilitaryDamage();
         virtual ~Military();
@@ -15,6 +15,11 @@ class Military : public Army{
         bool remove(Army* element);
         double getTotalDMG();
         double getTotalHP();
+        double getHP() {};
+        double getDMG() {};
+        char getType() {return 'M';};
+        bool incHP(int) {};
+        bool decHP(int) {};
 
     private:
         std::vector<Army*> next;

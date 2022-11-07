@@ -3,8 +3,10 @@
 /**
  * @brief The constructor class for the Navy class.
 */
-Navy::Navy() {
-
+Navy::Navy(int HPX, int DMGX, int Troops) {
+    _HPX = HPX;
+    _DMGX = DMGX;
+    _Troops = Troops;
 }
 
 /**
@@ -12,14 +14,14 @@ Navy::Navy() {
  * @return A health point for the Navy Soldier.
 */
 double Navy::getHP() {
-    return _HPX/10*_Troops;
+    return _HPX*_Troops;
 }
 /**
  * @brief A getter function for the damage power of the Navy soldier.
  * @return A damage power for the Navy Soldier.
 */
 double Navy::getDMG() {
-    return _DMGX/10*_Troops;
+    return _DMGX*_Troops;
 };
 
 /**
