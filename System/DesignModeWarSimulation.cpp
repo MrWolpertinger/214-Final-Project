@@ -10,12 +10,10 @@
 #include "TransportationCorridor.h"
 #include "ConfigClass.h"
 
-#define BLUE    "\033[34m"
-#define CYAN    "\033[36m"
-#define GREEN   "\033[32m"
-#define RESET   "\033[0m"
-
-//#include "ConfigClass.h"
+#define BLUE "\033[34m"
+#define CYAN "\033[36m"
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
 
 DesignModeWarSimulation::DesignModeWarSimulation()
 {
@@ -48,8 +46,7 @@ void DesignModeWarSimulation::setUp()
 	string countryLeaderInput;
 	string totalMilitarySpendingInput;
 
-	string colors[3] = {BLUE,CYAN,GREEN};
-
+	string colors[3] = {BLUE, CYAN, GREEN};
 
 	cout << "\033[31m"
 		 << "Warphase: Intelligence"
@@ -72,9 +69,7 @@ void DesignModeWarSimulation::setUp()
 	{
 		noOfCountryGroups = 2;
 	}
-	countryGroups = new CountryGroup*[noOfCountryGroups];
-
-
+	countryGroups = new CountryGroup *[noOfCountryGroups];
 
 	for (int cg = 1; cg <= noOfCountryGroups; cg++)
 	{
@@ -82,7 +77,7 @@ void DesignModeWarSimulation::setUp()
 		if (cg != 3)
 		{
 			cout << "(Non-neutral Country Group) " << cg << ":" << endl;
-			//newCountryGroup->setIsNeutral(false);
+			// newCountryGroup->setIsNeutral(false);
 		}
 		else
 		{
@@ -92,8 +87,8 @@ void DesignModeWarSimulation::setUp()
 		cout << "Country Group Name: ";
 		cin.ignore();
 		getline(cin, countryGroupNameInput);
-		CountryGroup* newCountryGroup = new CountryGroup(countryGroupNameInput);
-		countryGroups[cg-1]=newCountryGroup;
+		CountryGroup *newCountryGroup = new CountryGroup(countryGroupNameInput);
+		countryGroups[cg - 1] = newCountryGroup;
 
 		if (cg != 3)
 		{
@@ -115,17 +110,17 @@ void DesignModeWarSimulation::setUp()
 
 		for (int i = 1; i <= noOfCountries; i++)
 		{
-			cout<<colors[(i-1)%3];
+			cout << colors[(i - 1) % 3];
 			cout << "\n\nCountry " << i << ":" << endl;
 
 			cout << "Country Name: ";
 			cin.ignore();
 			getline(cin, countryNameInput);
-			Country* newCountry = new Country(countryNameInput);
-			
+			Country *newCountry = new Country(countryNameInput);
+			newCountry->setCountryStrategy('A');
 
 			cout << "Country Leader: ";
-			cin.ignore();
+			// cin.ignore();
 			getline(cin, countryLeaderInput);
 			newCountry->setLeader(countryLeaderInput);
 
@@ -135,7 +130,7 @@ void DesignModeWarSimulation::setUp()
 			cin >> totalMilitarySpendingInput;
 			totalMilitarySpending = stol(totalMilitarySpendingInput);
 			newCountry->stats->setBudget(totalMilitarySpending);
-			//newCountry->setTotalMilitarySpending(totalMilitarySpendingInput);
+			// newCountry->setTotalMilitarySpending(totalMilitarySpendingInput);
 
 			// newCountry.setIsNeutral(cg==3?true:false);
 			// newCountry.setFlag(false);
@@ -179,7 +174,7 @@ void DesignModeWarSimulation::setUp()
 			// getline(cin, deathtoll);
 			// // newCountry.setDeathtoll(stoi(deathtoll));
 
-			cout<<"Vehicles:"<<endl;
+			cout << "Vehicles:" << endl;
 
 			string carCount;
 			cout << "How many cars does this country have: ";
@@ -201,8 +196,8 @@ void DesignModeWarSimulation::setUp()
 			cout << "How many cargo ships does this country have: ";
 			cin >> cargoShipCount;
 
-			TransportationCorridor* countryTransportationCorridor = new TransportationCorridor(stoi(carCount), stoi(busCount), stoi(truckCount), stoi(cargoTrainCount), stoi(cargoShipCount));
-			
+			TransportationCorridor *countryTransportationCorridor = new TransportationCorridor(stoi(carCount), stoi(busCount), stoi(truckCount), stoi(cargoTrainCount), stoi(cargoShipCount));
+
 			newCountry->setTransportationCorridor(countryTransportationCorridor);
 
 			// newCountry->setRefugeeCount(0);
@@ -226,11 +221,32 @@ void DesignModeWarSimulation::setUp()
 			// newCountry->returnedCitizens=0;
 			// newCountry->deathtoll=0;
 
-			//countryGroups[cg-1]->Allies.push_back(newCountry);//fix
-			
-			countryGroups[cg-1]->add(newCountry);
+			// countryGroups[cg-1]->Allies.push_back(newCountry);//fix
+
+			countryGroups[cg - 1]->add(newCountry);
 		}
-		cout<<RESET;
+		cout << RESET;
+	}
+
+	ConfigClass *c = ConfigClass::instance();
+	c->ParseConfigFile("../Data/config.toml");
+
+	// for (int i = 0; i < 10; i++)
+	// {
+	// 	for (int j = 0; j < c->ListOfCountries[i].NumberOfWeapons; j++)
+	// 	{
+	// 		std::cout << c->ListOfCountries[i].countryForces[j].MaxTroops << " ";
+	// 	}
+	// 	std::cout << "\n";
+	// }
+
+	int countryNo=0;
+	for (int cg = 1; cg <= noOfCountryGroups; cg++){
+		for (int i = 1; i <= countryGroups[cg-1]->Allies.size(); i++){
+			//(Country*)(countryGroups[cg-1]->Allies.at(i-1))->produceWeapons((Country*)(countryGroups[cg-1]->Allies.at(i-1))->stats->getBudget());
+			c->ListOfCountries[countryNo].NoOfWeapons;
+			countryNo++;
+		}
 	}
 
 	cout << "\033[31m"
@@ -261,7 +277,7 @@ void DesignModeWarSimulation::interrupt()
 
 void DesignModeWarSimulation::tweak()
 {
-	ConfigClass* myConfig = ConfigClass::instance();
+	ConfigClass *myConfig = ConfigClass::instance();
 	string multiplierChoice;
 	string newMultiplierValue;
 	cout << "You can change the following multipliers: Army, Weapons, Support" << endl;
@@ -272,15 +288,18 @@ void DesignModeWarSimulation::tweak()
 	transform(multiplierChoice.begin(), multiplierChoice.end(), multiplierChoice.begin(), ::tolower);
 	if (multiplierChoice == "a")
 	{
-		myConfig->ChangableX[0] = stoi(newMultiplierValue);
+		// myConfig->ChangableX[0] = stoi(newMultiplierValue);
+		armyMULTIPLIER = stoi(newMultiplierValue);
 	}
 	else if (multiplierChoice == "w")
 	{
-		myConfig->ChangableX[1] = stoi(newMultiplierValue);
+		// myConfig->ChangableX[1] = stoi(newMultiplierValue);
+		weaponsMULTIPLIER = stoi(newMultiplierValue);
 	}
 	else if (multiplierChoice == "s")
 	{
-		myConfig->ChangableX[2] = stoi(newMultiplierValue);
+		// myConfig->ChangableX[2] = stoi(newMultiplierValue);
+		supportMULTIPLIER = stoi(newMultiplierValue);
 	}
 }
 
@@ -302,10 +321,12 @@ void DesignModeWarSimulation::warloop()
 	cout << "\033[31m"
 		 << "Warphase: Occupation"
 		 << "\033[0m" << endl;
-	if (isThereANeutralCountryGroup=="y"){
-		int neutralJoinsWar= rand()%countryGroups[2]->Allies.size();
-		if (isThereANeutralCountryGroup=="y" && neutralJoinsWar==0){
-	   		countryGroups[0]->add(countryGroups[2]->Allies.at(0));
+	if (isThereANeutralCountryGroup == "y")
+	{
+		int neutralJoinsWar = rand() % countryGroups[2]->Allies.size();
+		if (isThereANeutralCountryGroup == "y" && neutralJoinsWar == 0)
+		{
+			countryGroups[0]->add(countryGroups[2]->Allies.at(0));
 		}
 	}
 
@@ -313,80 +334,86 @@ void DesignModeWarSimulation::warloop()
 
 	int time = 50;
 
-
-	while (warIsActive){
-
-	time+=rand()%10;
-	Country* countryA = (Country*)countryGroups[0]->Allies.at(rand()%countryGroups[0]->Allies.size());
-	Country* countryB = (Country*)countryGroups[1]->Allies.at(rand()%countryGroups[0]->Allies.size());
-	
-
-	string countryChoiceA;
-	string countryChoiceB;
-	cout << "What would you like to do"<<" for country "<<countryA->getName()<<": \nAttack (A) \nRequest Assistance (R) \nChange Strategy (S) (A/R/S)";
-	cin >> countryChoiceA;
-	transform(countryChoiceA.begin(), countryChoiceA.end(), countryChoiceA.begin(), ::tolower);
-	if (countryChoiceA == "a")
+	while (warIsActive)
 	{
-		string warTheatreName;
-		cout << "War Theatre Name: ";
-		cin.ignore();
-		getline(cin, warTheatreName);
-		
-		War_Theatre* newWarTheatre = new Land_War_Theatre(warTheatreName,countryA,countryB);
-		
-		Battle* newBattle = new Battle("Battle of "+warTheatreName, to_string(time), to_string(time+rand()%5),countryA,countryB,'L');
-		countryA->print();
-		countryB->print();
-		countryA->attack(countryB);
-		
-	}
-	else if (countryChoiceA == "r"){
-		countryA->requestAssistance();
-	}else if (countryChoiceA == "s"){
-		countryA->setCountryStrategy();
-		// cout<<"What is the strategy for "<<countryA->getName()<<"(A/D/S)"<<endl;
-		// cin>>countryAStrategy;
-		// transform(countryAStrategy.begin(), countryAStrategy.end(), countryAStrategy.begin(), ::tolower);
-		// if (countryAStrategy=="A"){
-		// 	countryA->
-		// }
-	}else if(countryChoiceA == "d"){
-		
-	}else if(countryChoiceA == "p"){
-		interrupt();
-	}
 
-	cout << "What would you like to do"<<"for country"<<countryB->getName()<<": \nAttack (A) \nRequest Assistance (R) \n Change Strategy (S) (A/R/S)";
-	cin >> countryChoiceB;
-	transform(countryChoiceB.begin(), countryChoiceB.end(), countryChoiceB.begin(), ::tolower);
-	if (countryChoiceB == "a")
-	{
-		 string warTheatreName;
-		cout << " Name: ";
-		cin.ignore();
-		getline(cin, warTheatreName);
-		War_Theatre* newWarTheatre = new Land_War_Theatre(warTheatreName,countryB,countryA);
+		time += rand() % 10;
+		Country *countryA = (Country *)countryGroups[0]->Allies.at(rand() % countryGroups[0]->Allies.size());
+		Country *countryB = (Country *)countryGroups[1]->Allies.at(rand() % countryGroups[0]->Allies.size());
 
-		Battle* newBattle = new Battle("Battle of "+warTheatreName, to_string(time), to_string(time+rand()%5),countryB,countryA,'L');
+		string countryChoiceA;
+		string countryChoiceB;
+		cout << "What would you like to do"
+			 << " for country " << countryA->getName() << ": \nAttack (A) \nRequest Assistance (R) \nChange Strategy (S) (A/R/S)";
+		cin >> countryChoiceA;
+		transform(countryChoiceA.begin(), countryChoiceA.end(), countryChoiceA.begin(), ::tolower);
+		if (countryChoiceA == "a")
+		{
+			string warTheatreName;
+			cout << "War Theatre Name: ";
+			cin.ignore();
+			getline(cin, warTheatreName);
 
-		countryA->attack(countryB);
-	}
-	else if (countryChoiceB == "r"){
-		//countryA->requestAssistance(countryGroups[0]->Allies.at(rand()%countryGroups[0]->Allies.size()));
-		countryB->requestAssistance();
-	}else if (countryChoiceB == "s"){
-		countryB->setCountryStrategy();
-		// cout<<"What is the strategy for "<<countryA->getName()<<"(A/D/S)"<<endl;
-		// cin>>countryAStrategy;
-		// cout<<"What is the strategy for "<<countryB->getName()<<"(A/D/S)"<<endl;
-		// cin>>countryBStrategy;
-		// transform(countryAStrategy.begin(), countryAStrategy.end(), countryAStrategy.begin(), ::tolower);
-		// transform(countryBStrategy.begin(), countryBStrategy.end(), countryBStrategy.begin(), ::tolower);
-	}else if(countryChoiceA == "d"){
-		
-	}else if(countryChoiceB == "p"){
-		interrupt();
-	}
+			War_Theatre *newWarTheatre = new Land_War_Theatre(warTheatreName, countryA, countryB);
+
+			Battle *newBattle = new Battle("Battle of " + warTheatreName, to_string(time), to_string(time + rand() % 5), countryA, countryB, 'L');
+			countryA->print();
+			countryB->print();
+			countryA->attack(countryB);
+		}
+		else if (countryChoiceA == "r")
+		{
+			countryA->requestAssistance();
+		}
+		else if (countryChoiceA == "s")
+		{
+			cout << "What is the strategy for " << countryA->getName() << "(A/D/S)" << endl;
+			cin >> countryAStrategy;
+			transform(countryAStrategy.begin(), countryAStrategy.end(), countryAStrategy.begin(), ::toupper);
+			countryA->setCountryStrategy(countryAStrategy.at(0));
+		}
+		else if (countryChoiceA == "d")
+		{
+		}
+		else if (countryChoiceA == "p")
+		{
+			interrupt();
+		}
+
+		cout << "What would you like to do"
+			 << "for country" << countryB->getName() << ": \nAttack (A) \nRequest Assistance (R) \n Change Strategy (S) (A/R/S)";
+		cin >> countryChoiceB;
+		transform(countryChoiceB.begin(), countryChoiceB.end(), countryChoiceB.begin(), ::tolower);
+		if (countryChoiceB == "a")
+		{
+			string warTheatreName;
+			cout << " Name: ";
+			cin.ignore();
+			getline(cin, warTheatreName);
+			War_Theatre *newWarTheatre = new Land_War_Theatre(warTheatreName, countryB, countryA);
+
+			Battle *newBattle = new Battle("Battle of " + warTheatreName, to_string(time), to_string(time + rand() % 5), countryB, countryA, 'L');
+
+			countryA->attack(countryB);
+		}
+		else if (countryChoiceB == "r")
+		{
+			// countryA->requestAssistance(countryGroups[0]->Allies.at(rand()%countryGroups[0]->Allies.size()));
+			countryB->requestAssistance();
+		}
+		else if (countryChoiceB == "s")
+		{
+			cout << "What is the strategy for " << countryB->getName() << "(A/D/S)" << endl;
+			cin >> countryBStrategy;
+			transform(countryBStrategy.begin(), countryBStrategy.end(), countryBStrategy.begin(), ::toupper);
+			countryA->setCountryStrategy(countryBStrategy.at(0));
+		}
+		else if (countryChoiceA == "d")
+		{
+		}
+		else if (countryChoiceB == "p")
+		{
+			interrupt();
+		}
 	}
 }

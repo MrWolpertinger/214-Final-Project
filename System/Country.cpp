@@ -23,16 +23,22 @@ void Country::print(){
     cout << "Country Name: " << this->getName() << "\n";
     cout << "Country Leader: " << this->getLeader() << "\n";
 
-    bool o = false;
-    if (this->isNeutral)
-        o = true;
-    cout << "Country Neutral: " << o << "\n";
+    // bool o = false;
+    // if (this->isNeutral)
+    //     o = true;
+    // cout << "Country Neutral: " << o << "\n";
 
     bool surr = false;
     if (this->flag)
         surr = true;
-    cout << "Country Surrendered: " << surr;
+    //cout << "Country Surrendered: " << surr;
+    if (surr){
+        cout << "Country Surrendered: True"<<endl;
+    }else{
+        cout << "Country Surrendered: False"<<endl;
+    }
     stats->print();
+    cout<<endl<<endl<<endl;
 }
 
 /**
@@ -68,17 +74,17 @@ void Country::receiveDamage(int damage){
  * @param c The opposing country which is being attacked.
  */
 void Country::attack(AlliedForce* c){
-    cout<<"hello1\n";
-    string phase = "";
-    phase = this->phase->getPhase();
-    if (phase == "Intelligence Phase ."){
-        cout << "Cannot attack in the intelligence phase!\n";
-        return;
-    }
-    else if (phase == "Finished Phase ."){
-        cout << "Cannot attack whilst the war is finished!\n";
-        return;
-    }
+    // cout<<"hello1\n";
+    // string phase = "";
+    // phase = this->phase->getPhase();
+    // if (phase == "Intelligence Phase ."){
+    //     cout << "Cannot attack in the intelligence phase!\n";
+    //     return;
+    // }
+    // else if (phase == "Finished Phase ."){
+    //     cout << "Cannot attack whilst the war is finished!\n";
+    //     return;
+    // }
 
     string check = this->getStrategy();
     if (check != "Aggressive Strategy"){
@@ -86,11 +92,17 @@ void Country::attack(AlliedForce* c){
         return;
     }
 
-    int x = getArsenalDmg();
-    ArmyItorator* p = (this->_mil)->createIterator();
-    x += static_cast<int>(_mil->getMilitaryDamage());
-    cout << this->getName() << " is now attacking " << c->getName() << ".\n";
-    ((Country*)c)->receiveDamage(x);
+    // cout<<"hello1\n";
+    // int x = getArsenalDmg();
+    // cout<<"hello2\n";
+    // ArmyItorator* p = (this->_mil)->createIterator();
+    // cout<<"hello3\n";
+    // x += static_cast<int>(_mil->getMilitaryDamage());
+    // cout<<"hello4\n";
+    // cout << this->getName() << " is now attacking " << c->getName() << ".\n";
+    // cout<<"hello5\n";
+    ((Country*)c)->receiveDamage(rand()%1000000);
+    //cout<<"hello6\n";
 }
 
 /**
@@ -98,7 +110,7 @@ void Country::attack(AlliedForce* c){
  * @return The current country Strategy.
 */
 string Country::getStrategy(){
-    cout<< strategy->getCountryStrategy() << endl ;
+    //cout<< strategy->getCountryStrategy() << endl ;
     return strategy->getCountryStrategy();
 }
 
@@ -165,25 +177,25 @@ void Country::changeWarPhase(){
 /**
  * @brief Set the country battle strategy based on user input. 
 */
-void Country::setCountryStrategy(){
-    char answer ;
-    cout<<"What Strategy is the Country using currently ? \n Type 'A' if country is Aggresive \n Type 'B' if country is Defensive \n Type 'C' if country is Supportive ." << endl ;
-    cin>> answer ;
+void Country::setCountryStrategy(char answer){
+    // char answer ;
+    // cout<<"What Strategy is the Country using currently ? \n Type 'A' if country is Aggresive \n Type 'B' if country is Defensive \n Type 'C' if country is Supportive ." << endl ;
+    // cin>> answer ;
     switch (answer){
      case 'A':
         this->strategy = new Aggresive() ;
-        cout<<"Aggrasive Strategy chosen \n" ;
+        cout<<"Country Strategy: Aggressive Strategy \n" ;
         break;
-     case 'B':
+     case 'D':
         this->strategy = new Defensive() ;
-        cout<<"Defensive Strategy chosen \n" ;
+        cout<<"Country Strategy: Defensive Strategy \n" ;
         break;
-    case 'C':
+    case 'S':
         this->strategy = new Supportive() ;
-        cout<<"Supportive Strategy chosen \n" ;
+        cout<<"Country Strategy: Supportive Strategy \n" ;
         break;
     default:
-       cout<<"No strategy chosen \n" ;
+       cout<<"Invalid Strategy \n" ;
     }
     
 }
@@ -348,7 +360,7 @@ void Country::produceWeapons(int budget){
 int Country::getArsenalDmg(){
     int TotalDamage=0;
     for(int i=0;i<8;i++){
-        if(arsenal[i])
+        if(arsenal[i]!=nullptr)
             TotalDamage+=arsenal[i]->getTotalDamage();
     }
     return TotalDamage;

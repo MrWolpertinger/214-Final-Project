@@ -35,7 +35,7 @@ Supportive::~Supportive(){
 */
 string Aggresive::getCountryStrategy(){
    
-    return "Aggrasive Strategy";
+    return "Aggressive Strategy";
 }
 
 /**

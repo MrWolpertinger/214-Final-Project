@@ -22,6 +22,10 @@ public:
     bool warIsActive;
     string isThereANeutralCountryGroup;
 
+    int armyMULTIPLIER = 50;
+    int weaponsMULTIPLIER = 50;
+    int supportMULTIPLIER = 50;
+
 	WarSimulation();
     ~WarSimulation();
     virtual void setUp();

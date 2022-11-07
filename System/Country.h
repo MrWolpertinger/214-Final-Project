@@ -24,7 +24,6 @@ class Country : public AlliedForce{
         int HP;
         WarPhase* phase;
         CountryStrategy* strategy;
-        Weapons** arsenal;
         Military* _mil;
         TransportationCorridor* transportationCorridor;
         CountryGroup* myGroup;
@@ -51,7 +50,7 @@ class Country : public AlliedForce{
         void setWarPhase();
         void iteratePhases(WarPhase* phase_);
         void changeWarPhase();
-        void setCountryStrategy();
+        void setCountryStrategy(char answer);
         string getStrategy();
 
         /////
@@ -77,6 +76,7 @@ class Country : public AlliedForce{
         // int enlistedCitizens;
 
         CountryStats* stats;
+        Weapons** arsenal;
 };
 
 #endif

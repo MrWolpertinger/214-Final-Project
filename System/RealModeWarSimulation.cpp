@@ -283,7 +283,10 @@ void RealModeWarSimulation::warloop(){
 	else if (countryChoiceA == "r"){
 		countryA->requestAssistance();
 	}else if (countryChoiceA == "s"){
-		countryA->setCountryStrategy();
+		cout<<"What is the strategy for "<<countryA->getName()<<"(A/D/S)"<<endl;
+		cin>>countryAStrategy;
+		transform(countryAStrategy.begin(), countryAStrategy.end(), countryAStrategy.begin(), ::toupper);
+		countryA->setCountryStrategy(countryAStrategy.at(0));
 	}else if(countryChoiceA == "d"){
 		
 	}
@@ -307,7 +310,10 @@ void RealModeWarSimulation::warloop(){
 		//countryA->requestAssistance(countryGroups[0]->Allies.at(rand()%countryGroups[0]->Allies.size()));
 		countryB->requestAssistance();
 	}else if (countryChoiceB == "s"){
-		countryB->setCountryStrategy();
+		cout<<"What is the strategy for "<<countryB->getName()<<"(A/D/S)"<<endl;
+		cin>>countryBStrategy;
+		transform(countryBStrategy.begin(), countryBStrategy.end(), countryBStrategy.begin(), ::toupper);
+		countryA->setCountryStrategy(countryBStrategy.at(0));
 	}else if(countryChoiceA == "d"){
 		
 	}
