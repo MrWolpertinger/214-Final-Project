@@ -42,7 +42,7 @@ void Country::print(){
 void Country::setAlliance(AlliedForce* a){
     if (this->A  == NULL){
         this->A = a;
-        cout << "This country now belongs to " << a->getName();
+        cout << "This country now belongs to " << a->getName()<<endl;
         return;
     }
 }
@@ -68,6 +68,7 @@ void Country::receiveDamage(int damage){
  * @param c The opposing country which is being attacked.
  */
 void Country::attack(AlliedForce* c){
+    cout<<"hello1\n";
     string phase = "";
     phase = this->phase->getPhase();
     if (phase == "Intelligence Phase ."){
@@ -293,7 +294,7 @@ void Country::setMil(Military* m){
  * @brief Set the background stats of the country. Reads the stats from a @dir "../data/data.txt".
 */
 void Country::setStats(){
-
+    stats=new CountryStats();
 }
 
 /**

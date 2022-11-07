@@ -8,6 +8,13 @@
 #include "Sea_War_Theatre.h"
 #include "Airspace_War_Theatre.h"
 #include "TransportationCorridor.h"
+#include "ConfigClass.h"
+
+#define BLUE    "\033[34m"
+#define CYAN    "\033[36m"
+#define GREEN   "\033[32m"
+#define RESET   "\033[0m"
+
 //#include "ConfigClass.h"
 
 DesignModeWarSimulation::DesignModeWarSimulation()
@@ -41,6 +48,9 @@ void DesignModeWarSimulation::setUp()
 	string countryLeaderInput;
 	string totalMilitarySpendingInput;
 
+	string colors[3] = {BLUE,CYAN,GREEN};
+
+
 	cout << "\033[31m"
 		 << "Warphase: Intelligence"
 		 << "\033[0m" << endl;
@@ -64,6 +74,8 @@ void DesignModeWarSimulation::setUp()
 	}
 	countryGroups = new CountryGroup*[noOfCountryGroups];
 
+
+
 	for (int cg = 1; cg <= noOfCountryGroups; cg++)
 	{
 		cout << "\n\n\n\nCountry Group ";
@@ -81,6 +93,7 @@ void DesignModeWarSimulation::setUp()
 		cin.ignore();
 		getline(cin, countryGroupNameInput);
 		CountryGroup* newCountryGroup = new CountryGroup(countryGroupNameInput);
+		countryGroups[cg-1]=newCountryGroup;
 
 		if (cg != 3)
 		{
@@ -102,13 +115,14 @@ void DesignModeWarSimulation::setUp()
 
 		for (int i = 1; i <= noOfCountries; i++)
 		{
-
+			cout<<colors[(i-1)%3];
 			cout << "\n\nCountry " << i << ":" << endl;
 
 			cout << "Country Name: ";
 			cin.ignore();
 			getline(cin, countryNameInput);
 			Country* newCountry = new Country(countryNameInput);
+			
 
 			cout << "Country Leader: ";
 			cin.ignore();
@@ -120,6 +134,7 @@ void DesignModeWarSimulation::setUp()
 			// getline(cin, totalMilitarySpendingInput);
 			cin >> totalMilitarySpendingInput;
 			totalMilitarySpending = stol(totalMilitarySpendingInput);
+			newCountry->stats->setBudget(totalMilitarySpending);
 			//newCountry->setTotalMilitarySpending(totalMilitarySpendingInput);
 
 			// newCountry.setIsNeutral(cg==3?true:false);
@@ -128,7 +143,7 @@ void DesignModeWarSimulation::setUp()
 
 			cout << "Unlisted Citizens: ";
 			cin >> unlistedCitizens;
-			newCountry->unlistedCitizens=stoi(unlistedCitizens);
+			newCountry->stats->setUnlisted(stoi(unlistedCitizens));
 
 			// cout << "Refugee Count: ";
 			// cin.ignore();
@@ -137,7 +152,7 @@ void DesignModeWarSimulation::setUp()
 
 			cout << "Enlisted Citizens: ";
 			cin >> enlistedCitizens;
-			newCountry->enlistedCitizens=stoi(enlistedCitizens);
+			newCountry->stats->setEnlisted(stoi(enlistedCitizens));
 
 			// cout << "Deployed Citizens: ";
 			// cin.ignore();
@@ -197,16 +212,25 @@ void DesignModeWarSimulation::setUp()
 			// newCountry->setReturnedCitizens(0);
 			// newCountry->setDeathtoll(0);
 
-			newCountry->refugeeCount=0;
-			newCountry->deployedCitizens=0;
-			newCountry->fightingCitizens=0;
-			newCountry->stationedCitizens=0;
-			newCountry->returnedCitizens=0;
-			newCountry->deathtoll=0;
+			newCountry->stats->setRefugee(0);
+			newCountry->stats->setDeployed(0);
+			newCountry->stats->setFighting(0);
+			newCountry->stats->setStationed(0);
+			newCountry->stats->setReturned(0);
+			newCountry->stats->setDeath(0);
+
+			// newCountry->refugeeCount=0;
+			// newCountry->deployedCitizens=0;
+			// newCountry->fightingCitizens=0;
+			// newCountry->stationedCitizens=0;
+			// newCountry->returnedCitizens=0;
+			// newCountry->deathtoll=0;
 
 			//countryGroups[cg-1]->Allies.push_back(newCountry);//fix
+			
 			countryGroups[cg-1]->add(newCountry);
 		}
+		cout<<RESET;
 	}
 
 	cout << "\033[31m"
@@ -237,6 +261,7 @@ void DesignModeWarSimulation::interrupt()
 
 void DesignModeWarSimulation::tweak()
 {
+	ConfigClass* myConfig = ConfigClass::instance();
 	string multiplierChoice;
 	string newMultiplierValue;
 	cout << "You can change the following multipliers: Army, Weapons, Support" << endl;
@@ -247,15 +272,15 @@ void DesignModeWarSimulation::tweak()
 	transform(multiplierChoice.begin(), multiplierChoice.end(), multiplierChoice.begin(), ::tolower);
 	if (multiplierChoice == "a")
 	{
-		//ChangableX[0] = stoi(newMultiplierValue);
+		myConfig->ChangableX[0] = stoi(newMultiplierValue);
 	}
 	else if (multiplierChoice == "w")
 	{
-		//ChangableX[1] = stoi(newMultiplierValue);
+		myConfig->ChangableX[1] = stoi(newMultiplierValue);
 	}
 	else if (multiplierChoice == "s")
 	{
-		//ChangableX[2] = stoi(newMultiplierValue);
+		myConfig->ChangableX[2] = stoi(newMultiplierValue);
 	}
 }
 
@@ -277,9 +302,11 @@ void DesignModeWarSimulation::warloop()
 	cout << "\033[31m"
 		 << "Warphase: Occupation"
 		 << "\033[0m" << endl;
-	int neutralJoinsWar= rand()%countryGroups[2]->Allies.size();
-	if (isThereANeutralCountryGroup=="y" && neutralJoinsWar==0){
-	   countryGroups[0]->add(countryGroups[2]->Allies.at(0));
+	if (isThereANeutralCountryGroup=="y"){
+		int neutralJoinsWar= rand()%countryGroups[2]->Allies.size();
+		if (isThereANeutralCountryGroup=="y" && neutralJoinsWar==0){
+	   		countryGroups[0]->add(countryGroups[2]->Allies.at(0));
+		}
 	}
 
 	string countryAStrategy, countryBStrategy;
@@ -296,20 +323,23 @@ void DesignModeWarSimulation::warloop()
 
 	string countryChoiceA;
 	string countryChoiceB;
-	cout << "What would you like to do"<<"for country"<<countryA->getName()<<": \nAttack (A) \nRequest Assistance (R) \n Change Strategy (S) (A/R/S)";
+	cout << "What would you like to do"<<" for country "<<countryA->getName()<<": \nAttack (A) \nRequest Assistance (R) \nChange Strategy (S) (A/R/S)";
 	cin >> countryChoiceA;
 	transform(countryChoiceA.begin(), countryChoiceA.end(), countryChoiceA.begin(), ::tolower);
 	if (countryChoiceA == "a")
 	{
 		string warTheatreName;
-		cout << " Name: ";
+		cout << "War Theatre Name: ";
 		cin.ignore();
 		getline(cin, warTheatreName);
+		
 		War_Theatre* newWarTheatre = new Land_War_Theatre(warTheatreName,countryA,countryB);
-
+		
 		Battle* newBattle = new Battle("Battle of "+warTheatreName, to_string(time), to_string(time+rand()%5),countryA,countryB,'L');
-
+		countryA->print();
+		countryB->print();
 		countryA->attack(countryB);
+		
 	}
 	else if (countryChoiceA == "r"){
 		countryA->requestAssistance();

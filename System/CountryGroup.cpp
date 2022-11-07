@@ -40,10 +40,10 @@ void CountryGroup::print(){
  * @param ct a new country/ countryGroup member of this group.
 */
 void CountryGroup::add(AlliedForce* ct){
-    if (!(ct->CG())){
-        cout << "Cannot add countries to other countries, only to other country groups.\n";
-        return;
-    }
+    // if (!(ct->CG())){
+    //     cout << "Cannot add countries to other countries, only to other country groups.\n";
+    //     return;
+    // }
     this->Allies.push_back(ct);
     ((Country*)ct)->setAlliance(this);
     cout << ct->getName() << " has been added to " << this->getName() << "\n";

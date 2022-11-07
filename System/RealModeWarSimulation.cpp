@@ -9,6 +9,11 @@
 #include "Airspace_War_Theatre.h"
 #include "TransportationCorridor.h"
 
+#define BLUE    "\033[34m"
+#define CYAN    "\033[36m"
+#define GREEN   "\033[32m"
+#define RESET   "\033[0m"
+
 RealModeWarSimulation::RealModeWarSimulation() {
 	this->setUp();
 }
@@ -39,9 +44,13 @@ void RealModeWarSimulation::setUp()
 	string countryLeaderInput;
 	string totalMilitarySpendingInput;
 
+	string colors[3] = {BLUE,CYAN,GREEN};
+
+
 	cout << "\033[31m"
 		 << "Warphase: Intelligence"
 		 << "\033[0m" << endl;
+	
 
 	// // Number of country Groups
 	// cout << "How many country groups are there in this simulation?" << endl;
@@ -100,13 +109,14 @@ void RealModeWarSimulation::setUp()
 
 		for (int i = 1; i <= noOfCountries; i++)
 		{
-
+			cout<<colors[(i-1)%3];
 			cout << "\n\nCountry " << i << ":" << endl;
 
 			cout << "Country Name: ";
 			cin.ignore();
 			getline(cin, countryNameInput);
 			Country* newCountry = new Country(countryNameInput);
+			
 
 			cout << "Country Leader: ";
 			cin.ignore();
@@ -118,6 +128,7 @@ void RealModeWarSimulation::setUp()
 			// getline(cin, totalMilitarySpendingInput);
 			cin >> totalMilitarySpendingInput;
 			totalMilitarySpending = stol(totalMilitarySpendingInput);
+			newCountry->stats->setBudget(totalMilitarySpending);
 			//newCountry->setTotalMilitarySpending(totalMilitarySpendingInput);
 
 			// newCountry.setIsNeutral(cg==3?true:false);
@@ -126,7 +137,7 @@ void RealModeWarSimulation::setUp()
 
 			cout << "Unlisted Citizens: ";
 			cin >> unlistedCitizens;
-			newCountry->unlistedCitizens=stoi(unlistedCitizens);
+			newCountry->stats->setUnlisted(stoi(unlistedCitizens));
 
 			// cout << "Refugee Count: ";
 			// cin.ignore();
@@ -135,7 +146,7 @@ void RealModeWarSimulation::setUp()
 
 			cout << "Enlisted Citizens: ";
 			cin >> enlistedCitizens;
-			newCountry->enlistedCitizens=stoi(enlistedCitizens);
+			newCountry->stats->setEnlisted(stoi(enlistedCitizens));
 
 			// cout << "Deployed Citizens: ";
 			// cin.ignore();
@@ -195,16 +206,24 @@ void RealModeWarSimulation::setUp()
 			// newCountry->setReturnedCitizens(0);
 			// newCountry->setDeathtoll(0);
 
-			newCountry->refugeeCount=0;
-			newCountry->deployedCitizens=0;
-			newCountry->fightingCitizens=0;
-			newCountry->stationedCitizens=0;
-			newCountry->returnedCitizens=0;
-			newCountry->deathtoll=0;
+			newCountry->stats->setRefugee(0);
+			newCountry->stats->setDeployed(0);
+			newCountry->stats->setFighting(0);
+			newCountry->stats->setStationed(0);
+			newCountry->stats->setReturned(0);
+			newCountry->stats->setDeath(0);
+
+			// newCountry->refugeeCount=0;
+			// newCountry->deployedCitizens=0;
+			// newCountry->fightingCitizens=0;
+			// newCountry->stationedCitizens=0;
+			// newCountry->returnedCitizens=0;
+			// newCountry->deathtoll=0;
 
 			//countryGroups[cg-1]->Allies.push_back(newCountry);//fix
 			countryGroups[cg-1]->add(newCountry);
 		}
+		cout<<RESET;
 	}
 
 	cout << "\033[31m"

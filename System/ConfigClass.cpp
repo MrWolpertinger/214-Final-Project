@@ -38,15 +38,15 @@ void ConfigClass::ParseConfigFile(std::string path) {
 
     //create and populate country
     this->SizeOfArr = *tbl.at_path("CountryNumber").value<int>();
-    this->ListOfCountries = new Country[this->SizeOfArr];// allocating memory for country structs
+    this->ListOfCountries = new CountryStruct[this->SizeOfArr];// allocating memory for country structs
 
     for (int i = 0; i < this->SizeOfArr; i++) {
         this->ListOfCountries[i].NumOfForces = *tbl.at_path("Country" + std::to_string(i+1) + ".NumberOfForces").value<int>();
         int troopAlocated = 0;
-        this->ListOfCountries[i].countryForces = new Force[this->ListOfCountries[i].NumOfForces];
+        this->ListOfCountries[i].CountryForces = new Force[this->ListOfCountries[i].NumOfForces];
         for(int j = 0; (j < TotalTroops && troopAlocated < this->ListOfCountries[i].NumOfForces); j++) {
             if(f[j].Country == ("Country" + std::to_string(i+1))) {
-                this->ListOfCountries[i].countryForces[troopAlocated++] = f[i];
+                this->ListOfCountries[i].CountryForces[troopAlocated++] = f[i];
             }
         }
         //added Force structs to country structs

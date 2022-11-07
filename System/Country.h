@@ -28,7 +28,7 @@ class Country : public AlliedForce{
         Military* _mil;
         TransportationCorridor* transportationCorridor;
         CountryGroup* myGroup;
-        CountryStats* stats;
+        
 
     public:
         Country(string name);
@@ -67,14 +67,16 @@ class Country : public AlliedForce{
         void produceWeapons(int budget);
         int getArsenalDmg();
 
-        int refugeeCount;
-		int deployedCitizens;
-		int fightingCitizens;
-		int stationedCitizens;
-		int returnedCitizens;
-		int deathtoll;
-        int unlistedCitizens;
-        int enlistedCitizens;
+        // int refugeeCount;
+		// int deployedCitizens;
+		// int fightingCitizens;
+		// int stationedCitizens;
+		// int returnedCitizens;
+		// int deathtoll;
+        // int unlistedCitizens;
+        // int enlistedCitizens;
+
+        CountryStats* stats;
 };
 
 #endif
