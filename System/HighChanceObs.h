@@ -7,7 +7,7 @@ class HighChanceObs : public Obstacle
 private:
     /* data */
 public:
-    HighChanceObs(War_Theatre *W);
+    HighChanceObs(War_Theatre *W, AlliedForce* sideA, AlliedForce* sideB);
     std::string getDescription();
     War_Theatre* cloneTheatre();
 };

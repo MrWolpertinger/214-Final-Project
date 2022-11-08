@@ -8,7 +8,7 @@
  * @param sideA [CountryGroup*] CountryGroup side A in the war.
  * @param sideB [CountryGroup*] CountryGroup side B in the war.
 */
-War_Theatre::War_Theatre(std::string name, Country* SideA, Country* SideB) {
+War_Theatre::War_Theatre(std::string name, AlliedForce* SideA, AlliedForce* SideB) {
     this->_name = name;
     this->_SideA = SideA;
     this->_SideB = SideB;
@@ -44,7 +44,7 @@ void War_Theatre::setName(std::string name) {
  * @brief Getter for the CountryGroup A.
  * @return A countryGroup object for side A.
 */
-Country* War_Theatre::getSideA() {
+AlliedForce* War_Theatre::getSideA() {
     return this->_SideA;
 };
 
@@ -52,7 +52,7 @@ Country* War_Theatre::getSideA() {
  * @brief Getter for the CountryGroup B.
  * @return A countryGroup object for side B.
 */
-Country* War_Theatre::getSideB() {
+AlliedForce* War_Theatre::getSideB() {
     return this->_SideB;
 };
 
@@ -60,7 +60,7 @@ Country* War_Theatre::getSideB() {
  * @brief A setter for the country Side A.
  * @param sideA country taking sideA in the war.
 */
-void War_Theatre::setSideA(Country* sideA) {
+void War_Theatre::setSideA(AlliedForce* sideA) {
     this->_SideA = sideA;
 };
 
@@ -68,7 +68,7 @@ void War_Theatre::setSideA(Country* sideA) {
  * @brief A setter for the country Side B.
  * @param sideB country taking sideA in the war.
 */
-void War_Theatre::setSideB(Country* sideB) {
+void War_Theatre::setSideB(AlliedForce* sideB) {
     this->_SideB = sideB;
 };
 

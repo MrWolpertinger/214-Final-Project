@@ -4,7 +4,7 @@
  * @brief Constructor of the class. Receives a War_Theatre* object and pass it to the constructor of its base class Obstacle.
  * @param A War_Theatre* object to be decorated;
 */
-MedChanceObs::MedChanceObs(War_Theatre *W) : Obstacle(W){};
+MedChanceObs::MedChanceObs(War_Theatre *W, AlliedForce* sideA, AlliedForce* sideB) : Obstacle(W, sideA, sideB){};
 
 /**
  * @brief Description of the obstacle.
@@ -37,5 +37,5 @@ std::string MedChanceObs::getDescription() {
  * @return An clone instance of the current object.
 */
 War_Theatre* MedChanceObs::cloneTheatre(){
-    return new MedChanceObs(Component);
+    return new MedChanceObs(Component, _SideA, _SideB);
 }

@@ -9,7 +9,7 @@ private:
     Airspace_war_theatre() {};
 public:
     const int TT = 1;
-    Airspace_war_theatre(std::string name, Country* SideA, Country* SideB);
+    Airspace_war_theatre(std::string name, AlliedForce* SideA, AlliedForce* SideB);
     ~Airspace_war_theatre();
     War_Theatre* cloneTheatre();//
     virtual std::string getDescription();//

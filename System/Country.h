@@ -43,7 +43,6 @@ class Country : public AlliedForce{
         int getHp();
         void setStats();
 
-
         /////
 
         string getCurrentPhase();//getState

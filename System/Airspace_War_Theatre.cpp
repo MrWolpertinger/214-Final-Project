@@ -13,7 +13,7 @@ Airspace_war_theatre::Airspace_war_theatre(const Airspace_war_theatre& Template)
  * @param sideA [CountryGroup*] CountryGroup side A in the war.
  * @param sideB [CountryGroup*] CountryGroup side B in the war.
 */
-Airspace_war_theatre::Airspace_war_theatre(std::string name, Country* SideA, Country* SideB) : War_Theatre(name, SideA, SideB){};
+Airspace_war_theatre::Airspace_war_theatre(std::string name, AlliedForce* SideA, AlliedForce* SideB) : War_Theatre(name, SideA, SideB){};
 
 /**
  * @brief Destructor of the Airspace_War_Theatre class.

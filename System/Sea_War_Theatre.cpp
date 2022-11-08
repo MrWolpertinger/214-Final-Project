@@ -13,7 +13,7 @@ Sea_War_Theatre::Sea_War_Theatre(const Sea_War_Theatre& Template) : War_Theatre(
  * @param sideA [CountryGroup*] CountryGroup side A in the war.
  * @param sideB [CountryGroup*] CountryGroup side B in the war.
 */
-Sea_War_Theatre::Sea_War_Theatre(std::string name, Country* SideA, Country* SideB) : War_Theatre(name, SideA, SideB){};
+Sea_War_Theatre::Sea_War_Theatre(std::string name, AlliedForce* SideA, AlliedForce* SideB) : War_Theatre(name, SideA, SideB){};
 
 /**
  * @brief Destructor of the Sea_War_Theatre class.

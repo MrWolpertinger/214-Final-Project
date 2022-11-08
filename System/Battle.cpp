@@ -8,34 +8,34 @@
  * @param sideB country taking sideB of the war.
  * @param type type of warTheatre.
 */
-Battle::Battle(std::string name, std::string startDate, std::string endDate, Country* SideA, Country* SideB, char type) {
+Battle::Battle(std::string name, std::string startDate, std::string endDate, AlliedForce* SideA, AlliedForce* SideB, char type) {
     this->_name = name;
     this->_startDate = startDate;
     this->_endDate = endDate;
     int chance = rand() % 3;
     if(chance == 0){
         if(type == 'A') {
-            this->_Locale = new LoChanceObs(new Airspace_war_theatre(name, SideA, SideB));
+            this->_Locale = new LoChanceObs(new Airspace_war_theatre(name, SideA, SideB), SideA, SideB);
         } else if(type == 'L') {
-            this->_Locale = new LoChanceObs(new Land_War_Theatre(name, SideA, SideB));
+            this->_Locale = new LoChanceObs(new Land_War_Theatre(name, SideA, SideB), SideA, SideB);
         } else {
-            this->_Locale = new LoChanceObs(new Sea_War_Theatre(name, SideA, SideB));
+            this->_Locale = new LoChanceObs(new Sea_War_Theatre(name, SideA, SideB), SideA, SideB);
         }
     } else if(chance == 1) {
         if(type == 'A') {
-            this->_Locale = new MedChanceObs(new Airspace_war_theatre(name, SideA, SideB));
+            this->_Locale = new MedChanceObs(new Airspace_war_theatre(name, SideA, SideB), SideA, SideB);
         } else if(type == 'L') {
-            this->_Locale = new MedChanceObs(new Land_War_Theatre(name, SideA, SideB));
+            this->_Locale = new MedChanceObs(new Land_War_Theatre(name, SideA, SideB), SideA, SideB);
         } else {
-            this->_Locale = new MedChanceObs(new Sea_War_Theatre(name, SideA, SideB));
+            this->_Locale = new MedChanceObs(new Sea_War_Theatre(name, SideA, SideB), SideA, SideB);
         }
     } else {
         if(type == 'A') {
-            this->_Locale = new HighChanceObs(new Airspace_war_theatre(name, SideA, SideB));
+            this->_Locale = new HighChanceObs(new Airspace_war_theatre(name, SideA, SideB), SideA, SideB);
         } else if(type == 'L') {
-            this->_Locale = new HighChanceObs(new Land_War_Theatre(name, SideA, SideB));
+            this->_Locale = new HighChanceObs(new Land_War_Theatre(name, SideA, SideB), SideA, SideB);
         } else {
-            this->_Locale = new HighChanceObs(new Sea_War_Theatre(name, SideA, SideB));
+            this->_Locale = new HighChanceObs(new Sea_War_Theatre(name, SideA, SideB), SideA, SideB);
         }
     }
     
@@ -78,8 +78,8 @@ std::string Battle::getStartDate() {
  * @return description of the battle.
 */
 std::string Battle::getBattleDescription() {
-    string des="Locale: "+_Locale->getDescription()+"/n";
-    des+="Side A: "+_Locale->getSideA()->getName() +" VS Side B: "+_Locale->getSideB()->getName();
+    std::string des = "Locale: "+_Locale->getDescription()+"\n";
+    des += "Side A: "+_Locale->getSideA()->getName() + " VS Side B: "+_Locale->getSideB()->getName();
     return des;
 };
 

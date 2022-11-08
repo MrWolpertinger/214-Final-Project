@@ -13,7 +13,7 @@ Land_War_Theatre::Land_War_Theatre(const Land_War_Theatre& Template) : War_Theat
  * @param sideA [CountryGroup*] CountryGroup side A in the war.
  * @param sideB [CountryGroup*] CountryGroup side B in the war.
 */
-Land_War_Theatre::Land_War_Theatre(std::string name, Country* SideA, Country* SideB) : War_Theatre(name, SideA, SideB){};
+Land_War_Theatre::Land_War_Theatre(std::string name, AlliedForce* SideA, AlliedForce* SideB) : War_Theatre(name, SideA, SideB){};
 
 /**
  * @brief Destructor of the Land_War_Theatre class.

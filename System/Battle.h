@@ -14,7 +14,7 @@ private:
     std::string _name, _startDate, _endDate;
     War_Theatre* _Locale = nullptr;
 public:
-    Battle(std::string name, std::string startDate, std::string endDate, Country* SideA, Country* SideB, char type);
+    Battle(std::string name, std::string startDate, std::string endDate, AlliedForce* SideA, AlliedForce* SideB, char type);
     ~Battle();
     void setName(std::string name);
     void setEndDate(std::string endDate);

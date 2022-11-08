@@ -6,14 +6,14 @@
 class War_Theatre {
 protected:
     std::string _name = "";
-    Country* _SideA = nullptr;
-    Country* _SideB = nullptr;
+    AlliedForce* _SideA = nullptr;
+    AlliedForce* _SideB = nullptr;
     std::string _area = "";
     War_Theatre(const War_Theatre& Template);
     War_Theatre() {};
 public:
     int TT;
-    War_Theatre(std::string n, Country* SideA, Country* SideB);
+    War_Theatre(std::string n, AlliedForce* SideA, AlliedForce* SideB);
     ~War_Theatre() {};
 
     virtual War_Theatre* cloneTheatre()=0;
@@ -24,10 +24,10 @@ public:
     std::string getArea();
     void setArea(std::string area);
 
-    Country* getSideA();
-    Country* getSideB();
-    void setSideA(Country* sideA);
-    void setSideB(Country* sideB);
+    virtual AlliedForce* getSideA();
+    virtual AlliedForce* getSideB();
+    void setSideA(AlliedForce* sideA);
+    void setSideB(AlliedForce* sideB);
     virtual std::string getDescription()=0;
     virtual int getType() {return 0;};
 };

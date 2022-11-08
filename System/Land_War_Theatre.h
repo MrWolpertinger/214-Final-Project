@@ -9,7 +9,7 @@ private:
     Land_War_Theatre() {};
 public:
     const int TT = 2;
-    Land_War_Theatre(std::string name, Country* SideA, Country* SideB);
+    Land_War_Theatre(std::string name, AlliedForce* SideA, AlliedForce* SideB);
     ~Land_War_Theatre();
     War_Theatre* cloneTheatre();//
     std::string getDescription();//
