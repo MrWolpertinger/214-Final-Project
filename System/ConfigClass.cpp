@@ -27,6 +27,7 @@ void ConfigClass::ParseConfigFile(std::string path) {
     catch (const toml::parse_error& err)
     {
         std::cerr << "Parsing failed:\n" << err << "\n";
+        return;
     }
     
     //make troops structs first in an array to be copied into the individual country objects
